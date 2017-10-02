@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="31px" viewBox="0 0 36 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icon 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,10 L36,10 L36,30 L0,30 L0,10 Z M7,22 L7,30 L9,30 L9,22 L7,22 Z M27,22 L27,30 L29,30 L29,22 L27,22 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Автоматика-—-комплект" transform="translate(-776.000000, -2087.000000)">
+            <g id="Details" transform="translate(372.000000, 1946.000000)">
+                <g id="2" transform="translate(402.000000, 142.000000)">
+                    <g id="icon-2" transform="translate(2.000000, 0.000000)">
+                        <g id="Combined-Shape">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#0071BA" stroke-width="1" d="M0.5,10.5 L0.5,29.5 L35.5,29.5 L35.5,10.5 L0.5,10.5 Z M6.5,30.5 L6.5,21.5 L9.5,21.5 L9.5,30.5 L6.5,30.5 Z M26.5,21.5 L29.5,21.5 L29.5,30.5 L26.5,30.5 L26.5,21.5 Z"></path>
+                        </g>
+                        <circle id="Oval-7" stroke="#0071BA" fill="#FFFFFF" cx="18" cy="10" r="10"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
