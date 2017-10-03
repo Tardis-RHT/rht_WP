@@ -78,9 +78,8 @@
 	<section class="furnitura_download">
 		<div class="furnitura_wrapper wrapper">
 			<p>Собираетесь установить ворота своими руками?</p>
-			<button class="ghost_btn material-icons">Скачать инструкцию  
-					<i class="zmdi zmdi-download"></i>
-			</button>
+			<a class="ghost_btn material-icons" href="<?php the_field('downloadManual'); ?>" target="_blank">Скачать инструкцию <i class="zmdi zmdi-download"></i>
+			</a>
 		</div>
 	</section>
 
