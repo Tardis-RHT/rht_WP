@@ -105,7 +105,7 @@
 					<span class="furnitura_choose_title">Высота, м</span>
 					<div class="range-slider">
 						<span class="">0</span>							
-						<input class="range-slider__range" type="range" min="0" max="4" step="1" value="2"> 
+						<input class="range-slider__range" type="range" min="0" max="4" step="0.1" value="0"> 
 						<span class="range-slider__value">0</span>
 					</div>									
 				</div>
@@ -113,7 +113,7 @@
 					<span class="furnitura_choose_title">Ширина проема, м</span>
 					<div class="range-slider">
 						<span class="">0</span>							
-						<input class="range-slider__range" type="range" min="0" max="10" step="1" value="5"> 
+						<input class="range-slider__range" type="range" min="3.6" max="8.5" step="0.1" value="5.0" disabled> 
 						<span class="range-slider__value">0</span>
 					</div>
 				</div>
