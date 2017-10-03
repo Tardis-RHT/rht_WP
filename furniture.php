@@ -94,10 +94,13 @@
 					<div class="furnitura_choose_dropdown dropdown">
 						<button onclick="myFunction()" class="dropbtn">Любой</button>
 						<div id="myDropdown" class="dropdown-content">
-							<a href="#">Филёнка 280 x 280 x 1,5 мм</a>
-							<a href="#">Филёнка 480 x 280 x 1,5 мм</a>
-							<a href="#">Филёнка 480 x 480 x 1,5 мм</a>
-							<a href="#">Декоративная полоса 2 м</a>
+						<a href="#">Профнастил</a>
+						<a href="#">Легкая ковка</a>
+						<a href="#">Легкие породы дерева</a>
+						<a href="#">Другая легкая зашивка</a>
+						<a href="#">Металлическая филенка</a>
+						<a href="#">Массивная ковка</a>
+						<a href="#">Другая тяжелая зашивка</a>
 						</div>
 					</div>
 				</div>
