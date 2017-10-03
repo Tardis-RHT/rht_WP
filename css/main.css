@@ -2702,6 +2702,16 @@ input[type='range']::-webkit-slider-thumb:hover {
   background-color: #0063a6;
 }
 
+input[type='range']::-webkit-slider-thumb:disabled {
+  background-color: #dddddd;
+  cursor: default;
+}
+
+input[type='range']:disabled::-webkit-slider-thumb {
+  background-color: #dddddd;
+  cursor: default;
+}
+
 /* All the same stuff for Firefox */
 input[type=range]::-moz-range-thumb {
   background-color: #0071ba;
@@ -2717,6 +2727,11 @@ input[type=range]::-moz-range-thumb:hover {
   background-color: #0063a6;
 }
 
+input[type='range']:disabled::-moz-range-thumb {
+  background-color: #dddddd;
+  cursor: default;
+}
+
 /* All the same stuff for IE */
 input[type=range]::-ms-thumb {
   background-color: #0071ba;
@@ -2730,6 +2745,11 @@ input[type=range]::-ms-thumb {
 
 input[type=range]::-ms-thumb:hover {
   background-color: #0063a6;
+}
+
+input[type='range']:disabled::-ms-thumb {
+  background-color: #dddddd;
+  cursor: default;
 }
 
 .furnitura_products {
@@ -6295,3 +6315,6 @@ input[type=range]::-ms-thumb:hover {
   margin-top: 35px;
   width: 206px;
 }
+ 
+
+ /*# sourceMappingURL= main.css.map */

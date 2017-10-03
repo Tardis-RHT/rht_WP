@@ -280,3 +280,4 @@
 
 
 <?php get_footer(); ?>
+<script type="text/javascript" src="js/furnitura.js"></script>
