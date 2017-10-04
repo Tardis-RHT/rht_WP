@@ -45,7 +45,7 @@
 				<button class="mobile_callus-btn" onclick="superPopup()">Перезвоните мне</button>
 				<div class="mobile_callus">
 					<img class="mobile_icon_phone" src="<?php echo get_template_directory_uri(); ?>/img/phone.svg" alt="call us">
-					<a class="mobile_callus-tel" href="tel:0800210257">0 800 210 257</a>
+					<a class="mobile_callus-tel" href="tel:<?php the_field('telMainLink'); ?>"><?php the_field('telMain'); ?></a>
 					<span class="mobile_callus-text">Бесплатно по Украине</span>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="header_callus">
-						<a class="header_callus_tel" href="tel:0800210257"><i class="zmdi zmdi-phone"></i> 0 800 210 257</a>
+						<a class="header_callus_tel" href="tel:<?php the_field('telMainLink'); ?>"><i class="zmdi zmdi-phone"></i> <?php the_field('telMain'); ?></a>
 						<span class="header_callus_text">Бесплатно по Украине</span>
 						
 					</div>
@@ -83,7 +83,7 @@
 					<div class="header_cart">
 						<div class="header_cart_call invisible">
 							<button class="header_cart_call-button" onclick="superPopup()">Перезвоните мне</button>
-							<span class="header_cart_call-tel">Или звоните <a href="tel:0800210257">0 800 21 02 57</a></span>
+							<span class="header_cart_call-tel">Или звоните <a href="tel:<?php the_field('telMainLink'); ?>"><?php the_field('telMain'); ?></a></span>
 						</div>
 						<a href="/shopping-cart/">
 							<button class="header_cart_buy">

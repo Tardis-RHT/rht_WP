@@ -1,4 +1,4 @@
-<?php /* Template Name: Page Furniture */ ?>
+<?php /* Template Name: Page Furnitura */ ?>
 <?php get_header(); ?>
 
 <main role="main">
