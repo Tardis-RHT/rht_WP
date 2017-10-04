@@ -126,14 +126,23 @@
 
 	<section class="furnitura_products">
 		<!-- START OF THE SET BLOCK -->
+		<?php
+            global $post;
+			$args = array('posts_per_page' => 3,
+				'post_type' => 'page',
+				'order' => 'ASC',
+				'post_parent' => $post->ID );
+            $myposts = get_posts( $args );
+            foreach( $myposts as $post ){ setup_postdata($post);
+                ?>
 		<div class="furnitura_products_wrapper">
 			<div class="furnitura_products_single wrapper">
 				<div class="furnitura_products_chars">
 					<h3 class="furnitura_chars_set dots">Комплект</h3>
-					<h3 class="furnitura_chars_title">&laquo;Тихий&raquo;</h3>
+					<h3 class="furnitura_chars_title">&laquo;<?php the_title() ?>&raquo;</h3>
 					<ul class="furnitura_chars_main">
-						<li class="furnitura_chars_main-width">Ширина проема — <b>до 3,7 м</b></li>
-						<li class="furnitura_chars_main-weight">Вес ворот — <b>до 350 кг</b></li>
+						<li class="furnitura_chars_main-width">Ширина проема — <b>до <?php the_field('width'); ?> м</b></li>
+						<li class="furnitura_chars_main-weight">Вес ворот — <b>до <?php the_field('weight'); ?> кг</b></li>
 					</ul>
 					<ul class="furnitura_chars_additional">
 						<li>Направляющий профиль (60х70х3.5мм) — 5,5 м</li>
@@ -144,122 +153,24 @@
 						<li>Накатной ролик — 1 шт</li>
 						<li>Заглушка — 1 шт</li>
 					</ul>
-					<p class="furnitura_chars_price">2990 <span class="furnitura_hrn">грн</span></p>
+					<p class="furnitura_chars_price"><?php the_field('price'); ?> <span class="furnitura_hrn">грн</span></p>
 					<div class="furnitura_chars_buttons">
 						<a class="ghost_link" href="furnitura_set.html">Подробнее ></a>
 						<button class="btn">Добавить в корзину</button>
-						<a href="furnitura_set.html"><button class="ghost_btn">Подробнее</button></a>
+						<button class="ghost_btn" onClick='location.href="<?php echo get_permalink();?>"'>Подробнее</button>
 					</div>
 				</div>
 				<div class="furnitura_products_img">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/furnitura_plus.png" alt="Фурнитура комплект">
+					<img class="" src="<?php echo get_the_post_thumbnail_url();?>" alt="Фурнитура комплект">
 				</div>
 			</div>
 		</div>
+
+		<?php
+            }
+            wp_reset_postdata();
+            ?>
 		<!-- END OF THE SET BLOCK -->
-
-
-		<!-- START OF THE SET BLOCK -->
-		<div class="furnitura_products_wrapper">
-			<div class="furnitura_products_single wrapper">
-				<div class="furnitura_products_chars">
-					<h3 class="furnitura_chars_set dots">Комплект</h3>
-					<h3 class="furnitura_chars_title">&laquo;Стандарт&raquo;</h3>
-					<ul class="furnitura_chars_main">
-						<li class="furnitura_chars_main-width">Ширина проема — <b>до 5 м</b></li>
-						<li class="furnitura_chars_main-weight">Вес ворот — <b>до 500 кг</b></li>
-					</ul>
-					<ul class="furnitura_chars_additional">
-						<li>Направляющий профиль (60х70х3.5мм) — 6 м</li>
-						<li>Роликовая опора (полимерные колеса) — 2 шт</li>
-						<li>Нижний улавливатель — 1 шт</li>
-						<li>Верхний улавливатель — 1 шт</li>
-						<li>Верхний ограничитель (2 ролика) — 1 шт</li>
-						<li>Накатной ролик — 1 шт</li>
-						<li>Заглушка — 1 шт</li>
-					</ul>
-					<p class="furnitura_chars_price">2690 <span class="furnitura_hrn">грн</span></p>
-					<div class="furnitura_chars_buttons">
-						<a class="ghost_link" href="furnitura_set.html">Подробнее ></a>
-						<button class="btn">Добавить в корзину</button>
-						<a href="furnitura_set.html"><button class="ghost_btn">Подробнее</button></a>
-					</div>
-				</div>
-				<div class="furnitura_products_img">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/furnitura_plus.png" alt="Фурнитура комплект">
-				</div>
-			</div>
-		</div>
-		<!-- END OF THE SET BLOCK -->
-
-
-		<!-- START OF THE SET BLOCK -->
-		<div class="furnitura_products_wrapper">
-			<div class="furnitura_products_single wrapper">
-				<div class="furnitura_products_chars">
-					<h3 class="furnitura_chars_set dots">Комплект</h3>
-					<h3 class="furnitura_chars_title">&laquo;Усиленный&raquo;</h3>
-					<ul class="furnitura_chars_main">
-						<li class="furnitura_chars_main-width">Ширина проема — <b>до 7 м</b></li>
-						<li class="furnitura_chars_main-weight">Вес ворот — <b>до 800 кг</b></li>
-					</ul>
-					<ul class="furnitura_chars_additional">
-						<li>Направляющий профиль (60х70х3.5мм) — 6 м</li>
-						<li>Роликовая опора (полимерные колеса) — 2 шт</li>
-						<li>Нижний улавливатель — 1 шт</li>
-						<li>Верхний улавливатель — 1 шт</li>
-						<li>Верхний ограничитель (2 ролика) — 1 шт</li>
-						<li>Накатной ролик — 1 шт</li>
-						<li>Заглушка — 1 шт</li>
-					</ul>
-					<p class="furnitura_chars_price">4990 <span class="furnitura_hrn">грн</span></p>
-					<div class="furnitura_chars_buttons">
-						<a class="ghost_link" href="#">Подробнее ></a>
-						<button class="btn">Добавить в корзину</button>
-						<button class="ghost_btn">Подробнее</button>
-					</div>
-				</div>
-				<div class="furnitura_products_img">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/furnitura_plus.png" alt="Фурнитура комплект">
-				</div>
-			</div>
-		</div>
-		<!-- END OF THE SET BLOCK -->
-
-
-		<!-- START OF THE SET BLOCK -->
-		<div class="furnitura_products_wrapper">
-			<div class="furnitura_products_single wrapper">
-				<div class="furnitura_products_chars">
-					<h3 class="furnitura_chars_set dots">Комплект</h3>
-					<h3 class="furnitura_chars_title">&laquo;Мощный&raquo;</h3>
-					<ul class="furnitura_chars_main">
-						<li class="furnitura_chars_main-width">Ширина проема — <b>до 9 м</b></li>
-						<li class="furnitura_chars_main-weight">Вес ворот — <b>до 1200 кг</b></li>
-					</ul>
-					<ul class="furnitura_chars_additional">
-						<li>Направляющий профиль (60х70х3.5мм) — 6 м</li>
-						<li>Роликовая опора (полимерные колеса) — 2 шт</li>
-						<li>Нижний улавливатель — 1 шт</li>
-						<li>Верхний улавливатель — 1 шт</li>
-						<li>Верхний ограничитель (2 ролика) — 1 шт</li>
-						<li>Накатной ролик — 1 шт</li>
-						<li>Заглушка — 1 шт</li>
-					</ul>
-					<p class="furnitura_chars_price">6990 <span class="furnitura_hrn">грн</span></p>
-					<div class="furnitura_chars_buttons">
-						<a class="ghost_link" href="#">Подробнее ></a>
-						<button class="btn">Добавить в корзину</button>
-						<button class="ghost_btn">Подробнее</button>
-					</div>
-				</div>
-				<div class="furnitura_products_img">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/furnitura_plus.png" alt="Фурнитура комплект">
-				</div>
-			</div>
-		</div>
-		<!-- END OF THE SET BLOCK -->
-
 		<div class="furnitura_products_end"><button class="furnitura_products_more ghost_btn">Загрузить больше</button></div>
 	</section>
 
