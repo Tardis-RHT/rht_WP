@@ -45,7 +45,10 @@
 
 		<?php
             global $post;
-            $args = array('posts_per_page' => 10,'post_type' => 'rht-automatica', 'order' => 'ASC' );
+			$args = array('posts_per_page' => 4,
+				'post_type' => 'page',
+				'order' => 'ASC',
+				'post_parent' => $post->ID );
             $myposts = get_posts( $args );
             foreach( $myposts as $post ){ setup_postdata($post);
                 ?>
@@ -70,7 +73,7 @@
                     <button class="btn">
                         Добавить в корзину
                     </button>
-                    <button class="ghost_btn only_desktop"onClick='location.href="<?php echo get_permalink(); ?>"'>
+                    <button class="ghost_btn only_desktop"onClick='location.href="<?php echo get_permalink(); ?>"'> Подробнее
                     </button>
                 </div>
 
@@ -78,7 +81,7 @@
                 <img src="<?php the_field('garantee'); ?>" alt="Гарантия 3 года" class="garantee">
             </div>
         </section>
-			<?php
+        <?php
             }
             wp_reset_postdata();
             ?>
@@ -100,6 +103,5 @@
     </section>
     <?php get_template_part('callback'); ?>
 	</main>
-
 
 <?php get_footer(); ?>

@@ -349,8 +349,8 @@ add_action('init', 'register_rht_menu'); // Add rht Blank Menu
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'rhtwp_pagination'); // Add our rht Pagination
 
-add_action('init', 'create_post_type_automatica');
-add_action('init', 'create_post_type_furnitura');
+// add_action('init', 'create_post_type_automatica');
+// add_action('init', 'create_post_type_furnitura');
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
 remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
@@ -398,80 +398,80 @@ add_shortcode('rht_shortcode_demo_2', 'rht_shortcode_demo_2'); // Place [rht_sho
 \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called rht
-function create_post_type_furnitura()
-{
-    register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'rht');
-    register_post_type('rht-furnitura', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('Фурнитура', 'furnitura'), // Rename these to suit
-            'singular_name' => __('rht Blank Custom Post', 'furnitura'),
-            'add_new' => __('Add New', 'furnitura'),
-            'add_new_item' => __('Add New rht Blank Custom Post', 'furnitura'),
-            'edit' => __('Edit', 'furnitura'),
-            'edit_item' => __('Edit rht Blank Custom Post', 'furnitura'),
-            'new_item' => __('New rht Blank Custom Post', 'furnitura'),
-            'view' => __('View rht Blank Custom Post', 'furnitura'),
-            'view_item' => __('View rht Blank Custom Post', 'furnitura'),
-            'search_items' => __('Search rht Blank Custom Post', 'furnitura'),
-            'not_found' => __('No rht Blank Custom Posts found', 'furnitura'),
-            'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'furnitura')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail',
-            'custom-fields'
-        ), // Go to Dashboard Custom rht Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
-}
-function create_post_type_automatica()
-{
-    register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'rht');
-    register_post_type('rht-automatica', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('Автоматика', 'automatica'), // Rename these to suit
-            'singular_name' => __('rht Blank Custom Post', 'automatica'),
-            'add_new' => __('Add New', 'automatica'),
-            'add_new_item' => __('Add New rht Blank Custom Post', 'automatica'),
-            'edit' => __('Edit', 'automatica'),
-            'edit_item' => __('Edit rht Blank Custom Post', 'automatica'),
-            'new_item' => __('New rht Blank Custom Post', 'automatica'),
-            'view' => __('View rht Blank Custom Post', 'automatica'),
-            'view_item' => __('View rht Blank Custom Post', 'automatica'),
-            'search_items' => __('Search rht Blank Custom Post', 'automatica'),
-            'not_found' => __('No rht Blank Custom Posts found', 'automatica'),
-            'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'automatica')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail',
-            'custom-fields'
-        ), // Go to Dashboard Custom rht Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
-}
+// function create_post_type_furnitura()
+// {
+//     register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
+//     register_taxonomy_for_object_type('post_tag', 'rht');
+//     register_post_type('rht-furnitura', // Register Custom Post Type
+//         array(
+//         'labels' => array(
+//             'name' => __('Фурнитура', 'furnitura'), // Rename these to suit
+//             'singular_name' => __('rht Blank Custom Post', 'furnitura'),
+//             'add_new' => __('Add New', 'furnitura'),
+//             'add_new_item' => __('Add New rht Blank Custom Post', 'furnitura'),
+//             'edit' => __('Edit', 'furnitura'),
+//             'edit_item' => __('Edit rht Blank Custom Post', 'furnitura'),
+//             'new_item' => __('New rht Blank Custom Post', 'furnitura'),
+//             'view' => __('View rht Blank Custom Post', 'furnitura'),
+//             'view_item' => __('View rht Blank Custom Post', 'furnitura'),
+//             'search_items' => __('Search rht Blank Custom Post', 'furnitura'),
+//             'not_found' => __('No rht Blank Custom Posts found', 'furnitura'),
+//             'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'furnitura')
+//         ),
+//         'public' => true,
+//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+//         'has_archive' => true,
+//         'supports' => array(
+//             'title',
+//             'editor',
+//             'excerpt',
+//             'thumbnail',
+//             'custom-fields'
+//         ), // Go to Dashboard Custom rht Blank post for supports
+//         'can_export' => true, // Allows export in Tools > Export
+//         'taxonomies' => array(
+//             'post_tag',
+//             'category'
+//         ) // Add Category and Post Tags support
+//     ));
+// }
+// function create_post_type_automatica()
+// {
+//     register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
+//     register_taxonomy_for_object_type('post_tag', 'rht');
+//     register_post_type('rht-automatica', // Register Custom Post Type
+//         array(
+//         'labels' => array(
+//             'name' => __('Автоматика', 'automatica'), // Rename these to suit
+//             'singular_name' => __('rht Blank Custom Post', 'automatica'),
+//             'add_new' => __('Add New', 'automatica'),
+//             'add_new_item' => __('Add New rht Blank Custom Post', 'automatica'),
+//             'edit' => __('Edit', 'automatica'),
+//             'edit_item' => __('Edit rht Blank Custom Post', 'automatica'),
+//             'new_item' => __('New rht Blank Custom Post', 'automatica'),
+//             'view' => __('View rht Blank Custom Post', 'automatica'),
+//             'view_item' => __('View rht Blank Custom Post', 'automatica'),
+//             'search_items' => __('Search rht Blank Custom Post', 'automatica'),
+//             'not_found' => __('No rht Blank Custom Posts found', 'automatica'),
+//             'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'automatica')
+//         ),
+//         'public' => true,
+//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+//         'has_archive' => true,
+//         'supports' => array(
+//             'title',
+//             'editor',
+//             'excerpt',
+//             'thumbnail',
+//             'custom-fields'
+//         ), // Go to Dashboard Custom rht Blank post for supports
+//         'can_export' => true, // Allows export in Tools > Export
+//         'taxonomies' => array(
+//             'post_tag',
+//             'category'
+//         ) // Add Category and Post Tags support
+//     ));
+// }
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
@@ -677,6 +677,69 @@ function dimox_breadcrumbs() {
   }
 } // end of dimox_breadcrumbs()
 
+add_action('customize_register', function($customizer){
+    $customizer->add_section(
+        'contacts',
+        array(
+            'title' => 'Contacts & copyright',
+            'description' => 'Контакты и copyright для всего сайта',
+            'priority' => 11,
+        )
+    );
+    $customizer->add_setting(
+        'contacts_tel',
+        array('default' => '800 210 257')
+    );
+    $customizer->add_control(
+        'contacts_tel',
+        array(
+            'label' => 'Телефон',
+            'section' => 'contacts',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_setting(
+        'contacts_email',
+        array('default' => 'rollinghitech@gmail.com')
+    );
+    $customizer->add_control(
+        'contacts_email',
+        array(
+            'label' => 'Email',
+            'section' => 'contacts',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_setting(
+        'contacts_address',
+        array('default' => '69000, Украина, Запорожье, ул. Новостроек, дом 7')
+    );
+    $customizer->add_control(
+        'contacts_address',
+        array(
+            'label' => 'Адрес',
+            'section' => 'contacts',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_setting(
+        'contacts_copyright',
+        array('default' => 'Rolling Hi-Tech, 2017')
+    );
+    $customizer->add_control(
+        'contacts_copyright',
+        array(
+            'label' => 'Copyright',
+            'section' => 'contacts',
+            'type' => 'text',
+        )
+    );
+}); 
 
+
+    /* <?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>
+     <?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?>
+     <?php echo get_theme_mod('contacts_address', 'rollinghitech@gmail.com'); ?>
+     <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech, 2017'); ?> */
 ?>
 

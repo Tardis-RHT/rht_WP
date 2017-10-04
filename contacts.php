@@ -16,7 +16,7 @@
             <button class="main_feedback_feedback btn" onClick='location.href="/comment/"'>
                 Оставить отзыв
             </button>
-            <span>Или звоните бесплатно <a href="tel:<?php the_field('telMainLink'); ?>"><?php the_field('telMain'); ?></a></span>
+            <span>Или звоните бесплатно <a href="tel:<?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>"><?php echo get_theme_mod('contacts_tel', '800 210 257'); ?></a></span>
         </div>
         <div class="page-contacts_wrapper">
             <div class="page-contacts_wrapper-small">
@@ -25,7 +25,7 @@
                     <ul class="page-contacts_list">
                         <li>
                             <i class="zmdi zmdi-phone"></i>
-                            <p class="contacts_bold"><a href="tel:<?php the_field('telMainLink'); ?>"><?php the_field('telMain'); ?></a></p>
+                            <p class="contacts_bold"><a href="tel:<?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>"><?php echo get_theme_mod('contacts_tel', '800 210 257'); ?></a></p>
                             <span>(бесплатно по Украине)</span>
                         </li>
                         <li>
@@ -35,11 +35,11 @@
                         </li>
                         <li>
                             <i class="zmdi zmdi-email"></i>
-                            <p class="contacts_bold"><a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a></p>
+                            <p class="contacts_bold"><a href="mailto:<?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?>"><?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?></a></p>
                         </li>
                         <li>
                             <i class="zmdi zmdi-pin"></i>
-                            <p><?php the_field('address'); ?></p>
+                            <p><?php echo get_theme_mod('contacts_address', '69000, Украина, Запорожье, ул. Новостроек, дом 7'); ?></p>
                         </li>
                         <li>
                             <i class="zmdi zmdi-phone"></i>

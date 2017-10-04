@@ -1157,6 +1157,7 @@ a :visited {
   display: block;
   z-index: 2;
   -webkit-transition: all 2s 2s ease-in-out;
+  transition: all 2s 2s ease-in-out;
 }
 
 :-moz-full-screen#fs_section_img.fs_section #i3 {
@@ -1164,6 +1165,7 @@ a :visited {
   display: block;
   z-index: 2;
   -moz-transition: all 2s 2s ease-in-out;
+  transition: all 2s 2s ease-in-out;
 }
 
 .video-alt-img {
@@ -1500,7 +1502,7 @@ a :visited {
     line-height: 20px;
     font-weight: 700;
     margin: 0;
-    min0width: none;
+    min-width: none;
   }
 }
 
@@ -2721,6 +2723,7 @@ input[type=range]::-moz-range-thumb {
   border: 0 none;
   cursor: pointer;
   -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 input[type=range]::-moz-range-thumb:hover {
@@ -2741,6 +2744,7 @@ input[type=range]::-ms-thumb {
   border: 0 none;
   cursor: pointer;
   -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 input[type=range]::-ms-thumb:hover {
@@ -4701,7 +4705,7 @@ input[type='range']:disabled::-ms-thumb {
   }
 }
 
-.automatica-install button {
+.automatica-install a {
   display: inline-block;
 }
 
