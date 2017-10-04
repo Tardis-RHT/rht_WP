@@ -45,7 +45,7 @@
 
 		<?php
             global $post;
-            $args = array('posts_per_page' => 10,'post_type' => 'html5-automatica', 'order' => 'ASC' );
+            $args = array('posts_per_page' => 10,'post_type' => 'rht-automatica', 'order' => 'ASC' );
             $myposts = get_posts( $args );
             foreach( $myposts as $post ){ setup_postdata($post);
                 ?>

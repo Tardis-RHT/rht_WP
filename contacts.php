@@ -16,7 +16,7 @@
             <button class="main_feedback_feedback btn" onClick='location.href="/comment/"'>
                 Оставить отзыв
             </button>
-            <span>Или звоните бесплатно <a href="tel:0800210257">0 800 21 02 57</a></span>
+            <span>Или звоните бесплатно <a href="tel:<?php the_field('telMainLink'); ?>"><?php the_field('telMain'); ?></a></span>
         </div>
         <div class="page-contacts_wrapper">
             <div class="page-contacts_wrapper-small">
@@ -25,7 +25,7 @@
                     <ul class="page-contacts_list">
                         <li>
                             <i class="zmdi zmdi-phone"></i>
-                            <p class="contacts_bold"><a href="tel:0800210257">800 21 02 57</a></p>
+                            <p class="contacts_bold"><a href="tel:<?php the_field('telMainLink'); ?>"><?php the_field('telMain'); ?></a></p>
                             <span>(бесплатно по Украине)</span>
                         </li>
                         <li>
@@ -35,11 +35,11 @@
                         </li>
                         <li>
                             <i class="zmdi zmdi-email"></i>
-                            <p class="contacts_bold"><a href="mailto:rollinghitech@gmail.com">rollinghitech@gmail.com</a></p>
+                            <p class="contacts_bold"><a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a></p>
                         </li>
                         <li>
                             <i class="zmdi zmdi-pin"></i>
-                            <p>69000, Украина, Запорожье, ул. Новостроек, дом 7</p>
+                            <p><?php the_field('address'); ?></p>
                         </li>
                         <li>
                             <i class="zmdi zmdi-phone"></i>
