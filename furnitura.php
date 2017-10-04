@@ -128,7 +128,7 @@
 		<!-- START OF THE SET BLOCK -->
 		<?php
             global $post;
-			$args = array('posts_per_page' => 3,
+			$args = array('posts_per_page' => 4,
 				'post_type' => 'page',
 				'order' => 'ASC',
 				'post_parent' => $post->ID );
