@@ -10,18 +10,18 @@ $(function(){
 
 
 	// CHANGE LANGUAGE MENU START
-	$('.header_lang_main').click(function() {
-	// 	$('.header_lang_content').toggle(function(){
-  	//  $(this).removeClass('invisible');
-  	//  });
-		$('.header_lang_content').removeClass('invisible'); //Not needed if using Toggle
-		$('#header_shevron').removeClass('zmdi-chevron-down');
-		$('#header_shevron').addClass('zmdi-chevron-up');
+	$(document).ready(function() {
+		$('.languagepicker li:first').addClass('chevron_down');
+	});
+	$('.languagepicker').hover(function() {
+		$('.languagepicker li').css('display','block');
+		$('.languagepicker li:first').addClass('chevron_up');
+		$('.languagepicker li:first').removeClass('chevron_down');
 		$('.header_lang').mouseleave(function(){
-			$('.header_lang_content').addClass('invisible');
-			// $('.header_lang_content').css('display', 'none'); //Use it with Toggle
-			$('#header_shevron').addClass('zmdi-chevron-down');
-			$('#header_shevron').removeClass('zmdi-chevron-up');
+			$('.languagepicker li:nth-child(2)').css('display','none');
+			$('.languagepicker li:nth-child(3)').css('display','none');
+			$('.languagepicker li:first').removeClass('chevron_up');
+			$('.languagepicker li:first').addClass('chevron_down');
 		});
 	});
 	// CHANGE LANGUAGE MENU END
