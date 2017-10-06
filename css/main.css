@@ -761,7 +761,7 @@ a :visited {
   .languagepicker li a {
     color: white;
   }
-  .languagepicker li:hover {
+  .languagepicker li:hover:not(:first-child) {
     cursor: pointer;
   }
   .chevron_up::after {
