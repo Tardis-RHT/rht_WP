@@ -48,7 +48,8 @@
 				<div class="header_wrapper_hidesmall wrapper">
 					<div class="header_lang">
 						<ul class="languagepicker">
-							<?php pll_the_languages();?>
+							<li><?php echo pll_current_language('name'); ?></li>
+							<?php pll_the_languages(array('hide_current'=>1)); ?>
 						</ul>
 					</div>
 					<div class="header_callus">
