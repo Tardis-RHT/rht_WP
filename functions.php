@@ -88,20 +88,20 @@ function rht_nav()
 }
 
 // Load rht Blank scripts (header.php)
-function rht_header_scripts()
-{
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+// function rht_header_scripts()
+// {
+//     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
+//     	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
+//         wp_enqueue_script('conditionizr'); // Enqueue it!
 
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
-        wp_enqueue_script('modernizr'); // Enqueue it!
+//         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
+//         wp_enqueue_script('modernizr'); // Enqueue it!
 
-        wp_register_script('rhtscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('rhtscripts'); // Enqueue it!
-    }
-}
+//         wp_register_script('rhtscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
+//         wp_enqueue_script('rhtscripts'); // Enqueue it!
+//     }
+// }
 
 // Load rht Blank conditional scripts
 function rht_conditional_scripts()
@@ -115,7 +115,7 @@ function rht_conditional_scripts()
 // Load rht Blank styles
 function rht_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
     wp_register_style('rht', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
@@ -340,7 +340,7 @@ function rhtcomments($comment, $args, $depth)
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'rht_header_scripts'); // Add Custom Scripts to wp_head
+// add_action('init', 'rht_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_print_scripts', 'rht_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'rht_styles'); // Add Theme Stylesheet
