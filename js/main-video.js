@@ -2,7 +2,7 @@ $(function(){
     var calcVideoSize = function() {
         var video_height = $('#main_video-video').outerHeight()
         $('#main_video').css("height", video_height + 'px');
-        console.log(video_height);
+        // console.log(video_height);
     }
     $(window).resize(function() {
         calcVideoSize()
@@ -71,7 +71,7 @@ function enterFullscreen(id) {
     var onfullscreenchange =  function(e){
     var fullscreenElement = document.fullscreenElement || document.mozFullscreenElement || document.webkitFullscreenElement;
     var fullscreenEnabled = document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled;
-    console.log( 'fullscreenEnabled = ' + fullscreenEnabled, ',  fullscreenElement = ', fullscreenElement, ',  e = ', e);
+    // console.log( 'fullscreenEnabled = ' + fullscreenEnabled, ',  fullscreenElement = ', fullscreenElement, ',  e = ', e);
     }
     el.addEventListener("webkitfullscreenchange", onfullscreenchange);
     el.addEventListener("mozfullscreenchange",     onfullscreenchange);
@@ -102,7 +102,7 @@ function exitFullscreen(id) {
 function _fullscreenEnabled() {
 // FF provides nice flag, maybe others will add support for this later on?
 if(window['fullScreen'] !== undefined) {
-    console.log('1');
+    // console.log('1');
     return window.fullScreen;
 }
 // 5px height margin, just in case (needed by e.g. IE)
