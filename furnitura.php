@@ -161,7 +161,7 @@
 					</div>
 				</div>
 				<div class="furnitura_products_img">
-					<img class="" src="<?php echo get_the_post_thumbnail_url();?>" alt="Фурнитура комплект">
+					<img class="" src="<?php the_field('set_img'); ?>" alt="Фурнитура комплект">
 				</div>
 			</div>
 		</div>
