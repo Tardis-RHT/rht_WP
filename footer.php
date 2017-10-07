@@ -25,5 +25,6 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/lg-video.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/maskedinput.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/smartvalidity.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ajax_form.js"></script>
 	</body>
 </html>

@@ -7,12 +7,12 @@
 					<button class="callback-modal-close" id="modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></button>
 					<h2>Обратная связь</h2>
 					<p>Оставьте номер телефона и менеджер свяжется с вами в течение 15 минут</p>
-					<form class="form_callback" name="callback" id="callback">
+					<form class="form_callback" name="callback" id="callback" action="tel_form.php" action="post">
 						<input class="callback_telephone" type="tel" name="telephone" placeholder="Номер телефона" id="tel" 
 						PATTERN="\D[0-9]{3}\s\D[0-9]{2}\D\s[0-9]{3}\s\D\s[0-9]{2}\s\D\s[0-9]{2}"
 						onkeydown="checkTelValidity()">
 						<label class="phone" for="tel" id="tel_label">Номер телефона</label>
-						<button class="callback_callus_btn btn" type="submit" disabled id="tel-btn" onclick="resetForm(), showPopup()">Перезвоните мне</button>
+						<button class="callback_callus_btn btn" type="submit" disabled id="tel-btn">Перезвоните мне</button>
 					</form>
 					<span>Звоните бесплатно  0 800 21 02 57</span>
 					<span>Ответим с 9:00 до 19:00 ежедневно</span>
