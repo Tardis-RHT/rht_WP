@@ -39,31 +39,32 @@
 
     <section class="furnitura_video panels_video">
 
-            <img class="furnitura_video_pic" src="<?php echo get_template_directory_uri(); ?>/img/furnitura_video_bg.png">
-            <div class="furnitura_video_wrapper wrapper">
-                <h3 class="furnitura_video_h3">Подробнее о филёнке <span>ROLLING HI-TECH</span></h3>
-                <!-- Hidden video div -->
-                <div style="display:none;" id="video_panels">
-                    <video class="lg-video-object lg-html5" controls preload="none">
-                        <source src="<?php echo get_template_directory_uri(); ?>/video/video.mp4" type="video/mp4">
-                            Your browser does not support HTML5 video.
-                    </video>
-                </div>
-                <!-- data-src should not be provided when you use html5 videos -->
-                <ul id="videoFurnitura">
-                    <li data-html="#video_panels" >
-                        <a class="main-page_video-more">
-                            <div class="video_btn"></div>
-                            <div class="main-page_video-link video">Посмотреть видео</div>
-                        </a>
-                    </li>
-                </ul>
+        <img class="furnitura_video_pic" src="<?php echo get_template_directory_uri(); ?>/img/furnitura_video_bg.png">
+        <div class="furnitura_video_wrapper wrapper">
+            <h3 class="furnitura_video_h3">Подробнее о филёнке <span>ROLLING HI-TECH</span></h3>
+            <!-- Hidden video div -->
+            <div style="display:none;" id="video_panels">
+                <video class="lg-video-object lg-html5" controls preload="none">
+                    <source src="<?php echo get_template_directory_uri(); ?>/video/video.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                </video>
+                <a data-sub-html="#video_panels"href="<?php echo home_url(); ?>" class="video-fullscreen_logo toShow" id="video-fullscreen_logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-transparent.png" alt="RHT logo">
+                </a>
             </div>
-        </section>
+            <!-- data-src should not be provided when you use html5 videos -->
+            <ul id="videoFurnitura">
+                <li data-html="#video_panels" >
+                    <a class="main-page_video-more">
+                        <div class="video_btn"></div>
+                        <div class="main-page_video-link video">Посмотреть видео</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-
-
-        <section class="page_filenka_catalog wrapper">
+    <section class="page_filenka_catalog wrapper">
         <h2 class="page_filenka_catalog-title">Каталог</h2>
         <div class="catalog-container">
             <div class="catalog-item">

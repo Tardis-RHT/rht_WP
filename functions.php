@@ -734,12 +734,9 @@ add_action('customize_register', function($customizer){
             'type' => 'text',
         )
     );
-}); 
-
-
+});
     /* <?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>
      <?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?>
      <?php echo get_theme_mod('contacts_address', 'rollinghitech@gmail.com'); ?>
      <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech, 2017'); ?> */
 ?>
-

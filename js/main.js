@@ -1,6 +1,5 @@
 
 $(function(){
-
 	// MOBILE MENU
 	$('#burger').click(function() {
 			$('.mobile_menu').toggle();
@@ -87,42 +86,7 @@ $(function(){
 		autoWidth: true
 	});
 
-	//Sertificates Carousel
-	$('#lightSlider_certificates').lightSlider({
-		item:6,
-		loop:false,
-		easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-		speed:600,
-		controls: false,
-		pager: false,
-		slideMargin: 0,
-		responsive: [
-			// {
-			// 	breakpoint:1400,
-			// 	settings: {
-			// 		item:4
-			// 		}
-			// },
-			// {
-			// 	breakpoint:768,
-			// 	settings: {
-			// 		item:3
-			// 		}
-			// },
-			{
-				breakpoint:620,
-				settings: {
-					item:4
-					}
-			},
-			{
-				breakpoint:470,
-				settings: {
-					item:3
-					}
-			}
-		]
-	});
+
 
 	$("#lightSlider_filenka").lightSlider({
 		gallery: false,
@@ -134,15 +98,23 @@ $(function(){
 		pager: true,
 		// autoWidth: true
 	});
-	$('#video_panels').lightGallery({
-		videoMaxWidth: '100%',
-		autoPlay: true,
-		controls: false,
-		counter: false,
-		download: false,
-	}); 
-
+	// $('#video_panels').lightGallery({
+	// 	videoMaxWidth: '100%',
+	// 	autoPlay: true,
+	// 	controls: false,
+	// 	counter: false,
+	// 	download: false,
+	// }); 
+	
+	// $('#main_video-video').lightGallery({
+	// 	videoMaxWidth: '100%',
+	// 	autoPlay: true,
+	// 	controls: false,
+	// 	counter: false,
+	// 	download: false,
+	// }); 
 });
+
 
 //CALLBACK VALIDATION
 
@@ -180,18 +152,26 @@ $(function($){
 // END OF CALLBACK VALIDATION
 
 // SHOW HIDE THE adjusting-plate BLOCK BY CLICKIN CHECKBOX
-function toggle() {
+function toggleCheckbox() {
 	var div = document.getElementById('adjusting-plate');
 	if(this.checked)
+	{
 	  div.style.display = 'inline-block';
-	else
-	  div.style.display = 'none'
+	  document.getElementById('furnitura_chars_price_add').style.display = 'inline-block';
+	  document.getElementById('furnitura_chars_price').style.display = 'none';
+	  
+	}
+	else{
+	  div.style.display = 'none';
+	  document.getElementById('furnitura_chars_price_add').style.display = 'none';
+	  document.getElementById('furnitura_chars_price').style.display = 'inline-block';
+	  
+	}
 }
 
 if(document.getElementById('adjusting-plate_checkbox')){
-	document.getElementById('adjusting-plate_checkbox').onchange = toggle;
+	document.getElementById('adjusting-plate_checkbox').onchange = toggleCheckbox;
 }
-
 // END OF SHOW HIDE THE adjusting-plate BLOCK BY CLICKIN CHECKBOX
 
 
@@ -412,38 +392,38 @@ function changeMsg3(){
   //VALIDATION ON COMMENT PAGE
 
   if($('.comment-form').length > 0){
-		var inputs = $('#commentName, #commentEmail, #commentProducts, #commentText');
-		var commentBtn = $('#comment_btn');
-  		function checkCommentValidity(){
-		if(commentBtn != undefined){
-		// commentBtn.prop( "disabled", true );
+	var inputs = $('#commentName, #commentEmail, #commentProducts, #commentText');
+	var commentBtn = $('#comment_btn');
+	function checkCommentValidity(){
+	if(commentBtn != undefined){
+	// commentBtn.prop( "disabled", true );
 
-			$("#commentEmail").smartValidity({
-				btn: 'comment-btn',
-				label:'commentEmail-lab',
-				startBorder: 'rgb(120,120,123)',
-				startText: 'Email',
-				errorText:'Введите в формате mail@mail.com'
-			});
-			$("#commentText").smartValidity({
-				btn: 'comment-btn',
-				label:'commentText-lab',
-				startBorder: 'rgb(120,120,123)',
-				startText: 'Сообщение',
-				errorText:'Сообщение должно содержать больше 10 символов'
-			});
+		$("#commentEmail").smartValidity({
+			btn: 'comment-btn',
+			label:'commentEmail-lab',
+			startBorder: 'rgb(120,120,123)',
+			startText: 'Email',
+			errorText:'Введите в формате mail@mail.com'
+		});
+		$("#commentText").smartValidity({
+			btn: 'comment-btn',
+			label:'commentText-lab',
+			startBorder: 'rgb(120,120,123)',
+			startText: 'Сообщение',
+			errorText:'Сообщение должно содержать больше 10 символов'
+		});
 
-			for (i=0; i <inputs.length; i++){
-				inputs[i].checkValidity();
-				
-			}
-			if(inputs[0].checkValidity() === true && inputs[1].checkValidity() === true &&inputs[2].checkValidity() === true &&inputs[3].checkValidity() === true){
-				commentBtn.prop( "disabled", false );
-				return true;
-			} else{
-				commentBtn.prop( "disabled", true );
-				return false;
-			}
+		for (i=0; i <inputs.length; i++){
+			inputs[i].checkValidity();
+			
+		}
+		if(inputs[0].checkValidity() === true && inputs[1].checkValidity() === true &&inputs[2].checkValidity() === true &&inputs[3].checkValidity() === true){
+			commentBtn.prop( "disabled", false );
+			return true;
+		} else{
+			commentBtn.prop( "disabled", true );
+			return false;
+		}
 	}
   }
 
@@ -457,13 +437,14 @@ function changeMsg3(){
 	}
 }
 
-	  //>>>labels on comment page
+	  //>>>end of labels on comment page
 	  //>>>popup on comment page
 
 
 function showCommentThanx(){
 	$('#thankyou-hide').css('display', 'none');
-	$('#thankyou-popup').show(250,'swing');
+	// $('#thankyou-hide').hide(200, 'swing');
+	$('#thankyou-popup').show(450,'swing');
 }
  
 $('#comment-form').bind('submit',function(e) {
@@ -475,3 +456,77 @@ $('#comment-form').bind('submit',function(e) {
 	//ASK ABOUT ADDING ERROR ON 500
 });
   //END OF VALIDATION ON COMMENT PAGE
+
+ //CERTIFICATES SCROLL OR CAROUSEL
+
+function calcWidth(){
+    if ($(window).width() < '1024'){
+		if($('#lightSlider_certificates').length>0){
+			$('#lightSlider_certificates').lightSlider().destroy();
+		}
+		$('.slides').removeAttr('id').attr('id', 'main-page_certificates_scroll-wrapper');
+		$('.main-page_certificates_slider').css('display', 'none');
+    } else {
+		$('.main-page_certificates_slider').css('display', 'block');
+		$('.slides').attr('id', 'lightSlider_certificates');
+			//Sertificates Carousel
+		$('#lightSlider_certificates').lightSlider({
+			item:6,
+			loop:false,
+			easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+			speed:600,
+			controls: false,
+			pager: false,
+			slideMargin: 0,
+			responsive: [
+				{
+					breakpoint:1400,
+					settings: {
+						item:5
+						}
+				},
+				{
+					breakpoint:1200,
+					settings: {
+						item:4
+					}
+				}	
+			]
+		});
+	}
+}
+$(window).resize(calcWidth);
+$(document).ready(calcWidth);
+
+//END OF CERTIFICATES SCROLL OR CAROUSEL
+
+//FORM ON PAGE AUTOMATICA
+if($('#automatica-form').length > 0){
+	var radio = $('#mini, #maxi');
+	var input = $('#automatica-width');
+	var commentBtn = $('#automatica-btn');
+	function checkInput(){
+		if (input.val() !== ''){
+			commentBtn.prop("disabled", false);
+		} else {
+			commentBtn.prop('disabled', true);
+		}
+	}
+	function changePrice(){
+		if(radio[0].checked){
+			$('#for-mini').css('display','inline');
+			$('#for-maxi').css('display','none');
+		} else if(radio[1].checked){
+			$('#for-mini').css('display','none');
+			$('#for-maxi').css('display','inline');
+		}
+	}
+	$(document).ready(function(){
+		checkInput();
+		changePrice();
+	});
+	radio.change(function(){
+		changePrice();
+	});
+}
+//END OF FORM ON PAGE AUTOMATICA

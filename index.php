@@ -3,41 +3,37 @@
 	<main role="main">
 	<div id="overlay"></div>
 	
-	<section class="main-page_video" id="main_video">
-		<a href="<?php echo home_url(); ?>" class="video-fullscreen_logo toShow" id="video-fullscreen_logo">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/logo-transparent.png" alt="RHT logo">
-		</a>
-		<video controls="controls" id="main_video-video" class="main-page_video-video"  poster="<?php echo get_template_directory_uri(); ?>/img/Video_bg.png"  preload="auto" muted="" autoplay="autoplay" loop="loop">
+	<section class="furnitura_video main-page_video" id="main_video">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/Video_bg.png" alt="Rolling Hi-tech" class="video-alt-img">
+		<video poster="<?php echo get_template_directory_uri(); ?>/img/Video_bg.png" class="main-page_video-video" preload="auto" muted="" autoplay="autoplay" loop="loop">
 			<source src="<?php echo get_template_directory_uri(); ?>/video/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 		</video>
-		<img src="<?php echo get_template_directory_uri(); ?>/img/Video_bg.png" alt="Rolling Hi-tech" class="video-alt-img">
-		  <!-- <a class="video-play toShow" id="video-play" onclick="vidplay()">| |</a> -->
-		  <button class="video_exit toShow" onclick="exitFullscreen('main_video')"><i class="zmdi zmdi-close zmdi-hc-5x"></i></button>
-		<div class="main-page_video_caption wrapper toHide">
-			<h1 class="main-page_video-title" id="title">Rolling Hi-tech</h1>
-			<h3 class="main-page_video-about">производитель усиленных комплектующих <br> для откатных ворот</h3>
-			<p class="main-page_video-more">
-				<button class="video_icon" onclick="enterFullscreen('main_video')">
-					<svg>
-						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="ui-kit" transform="translate(-450.000000, -698.000000)">
-								<g id="btn-play" transform="translate(450.000000, 698.000000)">
-									<g id="normal">
-										<circle id="Oval" fill="#0071BA" cx="25" cy="25" r="25"></circle>
-										<polygon id="Triangle" fill="#FFFFFF" points="34 25 19 31 19 19"></polygon>
-									</g>
-								</g>
-							</g>
-						</g>
-					</svg>
-				</button>
-				<a class="main-page_video-link" onclick="enterFullscreen('main_video')">Подробнее о компании</a>
-			</p>
+		<div class="furnitura_video_wrapper wrapper">
+				<h1 class="main-page_video-title" id="title">Rolling Hi-tech</h1>
+				<h3 class="main-page_video-about">производитель усиленных комплектующих <br> для откатных ворот</h3>
+			<!-- Hidden video div & logo -->
+			<div style="display:none;" id="main_video-video">
+				<video class="lg-video-object lg-html5" controls preload="none">
+					<source src="<?php echo get_template_directory_uri(); ?>/video/video_fullscreen.mp4" type="video/mp4">
+						Your browser does not support HTML5 video.
+				</video>
+				<a data-sub-html="#main_video-video" href="<?php echo home_url(); ?>" class="video-fullscreen_logo toShow" id="video-fullscreen_logo">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-transparent.png" alt="RHT logo">
+				</a>
+			<!-- End of hidden video div & logo -->
+			</div>
+			<ul id="videoFurnitura">
+				<li data-html="#main_video-video" >
+					<a class="main-page_video-more">
+						<div class="video_btn"></div>
+						<div class="main-page_video-link video">Подробнее о компании</div>
+					</a>
+				</li>
+			</ul>
 		</div>
-		
-		<a href="#benefits" class="main_page_video-scroll toHide"><i class="zmdi zmdi-chevron-down"></i></a>
-
-
+		<a href="#benefits" class="main_page_video-scroll toHide">
+			<i class="zmdi zmdi-chevron-down"></i>
+		</a>
 	</section>
 
 	<section class="main_benefits" id="benefits">

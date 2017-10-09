@@ -7,7 +7,7 @@
 					<button class="callback-modal-close" id="modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></button>
 					<h2>Обратная связь</h2>
 					<p>Оставьте номер телефона и менеджер свяжется с вами в течение 15 минут</p>
-					<form class="form_callback" name="callback" id="callback" action="tel_form.php" action="post">
+					<form class="form_callback" name="callback" id="callback" action="<?php echo get_template_directory_uri(); ?>/tel_form.php">
 						<input class="callback_telephone" type="tel" name="telephone" placeholder="Номер телефона" id="tel" 
 						PATTERN="\D[0-9]{3}\s\D[0-9]{2}\D\s[0-9]{3}\s\D\s[0-9]{2}\s\D\s[0-9]{2}"
 						onkeydown="checkTelValidity()">

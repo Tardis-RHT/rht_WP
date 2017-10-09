@@ -31,69 +31,73 @@ Post Template Name: Automatica Card
                     </ul>
                 </div>
             </div>
-            <img src="<?php the_field('img'); ?>" alt="Автоматика комплект Rotelli Premium 1100">
-            <img src="<?php the_field('garantee'); ?>" alt="Гарантия 2 года" class="garantee">
+            <img src="<?php the_field('img'); ?>" alt="Автоматика комплект <?php the_title(); ?>">
+            <div class="garantee">
+                <img src="<?php the_field('img'); ?>" alt="Автоматика комплект <?php the_title(); ?>">
+            </div>            
         </div>
     </section>
 
     <section class="automatica-inset wrapper">
         <h2 class="inset-title">В комплект входит</h2>
-        <p class="inset-format">Формат комплекта:</p>
-        <span class="toggle">
-                <input id="mini" type="radio" name="toggle" value="mini" checked onclick="maximize()">
-                <label for="mini">Mini</label>
-                <input id="maxi" type="radio" name="toggle" value="maxi" onclick="maximize()">
-                <label for="maxi">Maxi</label>
-        </span>
-        <div class="inset-container">
-            <div class="inset-items">
-                <div class="inset-item">
-                    <div class="inset-img-container">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap4.png" alt="Привод">
+        <form action="" id="automatica-form">
+            <p class="inset-format">Формат комплекта:</p>
+            <span class="toggle">
+                    <input id="mini" type="radio" name="toggle" value="mini" checked onclick="maximize()">
+                    <label for="mini">Mini</label>
+                    <input id="maxi" type="radio" name="toggle" value="maxi" onclick="maximize()">
+                    <label for="maxi">Maxi</label>
+            </span>
+            <div class="inset-container">
+                <div class="inset-items">
+                    <div class="inset-item">
+                        <div class="inset-img-container">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap4.png" alt="Привод">
+                        </div>
+                        <p class="inset-item-name">Привод &mdash; 1&nbsp;шт</p>
                     </div>
-                    <p class="inset-item-name">Привод &mdash; 1&nbsp;шт</p>
+                    <div class="inset-item">
+                            <div class="inset-img-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap.png" alt="Пульт 2-х канальный">
+                            </div>
+                        <p class="inset-item-name">Пульт 2-х канальный &mdash; 2&nbsp;шт</p>
+                    </div>
+                    <div class="inset-item with-input">
+                            <div class="inset-img-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap1.png" alt="Стальная оцинкованная зубчатая рейка">
+                            </div>
+                        <p class="inset-item-name">Стальная оцинкованная зубчатая рейка &mdash; 4&nbsp;м</p>
+                        <input type="text" class="item-width" placeholder="Ширина проема ворот" id="automatica-width" oninput="checkInput()">
+                        <i class="zmdi zmdi-help showme"></i>
+                        <!-- <div class="automatica_help">
+                            <img src="img/adjusting_plate.png" alt="Item of the kit">
+                            <p>Позволяет правильно выставить уровень ворот при установке, выровнять его при проседании почвы, а также сменить каркас или передвинуть ворота без замены фурнитуры.</p>
+                            <i class="zmdi zmdi-close"></i>
+                        </div> -->
+                    </div>
+                    <div class="inset-item maxi">
+                            <div class="inset-img-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap2.png" alt="Сигнальная лампа">
+                            </div>
+                        <p class="inset-item-name">Сигнальная лампа &mdash; 1&nbsp;шт</p>
+                    </div>
+                    <div class="inset-item maxi">
+                            <div class="inset-img-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap3.png" alt="Комплект фотоэлементов безопасности">
+                            </div>
+                        <p class="inset-item-name">Комплект фотоэлементов безопасности &mdash; 1&nbsp;шт</p>
+                    </div>
                 </div>
-                <div class="inset-item">
-                        <div class="inset-img-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap.png" alt="Пульт 2-х канальный">
-                        </div>
-                    <p class="inset-item-name">Пульт 2-х канальный &mdash; 2&nbsp;шт</p>
-                </div>
-                <div class="inset-item with-input">
-                        <div class="inset-img-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap1.png" alt="Стальная оцинкованная зубчатая рейка">
-                        </div>
-                    <p class="inset-item-name">Стальная оцинкованная зубчатая рейка &mdash; 4&nbsp;м</p>
-                    <input type="text" class="item-width" placeholder="Ширина проема ворот">
-                    <i class="zmdi zmdi-help showme"></i>
-                    <!-- <div class="automatica_help">
-                        <img src="img/adjusting_plate.png" alt="Item of the kit">
-                        <p>Позволяет правильно выставить уровень ворот при установке, выровнять его при проседании почвы, а также сменить каркас или передвинуть ворота без замены фурнитуры.</p>
-                        <i class="zmdi zmdi-close"></i>
-                    </div> -->
-                </div>
-                <div class="inset-item maxi">
-                        <div class="inset-img-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap2.png" alt="Сигнальная лампа">
-                        </div>
-                    <p class="inset-item-name">Сигнальная лампа &mdash; 1&nbsp;шт</p>
-                </div>
-                <div class="inset-item maxi">
-                        <div class="inset-img-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap3.png" alt="Комплект фотоэлементов безопасности">
-                        </div>
-                    <p class="inset-item-name">Комплект фотоэлементов безопасности &mdash; 1&nbsp;шт</p>
-                </div>
+                <div class="inset-order">
+                    <p class="automatica_set-price">
+                    <b id="for-mini"> <?php echo get_post_meta( $post->ID, 'price', true ); ?></b>
+                    <b id="for-maxi"> 3490</b> грн
+                    </p>
+                    <button class="btn" id="automatica-btn" disabled>
+                            Добавить в корзину
+                    </button>
+                </div>            
             </div>
-            <div class="inset-order">
-                <p class="automatica_set-price">
-                    <b><?php echo get_post_meta( $post->ID, 'price', true ); ?></b> грн
-                </p>
-                <button class="btn">
-                        Добавить в корзину
-                </button>
-            </div>            
-        </div>
     </section>
 
     <section class="automatica-more wrapper">

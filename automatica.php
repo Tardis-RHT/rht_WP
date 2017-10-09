@@ -78,7 +78,9 @@
                 </div>
 
                 <img src="<?php the_field('img'); ?>" alt="Автоматика комплект">
-                <img src="<?php the_field('garantee'); ?>" alt="Гарантия 3 года" class="garantee">
+                <div class="garantee">
+                    <img src="<?php the_field('img'); ?>" alt="Автоматика комплект">
+                </div>
             </div>
         </section>
         <?php
