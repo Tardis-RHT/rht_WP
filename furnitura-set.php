@@ -32,7 +32,8 @@ Post Template Name: Furnitura Set
 									<i class="zmdi zmdi-close"></i>
 							</div>
                         </div>
-                        <p class="furnitura_chars_price"><?php the_field('price'); ?> <span class="furnitura_hrn">грн</span></p>
+							<p id="furnitura_chars_price" class="furnitura_chars_price"><?php the_field('price'); ?> <span class="furnitura_hrn">грн</span></p>
+							<p id="furnitura_chars_price_add" class="furnitura_chars_price_add"><?php the_field('price_plus'); ?> <span class="furnitura_hrn">грн</span></p>	
                         <div class="furnitura_chars_buttons">
                             <button class="btn">Добавить в корзину</button>
                         </div>
