@@ -524,9 +524,11 @@ if($('#automatica-form').length > 0){
 	$(document).ready(function(){
 		checkInput();
 		changePrice();
+		maximize();
 	});
 	radio.change(function(){
 		changePrice();
+		maximize();
 	});
 }
 //END OF FORM ON PAGE AUTOMATICA

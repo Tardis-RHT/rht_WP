@@ -67,7 +67,7 @@
                         <li>Рабочая температура &mdash; <?php echo get_post_meta( $post->ID, 'temperature', true ); ?></li>
                     </ul>
 					<p class="automatica_set-price">
-                        от <b><?php echo get_post_meta( $post->ID, 'price', true ); ?></b> грн
+                        от <b><?php echo get_post_meta( $post->ID, 'price-mini', true ); ?></b> грн
                     </p>
                     <a href="<?php echo get_permalink(); ?>" class="see-more-mobile">Подробнее ></a>
                     <button class="btn">

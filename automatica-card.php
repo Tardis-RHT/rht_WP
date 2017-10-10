@@ -90,8 +90,9 @@ Post Template Name: Automatica Card
                 </div>
                 <div class="inset-order">
                     <p class="automatica_set-price">
-                    <b id="for-mini"> <?php echo get_post_meta( $post->ID, 'price', true ); ?></b>
-                    <b id="for-maxi"> 3490</b> грн
+                    <b id="for-mini"> <?php echo get_post_meta( $post->ID, 'price-mini', true ); ?></b>
+                    <b id="for-maxi"> <?php echo get_post_meta( $post->ID, 'price-maxi', true ); ?></b>
+                     грн
                     </p>
                     <button class="btn" id="automatica-btn" disabled>
                             Добавить в корзину
