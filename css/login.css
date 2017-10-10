@@ -389,6 +389,7 @@ body.login div#login form#loginform p.forgetmenot input#rememberme:checked::befo
   box-shadow: none;
   font-family: 'MuseoSansCyrl';
   line-height: 19px;
+  padding: 0;
 }
 
 .login #login_error {
@@ -396,6 +397,7 @@ body.login div#login form#loginform p.forgetmenot input#rememberme:checked::befo
   box-shadow: none;
   font-family: 'MuseoSansCyrl';
   line-height: 19px;
+  padding: 0;
   color: red;
 }
  
