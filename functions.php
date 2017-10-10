@@ -735,6 +735,40 @@ add_action('customize_register', function($customizer){
         )
     );
 });
+
+
+// CUSTOMIZING THE LOGIN FORM
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+        background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png);
+        width:100%;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-bottom: 30px;
+        margin: 0 auto;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Roling Hi-Tech';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/login.css' );
+    // wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/style-login.js' ); // We don't use any custom js scripts for login form
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+// END OF CUSTOMIZING THE LOGIN FORM
+
     /* <?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>
      <?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?>
      <?php echo get_theme_mod('contacts_address', 'rollinghitech@gmail.com'); ?>
