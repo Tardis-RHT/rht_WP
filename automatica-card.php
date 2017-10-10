@@ -43,9 +43,9 @@ Post Template Name: Automatica Card
         <form action="" id="automatica-form">
             <p class="inset-format">Формат комплекта:</p>
             <span class="toggle">
-                    <input id="mini" type="radio" name="toggle" value="mini" checked onclick="maximize()">
+                    <input id="mini" type="radio" name="toggle" value="mini" checked>
                     <label for="mini">Mini</label>
-                    <input id="maxi" type="radio" name="toggle" value="maxi" onclick="maximize()">
+                    <input id="maxi" type="radio" name="toggle" value="maxi">
                     <label for="maxi">Maxi</label>
             </span>
             <div class="inset-container">
