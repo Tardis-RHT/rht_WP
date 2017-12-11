@@ -77,8 +77,14 @@
 						</div>
 						<a href="/shopping-cart/">
 							<button class="header_cart_buy">
+							
 								<i class="zmdi zmdi-shopping-cart icon_cart"></i>
-								<div class="shopping-cart_number">1</div>
+								<div class="shopping-cart_number">				
+									<?php $cart = do_shortcode('[cart_button show_items="true"]');
+										preg_match_all('|\d+|', $cart, $matches); 
+										echo $matches[0][0];  										
+									?> 
+								</div>
 								<span class="header_cart_bye-text">Корзина</span>
 							</button>
 						</a>

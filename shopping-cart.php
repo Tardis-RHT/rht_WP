@@ -3,8 +3,8 @@
 
 <main role="main">
 		<div id="overlay"></div>
-    
-    <section class="shopping-cart wrapper">
+    <?php echo do_shortcode('[woocommerce_cart]'); ?>
+    <!-- <section class="shopping-cart wrapper">
         <h2>Корзина</h2>
         <div class="shopping-cart_items">
 			<div class="shopping-cart_item-single">
@@ -41,7 +41,7 @@
 			Заказать
 			</button>
 		</a>
-    </section>
+    </section> -->
 
     <section class="economy">
         <div class="economy-container wrapper">

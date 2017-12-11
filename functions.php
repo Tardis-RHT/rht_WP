@@ -773,4 +773,41 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
      <?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?>
      <?php echo get_theme_mod('contacts_address', 'rollinghitech@gmail.com'); ?>
      <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech, 2017'); ?> */
+
+
+    //  WOCOMMERCE
+    add_filter( 'woocommerce_loop_add_to_cart_link', 'custom_product_link' );
+    function custom_product_link( $link ) {
+    global $product;
+        echo '<a href="'.esc_url( $product->get_permalink( $product->id )).'" class="btn">Добавить в корзину</a>';
+    }
+    add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+    
+    function change_existing_currency_symbol( $currency_symbol, $currency ) {
+         switch( $currency ) {
+              case 'UAH': $currency_symbol = ' грн'; break;
+         }
+         return $currency_symbol;
+    }
+
+// //получаем цену продажи (распродажи)
+// echo $sale_price = get_post_meta( get_the_ID(), '_price', true);
+
+// //получаем обычную стоимость товара (простого товара)
+// $regular_price = get_post_meta( get_the_ID(), '_regular_price', true);
+
+// //если у нас обычная стоимость отсутствует, то будем перебирать вариативную
+// if ($regular_price == ""){
+
+// //1: получим вариации
+// $available_variations = $product->get_available_variations();
+
+// //получим значения цен
+// //цена продажи (распродажи) первой вариации
+// $v1_display_price = $available_variations[0]['display_price'];
+// //обычная цена продажи первой вариации
+// $v1_display_regular_price = $available_variations[0]['display_regular_price'];
+// //$available_variations можно использовать в цикле, чтобы получить значения всех вариаций
+// }
+    
 ?>

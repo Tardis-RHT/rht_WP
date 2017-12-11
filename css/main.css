@@ -162,6 +162,10 @@ textarea:focus:-ms-input-placeholder {
   border: 2px solid #0071ba;
 }
 
+a.btn{
+  display: inline-block;
+}
+
 .btn:hover {
   background-color: #0063a6;
   border-color: #0063a6;
@@ -5615,7 +5619,8 @@ input[type='range']:disabled::-ms-thumb {
   }
 }
 
-.shopping-cart_item-single_number {
+/* .shopping-cart_item-single_number { */
+.shopping-cart_item-single_num-container input{
   width: 46px;
   height: 46px;
   background-color: #f7f7f7;
