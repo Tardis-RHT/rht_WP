@@ -9,9 +9,17 @@ if (!isset($_SESSION['products']) && !empty($product_id)) {
             'count' => 1
         )  
     );
-}elseif(!empty($product_id)){
+}else {
+    // foreach ($_SESSION['products'] as $curproduct){
+    //    if(array_search($product_id, $curproduct)){
+    //        $curproduct['count']++;
+    //        $is_product = true;
+    //        print_r($curproduct);
+    //    }
+    // }
+
     for($i = 0; $i < sizeof($_SESSION['products']); $i++){
-        if(in_array( $product_id, $_SESSION['products'][$i])){
+        if(array_search( $product_id, $_SESSION['products'][$i])){
             $_SESSION['products'][$i]['count']++;
             $is_product = true;
         }
@@ -26,16 +34,16 @@ if (!isset($_SESSION['products']) && !empty($product_id)) {
 }
 
 function deleteProduct($delete_product_id){
-    for($j = 0; $j < sizeof($_SESSION['products']); $j++){
-        if(in_array( $delete_product_id, $_SESSION['products'][$j])){
-            unset($_SESSION['products'][$j]);
-        }
-    } 
+    if(isset($_SESSION['products']) && !empty($id_to_delete)){
+        for($j = 0; $j < sizeof($_SESSION['products']); $j++){
+            if(array_search( $delete_product_id, $_SESSION['products'][$j])){
+                unset($_SESSION['products'][$j]);
+            }
+        } 
+    }
 }
 $id_to_delete = $_POST['id_to_delete'];
-if(isset($_SESSION['products']) && !empty($id_to_delete)){
-    deleteProduct($id_to_delete);
-}
+deleteProduct($id_to_delete);
 
 function countItems(){
     if (isset($_SESSION['products'])){
