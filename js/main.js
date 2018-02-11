@@ -532,3 +532,46 @@ if($('#automatica-form').length > 0){
 	});
 }
 //END OF FORM ON PAGE AUTOMATICA
+
+
+//BUY BUTTON
+
+$(".buy").click(function(){   
+	var currentButton = $(this); 
+	var productId = currentButton.attr('data-id');
+    // console.log(productId);
+    var params = {
+        id: productId,
+	}
+    $.post(templateUrl+'/cart-controller.php', params, function(data){
+		$('.shopping-cart_number').html(data);
+		// console.log(data);
+    })
+});
+
+function countSum(){
+	if($('.shopping-cart_item-single_price-total').length > 0){
+		var totalPrice = 0;
+		$('.shopping-cart_item-single_price-total').each(function(){
+			totalPrice += parseInt($(this).html());
+		});
+		$('.shopping-cart_price-sum > p > span').html(totalPrice.toLocaleString('ru'));
+	} else{
+		$('.shopping-cart_price-sum > p > span').html(0);
+	}
+}
+countSum();
+
+//delete product from cart
+$(".delete-product").click(function(){   
+	var currentDeleteButton = $(this); 
+	var deleteProductId = currentDeleteButton.attr('data-id');
+    var params = {
+        id_to_delete: deleteProductId,
+	}
+    $.post(templateUrl+'/cart-controller.php', params, function(data){
+		$('.shopping-cart_number').html(data);
+	});
+	currentDeleteButton.parent().remove();
+	countSum();
+});

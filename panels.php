@@ -75,7 +75,7 @@
                     </div>
                     <div class="catalog-item-info-bottom">
                         <p class="catalog-item-price"><b>199</b>грн/шт</p>
-                        <button class="btn">Добавить в корзину</button>
+                        <button class="btn buy" data-id="<?php echo $post->ID?>">Добавить в корзину</button>
                     </div>
                 </div>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/products/panel_1.png" alt="Филёнка" class="catalog-item-img">
