@@ -10,20 +10,19 @@
 		<?php
 			if (isset($_SESSION['products'])){
 				$products = $_SESSION['products'];
-				foreach($products as $product ){ 
-					$current = $product['id'];?>
+				foreach($products as $product => $quantity ){ ?>
 					
 			<div class="shopping-cart_item-single">
-				<img src="<?php the_field('img', $current); ?>" alt="<?php echo get_the_title( $current ); ?>">
+				<img src="<?php the_field('img', $product); ?>" alt="<?php echo get_the_title( $product ); ?>">
 				<div class="shopping-cart_item-single_desc">
-					<p><?php echo get_the_title( $current ); ?></p>
+					<p><?php echo get_the_title( $product ); ?></p>
 					<!-- different set fot each category -->
-					<?php $template = get_page_template_slug($current);
+					<?php $template = get_page_template_slug($product);
 					//for furniture:
 						if ($template == 'furnitura-set.php'):?>
 					<ul>
-						<li>Ширина проема – <b>до <?php the_field('width', $current); ?> м</b></li>
-						<li>Вес ворот – <b>до <?php the_field('weight', $current); ?> кг</b></li>
+						<li>Ширина проема – <b>до <?php the_field('width', $product); ?> м</b></li>
+						<li>Вес ворот – <b>до <?php the_field('weight', $product); ?> кг</b></li>
 					</ul>
 					<span>+ Регулировочная пластина</span>
 					<?php endif; ?>
@@ -33,11 +32,11 @@
 					<ul>
 						<li class="automatica_set-weight">
 							Максимальный вес ворот &mdash; <b>
-							<?php echo get_post_meta( $current, 'weight', true ); ?> кг</b>
+							<?php echo get_post_meta( $product, 'weight', true ); ?> кг</b>
 						</li>
 						<li class="automatica_set-power">
 							Мощность мотора &mdash; <b>
-							<?php echo get_post_meta( $current, 'power', true ); ?> Вт</b>
+							<?php echo get_post_meta( $product, 'power', true ); ?> Вт</b>
 						</li>
 					</ul>
 					<?php endif;?>
@@ -45,22 +44,22 @@
 				<div class="shopping-cart_item-single_num-container">
 					<form>
 						<input type="number" class="shopping-cart_item-single_number" min="0" value="<?php
-						echo $product['count'];?>">
+						echo $quantity;?>" data-id="<?php echo $product;?>">
 						<span>шт.</span>			
 					</form>
 					<p class="shopping-cart_item-single_price">
-					<?php if(!empty(get_post_meta( $current, 'price-mini', true ))){
-						$price = get_post_meta( $current, 'price-mini', true );
+					<?php if(!empty(get_post_meta( $product, 'price-mini', true ))){
+						$price = get_post_meta( $product, 'price-mini', true );
 					} else{
-						$price = get_post_meta( $current, 'price', true );
+						$price = get_post_meta( $product, 'price', true );
 					}
 					echo $price ?> грн
 					</p>
 					<p class="shopping-cart_item-single_price-total">
-						<?php echo $price * $product['count']; ?> грн
+						<?php echo $price * $quantity ?> грн
 					</p>
 				</div>
-				<button class="delete-product" data-id="<?php echo $current ?>">
+				<button class="delete-product" data-id="<?php echo $product ?>">
 					<i class="zmdi zmdi-close"></i>
 				</button>				
 			</div>

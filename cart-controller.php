@@ -2,55 +2,52 @@
 session_start();
 // unset($_SESSION['products']);
 $product_id = $_POST['id'];
-if (!isset($_SESSION['products']) && !empty($product_id)) {
-    $_SESSION['products'] = array(
-        array(
-            'id' => $product_id,
-            'count' => 1
-        )  
-    );
-}else {
-    // foreach ($_SESSION['products'] as $curproduct){
-    //    if(array_search($product_id, $curproduct)){
-    //        $curproduct['count']++;
-    //        $is_product = true;
-    //        print_r($curproduct);
-    //    }
-    // }
-
-    for($i = 0; $i < sizeof($_SESSION['products']); $i++){
-        if(array_search( $product_id, $_SESSION['products'][$i])){
-            $_SESSION['products'][$i]['count']++;
-            $is_product = true;
-        }
+$products_array = $_SESSION['products'];
+if($product_id){
+    if(!isset($_SESSION['products'])) {
+        $_SESSION['products'] = array(
+            $product_id => 1,
+        );
     } 
-    if ($is_product !== true && !empty($product_id)){
-         $new_product = array(
-             'id' => $product_id,
-             'count' => 1
-         );
-       array_push($_SESSION['products'], $new_product);
-     }
-}
+    else{
+        if(array_key_exists($product_id, $_SESSION['products'])){
+            $_SESSION['products'][$product_id]++;
+        } else {
+            $_SESSION['products'][$product_id] = 1;
+        }
+    }
+};
 
+$id_to_delete = $_POST['id_to_delete'];
 function deleteProduct($delete_product_id){
-    if(isset($_SESSION['products']) && !empty($id_to_delete)){
-        for($j = 0; $j < sizeof($_SESSION['products']); $j++){
-            if(array_search( $delete_product_id, $_SESSION['products'][$j])){
-                unset($_SESSION['products'][$j]);
-            }
-        } 
+    if(array_key_exists($delete_product_id, $_SESSION['products'])){
+        unset( $_SESSION['products'][$delete_product_id]);
     }
 }
-$id_to_delete = $_POST['id_to_delete'];
-deleteProduct($id_to_delete);
+if($id_to_delete){
+    deleteProduct($id_to_delete);
+}
+
+$id_to_change = $_POST['id_to_change'];
+$new_quantity = $_POST['new_quantity'];
+function changeQuantity($id, $quantity){
+    if(array_key_exists($id, $_SESSION['products']) && $quantity > 0){
+        $_SESSION['products'][$id] = $quantity;
+    } elseif(array_key_exists($id, $_SESSION['products']) && $quantity == 0){
+        unset( $_SESSION['products'][$id]);
+    }
+}
+if($id_to_change){
+    changeQuantity($id_to_change, $new_quantity);
+}
+
 
 function countItems(){
     if (isset($_SESSION['products'])){
         $count = 0;
         $products = $_SESSION['products'];
-        foreach($products as $product ){ 
-            $count = $count + $product['count'];
+        foreach($products as $product => $quantity ){ 
+            $count = $count + $quantity;
         }
         echo $count;
     } else{
@@ -59,4 +56,5 @@ function countItems(){
 }
 countItems();
 
+// print_r($_SESSION['products']);
 ?>

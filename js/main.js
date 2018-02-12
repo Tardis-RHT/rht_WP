@@ -575,3 +575,24 @@ $(".delete-product").click(function(){
 	currentDeleteButton.parent().remove();
 	countSum();
 });
+
+//change product quantity from cart
+
+$('.shopping-cart_item-single_number').change(function(){
+	var new_quantity = $(this).val();
+	var changeProductQuantity = $(this).attr('data-id');
+	var params = {
+		id_to_change: changeProductQuantity,
+		new_quantity: new_quantity
+	}
+	$.post(templateUrl+'/cart-controller.php', params, function(data){
+		$('.shopping-cart_number').html(data);
+	});
+	if(new_quantity == 0){
+		$(this).parent().parent().parent().remove();
+	}
+	var newSum = parseInt($(this).parent().next().html()) * new_quantity;
+	console.log(parseInt(newSum));
+	$(this).parent().next().next().html(newSum + ' грн');
+	countSum();
+})
