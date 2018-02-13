@@ -1,0 +1,129 @@
+.offer-automatica{
+    background-image: url('../img/products/automatica-offer.png');
+}
+.page_filenka_slider-title{
+    margin-bottom: 70px;
+}
+.filenka-slide{
+    width: 100%;
+    img{
+        height: 200px;
+        @media(min-width:495px){
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.page_filenka_catalog-title{
+    margin-bottom: 50px;
+}
+.catalog-container{
+    @include flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.catalog-item{
+    width: 100%;
+    background-color: $bg_section;
+    padding: 15px;
+    @include flex;
+    justify-content: space-between;
+    color: $font_h2;
+    margin-bottom: 35px;
+    position: relative;
+    button{
+        font-size: 13px;
+    }
+    img{
+        max-width: 45%;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        height: 50%;
+        @media(min-width:400px){
+            position: static;
+            max-width: 50%;
+            height: auto;
+        }
+    }
+    @media (min-width: 720px){
+        padding: 40px;
+    }
+    @media (min-width: 1024px){
+        width: calc(50% - 18px);
+        &:nth-of-type(odd){
+            margin-right: 36px;
+        }        
+    }
+    @media(min-width: 1115px){
+    button{
+            font-size: 18px;
+        }
+    }
+}
+.catalog-item-info{
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.catalog-item-title{
+    font-weight: $weight_normal;
+    font-size: 22px;
+    line-height: 22px;
+    @media (min-width: 1024px){
+        font-size: 36px;
+        line-height: 36px;
+        margin-top: -10px;
+    }
+}
+.catalog-item-size{
+    font-weight: $weight_light;
+    font-size: 14px;
+    line-height: 32px;
+    @media (min-width: 1024px){
+        font-size: 18px;
+    }
+}
+
+.catalog-item-price{
+    @extend .automatica_set-price;
+    margin-bottom: 20px;
+    align-self: flex-end;
+    font-size: 16px;
+    @media (min-width: 1024px){
+        font-size: 18px;
+    }
+}
+
+.filenka_title{
+    @extend .furnitura_title;
+    .page_products-title{
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+}
+.filenka_title-container{
+    @extend .furnitura_title_wrapper;
+    background-image: url('../img/products/filenka.png');
+    background-position: right bottom;
+}
+
+.custom-html{
+    font-size: 36px;
+    color: $font_white;
+    font-weight: $weight_normal;
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 10px);
+}
+.panels_video{
+    margin-bottom: 30px;
+    @media (min-width: 769px){
+        margin-bottom: 120px;
+    }
+}
+
+.filenka-delivery{
+    padding-bottom: 12px;
+}

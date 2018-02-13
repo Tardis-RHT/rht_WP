@@ -1,0 +1,474 @@
+.card_automatica_title{
+    background-color: $bg_section;
+    margin-bottom: 50px;
+    padding-top: 40px;
+    overflow: hidden;
+    position: relative;
+    @media(min-width:872px){
+        padding-top: 0;
+        margin-bottom: 120px;
+    }
+    img{
+        position: absolute;
+        z-index: 2;
+        max-width: 50%;
+        bottom: 0;
+        left: 60%;
+        opacity: .5;
+        @media (min-width:480px){
+            max-width: 80%;
+            left: 50%;
+            opacity: .9;
+        }
+        @media (min-width:769px){
+            position: static;
+            max-width: none;
+            opacity: 1;
+        }
+    }
+    .garantee{
+        position: absolute;
+        top: calc(10% + 40px + 15px);
+        left: auto;
+        right: 15px;
+        width: 80px;
+        height: 80px;
+        @include flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        overflow: hidden;
+        img{
+            opacity: 1;
+            max-width: none;
+            width:380px;
+            height: 300px;
+            margin-top: -3px;
+            margin-right: 3px;
+            left:0;
+            position: static;
+        }
+        @media(min-width:769px){
+            display: none;
+        }
+    }
+    .automatica_title-container{
+        padding: 15px 0;
+        min-height: auto;
+        @media (min-width:465px){
+            min-height: 250px;
+            max-height: 305px;
+        }
+        @media (min-width:769px){
+        height: 565px;
+        max-height: none;
+        // padding: 0;
+        }
+    } 
+}
+.automatica-inset{
+    padding-bottom: 40px;
+    border-bottom: 2px solid $bg_section; 
+    margin-bottom: 110px;
+}
+.inset-title{
+    margin-bottom: 50px;
+}
+.inset-format{
+    @include text-style_main($weight_light, $font-gray, 26px);
+    margin-bottom: 5px;
+}
+.toggle{
+    margin-bottom: 50px;
+}
+.inset-items{
+    @include flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: visible;
+    overflow-y: hidden;
+    @media(min-width:1024px){
+        flex-wrap: wrap;
+        white-space: normal;
+        overflow: hidden;
+    }
+}
+.inset-item{
+    width: 75%;  
+    margin-right: 25px;  
+    @media(min-width:1024px){
+        width: calc((100% - 105px - 75px) / 4);    
+    }
+    @media(min-width:1190px){
+        margin-right: 0;
+        width: calc((100% - 105px) / 4);
+    }
+    img{
+        margin-bottom: 15px;
+    }
+}
+
+.inset-item-name{
+    @include text-style_main($weight_normal, $font_h2, 26px);
+    min-height: 90px;
+    white-space: normal;
+
+    // padding-left: 10px; //?
+}
+.inset-order{
+    text-align: right;
+    button{
+        display: inline;
+    }
+}
+.inset-img-container{
+    width: 265px;
+    height: 195px;
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg_section;
+    position: relative;
+    @media (min-width: 1024px){
+        width: calc(265px - 25px);
+    }
+    @media (min-width: 1190px){
+        width: 265px;
+    }
+}
+.item-width{
+    // width: calc(100% - 25px);
+    max-width: 245px;
+    box-sizing: border-box;
+    padding: 12px 0 12px 25px;
+    background-color: $bg_section;
+    outline: none;
+    border: 1px solid $button_inactive;
+    box-shadow: none;
+    margin-right: 7px;
+    margin-bottom: 15px;
+    font-family: $main_font;
+    font-weight: $weight_normal;
+    font-size: 18px;
+    color: $font_black;
+    letter-spacing: 0;
+
+    &::-moz-placeholder {
+        @include text-style_main($weight_normal, $font_black, 18px);
+        opacity: 1;
+	}
+	&::-webkit-input-placeholder {
+        @include text-style_main($weight_normal, $font_black, 18px);
+        opacity: 1;
+	}
+}
+.item-width + i{
+    color: $button_normal;
+    cursor: pointer;
+    font-size: 14px;
+    @media (min-width: 1197px){
+        font-size: inherit;
+    }
+}
+
+
+.automatica-more {
+    @media (max-width:930px){
+        .main_benefits_container{
+            white-space: nowrap;
+            overflow-x: visible;
+            overflow-y: hidden;
+            vertical-align: top;
+            flex-wrap: nowrap;
+        }
+    }
+}
+.automatica-more-title{
+    margin-bottom: 60px;
+}
+.automatica_benefits_icon{
+    height: 40px;
+}
+.main_benefits_single:last-of-type > .automatica_benefits_icon{
+    padding: 10px;
+}
+.automatica-more{
+    .main_benefits_single{
+    margin-bottom: 30px;
+    @media(min-width:769px){
+        margin-bottom: 140px;
+    }
+        h3{
+        margin-bottom: 15px;
+        min-height: 70px;
+        @media(min-width:1201px){
+            min-height: auto;
+        }
+        }
+    }
+}
+
+.automatica-install{
+    background-color: $bg_section;
+.automatica-instruction{
+    padding: 27px 0;
+}
+    @include text-style_main($weight_light, $font_black, 22px);
+    span{
+        margin-right: 25px;
+        font-size: 16px;
+        padding: 15px 0;
+        display: inline-block;
+        @media(min-width: 768px){
+            font-size: 18px;
+            padding: 0;
+        }
+    }
+    a{
+        display: inline-block;
+    }
+}
+
+.economy{
+    background-color: $bg_black;
+    color: $font_white;
+    //mobile
+    padding: 50px 0;
+}
+.economy-title{
+    margin-bottom: 15px;
+    color: $bg_white;
+}
+.economy-items{
+    @include flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    //mobile
+    flex-wrap: wrap;
+    
+}
+.economy-item{
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-start;
+    //mobile
+    max-width: calc(40% - 15px);
+    min-height: 200px;
+    max-height: 345px;
+    // @media (min-width: 364px){
+    //     height: 250px;
+    //     // &:nth-of-type(2){
+    //     //     height: 228px;
+    //     // }
+    // }
+    // @media (min-width: 480px){
+    //     height: 260px;
+    //     // &:nth-of-type(2){
+    //     //     height: 238px;
+    //     // }
+    // }
+    // @media (min-width: 503px){
+    //     height: 300px;
+    //     // &:nth-of-type(2){
+    //     //     height: 300px;
+    //     // }
+    // }
+    @media (min-width: 625px){
+        height: 345px;
+    //     // &:nth-of-type(2){
+    //     //     height: 345px;
+    //     // }
+    }
+    img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+}
+.math{
+    font-size: 35px;
+    line-height: 36px;
+    color: $font_white;
+    font-weight: $weight_normal;
+    display: inline-block;
+    text-align: middle;
+    //mobile
+    padding: 0 15px;
+    &:last-of-type{
+        display: none;
+    }
+    @media(min-width: 775px){
+        padding: 0 20px;
+        &:last-of-type{
+            display: inline-block;
+        }
+    }
+}
+.economy-item-title{
+    @include text-style_main($weight_normal, $font_white, 22px);
+    padding-top: 10px;
+    border-top: 2px solid $font-gray;
+    //mobile    
+    font-size: 14px;
+}
+.economy_deal{
+    @include flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    //mobile
+    padding-top: 40px;
+    align-items: center;
+}
+.economy-price{
+    @extend .automatica_set-price;
+    color: $font_white;
+}
+.economy-last-price{
+    display: block;
+    text-decoration: line-through;
+    @include text-style_main($weight_light, $font_white, 22px);
+    margin-bottom: 10px;
+    
+}
+
+@media(min-width: 846px){
+    .economy-item-title{
+        font-size: 18px;
+     }
+     .economy_deal{
+         height: 345px;
+         button{
+             margin-bottom: 34px;
+         }
+     }
+     .economy-prices{
+         margin-bottom: 60px;
+     }
+}
+@media(min-width:872px){
+    .economy{
+        padding: 120px 0 50px;
+    }
+    .economy-items{
+        flex-wrap: nowrap;
+    }
+    .economy-item{
+        max-width: none;
+        // img{
+        //     width: 100%;
+        //     height: auto;
+        // }
+    }
+    .economy_deal{
+        // height: 345px;
+        // padding: 18px 0 32px;
+        align-items: center; //?
+        button{
+            margin-bottom: 34px;
+        }
+    }
+    .economy-prices{
+        margin-bottom: 60px;
+    }
+}
+
+@media(min-width:1024px){    
+    .math{
+        padding: 0 50px;
+    }
+}
+
+
+//logic
+
+.maxi{
+    visibility: hidden;
+}
+
+.with-input{
+    position: relative;
+}
+// help button
+.automatica_help{
+    // display: none;
+    position: absolute;
+    align-items: center;
+    border: 1px solid $font-gray;
+    color: $font_black;
+    background-color: $bg_section;
+    top: 40px;
+    left: 0px;
+    width: 290px;
+    z-index: 2;
+    &:after,
+    &:before {
+        content:'';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid; 
+    }
+    &:after {
+        border-color: transparent transparent $bg_section transparent;
+        border-width: 10px;
+        right: 52px;
+        top: -20px;
+    }
+    &:before {
+        border-color: transparent transparent $font-gray transparent;
+        border-width: 12px;
+        right: 50px;        
+        top: -24px;
+    }
+    p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    i{
+        padding: 0px 5px 0 0;
+        align-self: flex-start;
+    }
+    @media (min-width:872px){
+        top: -53px;
+        left: 260px;
+        width: 570px;
+        height: 130px;
+        &:after,
+        &:before {
+            content:'';
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 100%;
+            border-style: solid;
+        }
+        &:after {
+            border-color: transparent $bg_section transparent transparent;
+            border-width: 10px;
+            top: 50px;
+        }
+        &:before {
+            border-color: transparent $font-gray transparent transparent ;
+            border-width: 12px;
+            top: 48px;
+        }
+        img{
+            width:100px;
+            height: auto;
+            margin: 0 10px;
+        }
+        p{
+            @include text-style_main($weight_light, $font_black, 26px);
+    
+        }
+        i{
+            padding: 5px 5px 0 0;
+            align-self: flex-start;
+        }
+    }
+}
+

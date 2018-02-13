@@ -1,0 +1,131 @@
+.callback_form_wrapper-small{
+    margin: 0 auto 20px;    
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+        margin-bottom: 25px;
+        align-self: flex-start;
+        }
+    p{
+        font-weight: $weight_normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: $font_h2;
+    }
+    span{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 18px;
+        color: $font-gray;        
+        align-self: flex-start;
+    }
+}
+.form_callback {
+    width: 320px;
+    margin: 15px 0;
+    border-bottom: solid 2px $font-gray;
+    text-align: center;
+    padding: 15px;
+    input, button{
+        box-sizing: border-box;
+        margin: 0 auto;
+        width:280px;
+        height:46px;
+    }
+    input{
+        border: 1px solid rgb(221,221,221);
+        background-color: rgb(247,247,247);
+        outline: none;
+        margin: 0 0 20px 0;
+        font-weight: $weight_normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: $font_black;
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width: 550px){
+    .main_callback {
+        margin: 0 auto;
+        width: 100%;
+        height: 685px;
+        box-sizing: border-box;
+        @include flex;
+        justify-content: center;
+        background-color: rgb(247,247,247);    
+    }
+    .main_callback_left,
+    .main_callback_right {
+        align-self: flex-end;
+        width: 100%;
+        height: 90%;
+        background-repeat: no-repeat;
+        background-clip: content-box;
+        background-size: auto;
+    }
+    .main_callback_left{
+        background-image: url('../img/bg_left.png');
+        background-position: left bottom;
+    }
+    .main_callback_right{
+        background-image: url('../img/bg_right.png');
+        background-position: right bottom;
+    }
+    .main_callback_center{
+        width: 525px;
+        @include flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .callback_form_wrapper {
+        width: 525px;
+        height: 585px;
+        @include flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $bg_white;
+    }
+    .callback_form_wrapper-small{
+        margin: 0 auto;    
+        width: 440px;
+        height: 500px;
+        border: solid 1px $font-gray;
+        h2{
+            margin-bottom: 45px;
+            align-self: center;
+        }
+        p{
+		    @include text-style_main($weight_normal, $font_black, 26px);
+            margin: 0 40px 25px; //from Anna (was: 0 40px)
+        }
+        span{
+            font-size: 18px;
+            line-height: 26px;
+            color: $font-gray;
+            margin: 0 40px;
+        }
+    }
+    .form_callback {
+        width: 357px;
+        input, button{
+            box-sizing: border-box;
+            margin: 0 auto;
+            width:280px;
+            height:46px;
+        }
+        input{
+            border: 1px solid $button_inactive;
+            outline: none;
+            margin: 0 0 20px 0;
+            font-weight: $weight_normal;
+            font-size: 16px;
+            line-height: 19px;
+            color: $font_black;
+            text-align: center;
+        }
+    }
+}

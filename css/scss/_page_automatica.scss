@@ -1,0 +1,372 @@
+.automatica_title{
+    width: 100%;
+    background-color: $bg_black;
+    background-image: url("../img/products/automatica-offer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 30px bottom;
+    padding: 10px 10px;
+    margin-top: 35px;
+    @media (min-width:769px){
+        background: none;
+        background-color: $bg_black;
+        padding: 0;
+        margin-top: 0;
+    }
+}
+.automatica_title-container{
+    @include flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // min-height: 320px;
+    min-height: 110px;
+    @media (min-width:769px){
+        height: 620px;
+    }
+}
+.product-img{
+    padding: 20px 0;
+    height: calc(100% - 40px);
+    width: auto;
+    display: none;
+    @media (min-width: 769px){
+        display: inline;
+    }
+}
+.page_products-title{
+    font-weight: $weight_bold;
+    font-size: 24px;
+    line-height: 34px;
+    background-color: rgba(17,24,32,.2);
+    @media(min-width:769px){
+        font-size: 30px;
+        line-height: 30px;
+    }
+    @media(min-width:1024px){
+        font-size: 48px;
+        line-height: 60px;
+    }
+}
+
+.automatica_benefits{
+    @extend .main_benefits;
+    @media (max-width:930px){
+        .main_benefits_container{
+            white-space: nowrap;
+            overflow-x: visible;
+            overflow-y: hidden;
+            vertical-align: top;
+            flex-wrap: nowrap;
+        }
+    }
+    // padding-top: 50px;
+    margin-bottom: 50px;
+    .main_benefits_icon{
+        max-width: 153px;
+        width: auto;
+        max-height: 93px;
+        height: auto;
+    }
+    // .main_benefits_single:nth-child(2) .main_benefits_icon{
+    //     margin-top: -12px;
+    // }
+    .automatica-garantee{
+        margin-top: -12px;
+    }
+    .main_benefits_single{
+        padding-top: 20px;
+        max-width: 390px;
+        &:last-of-type{
+            // width: 380px;
+            h3, p {
+                padding-left: 25px;
+            }
+        }
+        & > p{
+            line-height: 22px;
+        }
+    }
+    @media(min-width:769px){
+        padding-top: 110px;
+        .main_benefits_container{
+            height: 440px;
+        }
+        .main_benefits_single:last-of-type{
+            width: 380px;
+        }
+    }
+}
+.automatica_sets-title{
+    @media(min-width:550px){
+    line-height: 50px;
+    }
+    margin-bottom: 50px;
+}
+.automatica_set-single{
+    max-width: 1820px;
+    width: 100%;
+    margin: 0 auto 25px;
+    height: auto;
+    background-color: $bg_section;
+    @include flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+    @media (min-width:769px){
+        margin-bottom: 50px;
+        height: 650px;
+        padding: 0;
+    }
+}
+
+.automatica_set-single-wrapper{
+    @include flex;
+    justify-content: space-between;
+    align-items: center;
+    // overflow: hidden;
+    // position: relative;
+    // z-index: -2;
+    img{
+        position: absolute;
+        z-index: 2;
+        max-width: 100%;
+        bottom: 0;
+        left: 60%;
+        opacity: .5;
+        @media (min-width:480px){
+            max-width: 80%;
+            left: 50%;
+            opacity: .9;
+        }
+        @media (min-width:769px){
+            position: static;
+            max-width: none;
+            opacity: 1;
+        }
+    }
+    .garantee{
+        position: absolute;
+        top:20px;
+        left:75%;
+        z-index: 3;
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        @include flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-color: rgba(252,248,248,.6);
+        border-radius: 50%;
+        img{
+            opacity: 1;
+            max-width: none;
+            width:380px;
+            height: 300px;
+            margin-top: -3px;
+            margin-right: 3px;
+            left:0;
+            position: static;
+        }
+        @media (min-width:769px){
+            display: none;
+        } 
+    }
+}
+.automatica_set-capture{
+    position: relative;
+    z-index: 2;
+}
+.automatica_set-capture > .main_products-category{
+    color: $font_black;
+    margin-bottom: 16px;
+}
+.automatica_set-title{
+    color: $font_h2;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: $weight_bold;
+    margin-bottom: 10px;
+    @media(min-width:769px){
+        font-size: 36px;
+        line-height: 46px;
+        margin-bottom: 22px;
+    }
+}
+.automatica_set-characteristics{
+    margin-bottom: 15px;
+    @include text-style_main($weight_light, $font_h2, 18px);
+    font-size: 12px;
+    max-width: 60%;
+    li{
+        margin-left: 18px;
+        position: relative;
+        b{
+            font-weight: $weight_bold;
+        }
+        &::before{
+            content: '';
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            top:5px;
+            left: -18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+    .automatica_set-weight::before{
+        background-image: url('../img/icons/automatica-weight.svg');
+    }
+    .automatica_set-power::before{
+        background-image: url('../img/icons/automatica-power.svg');
+    }
+    @media(min-width:769px){
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 32px;
+        max-width: none;
+        li{
+            margin-left: 32px;
+            &::before{
+                left: -32px;
+            }
+        }
+    }
+}
+.automatica_set-characteristics-additional{
+    margin-bottom: 95px;
+    @include text-style_main($weight_light, $font-gray, 32px);
+    display: none;
+    @media(min-width:769px){
+        display: block;
+    }
+}
+.automatica_set-price{
+    @include text-style_main($weight_normal, $font_black, 46px);
+    vertical-align: bottom;
+    b{
+        font-size:  36px;
+    }
+}
+.automatica_set-capture button{
+    display: inline-block;
+    margin-right: 25px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    @media (min-width:769px){
+        font-size: 18px;
+        // margin-bottom: 0;
+    }
+}
+.automatica_set-capture > .only_desktop{
+    display: none;
+        @media (min-width:769px){
+            display: inline-block;
+        }
+}
+.see-more-mobile{
+    display: block;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    @media (min-width:769px){
+        display: none;
+    }
+}
+
+
+.automatica_offers{
+    margin-bottom: 40px;
+    @media (min-width:1024px){
+        margin-bottom: 140px;
+    }
+}
+.automatica_offers-title{
+    margin-bottom: 45px;
+}
+
+
+
+.offers > a{
+    font-weight: $weight_bold;
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 15px;
+    // display: inline-block;
+    background-color: rgba(17,24,32,.3);
+    
+    display: block;
+    width: calc(100% + 30px);
+    // padding: 50px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+
+    margin-left: -15px;
+    margin-right: -15px;
+    h3{
+        background-color: rgba(17,24,32,.2);
+        text-align: left;       
+    }
+    @media(min-width:480px){
+        justify-content: flex-start;
+        padding-left: 60px;
+    } 
+    @media(min-width:769px){
+        margin-bottom: 40px;
+        font-size: 30px;
+        line-height: 30px;
+        height: 195px;
+        // padding: 50px 10px;
+    }
+    @media(min-width:1024px){
+        // margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 46px;
+        width: calc(50% - 35px);
+        margin: 0;
+    }
+
+    // margin-bottom: 15px;
+    // padding: 10px 10px;
+    // text-align: center;
+    // // justify-content: center;
+    // background-color: $bg_black;
+
+    // display: block;
+    // height: auto;
+    // width: 100%;
+    // background-repeat: no-repeat;
+    // background-size: 150%;
+    // @include flex;
+    // align-items: center;
+    // cursor: pointer;
+    // @media(min-width:769px){
+       
+    // background-size: contain; 
+    // padding-left: 60px;        
+    // height: 195px;
+    
+    // width: 565px;
+    // }
+}
+.offers{
+    @include flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.offer-furnitura{
+    background-image: url('../img/products/furnitura.png');
+}
+.offer-filenka{
+    background-image: url('../img/products/filenka.png');
+}

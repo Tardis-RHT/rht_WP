@@ -1,0 +1,27 @@
+$main_font: "MuseoSansCyrl";
+// $secondary_font: "ProximaNovaRegular";
+
+$weight_light: 300;
+$weight_normal: 500;
+$weight_bold: 700;
+$weight_super-bold: 900;
+
+
+// colors
+    
+
+    //font-colors
+    $font_white: rgb(255,255,255);
+    $font_black: rgb(17,24,32);
+    $font_h2:rgb(13,34,63);
+    $font-gray: rgb(120,120,123);
+
+    //buttons
+    $button_normal: rgb(0,113,186);
+    $button_hover: rgb(0,99,166);
+    $button_inactive: rgb(221,221,221);
+
+    //backgrounds
+    $bg_white: $font_white;
+    $bg_black: $font_black;
+    $bg_section: rgb(247,247,247);
