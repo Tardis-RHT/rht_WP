@@ -91,7 +91,7 @@
 				<div class="furnitura_choose_material">
 					<span class="furnitura_choose_title">Материал зашивки ворот</span>
 					<div class="furnitura_choose_dropdown dropdown">
-						<button onclick="myFunction()" class="dropbtn">Любой</button>
+						<!-- <button onclick="myFunction()" class="dropbtn">Любой</button>
 						<div id="myDropdown" class="dropdown-content">
 						<a href="#">Профнастил</a>
 						<a href="#">Легкая ковка</a>
@@ -100,14 +100,24 @@
 						<a href="#">Металлическая филенка</a>
 						<a href="#">Массивная ковка</a>
 						<a href="#">Другая тяжелая зашивка</a>
-						</div>
+						</div> -->
+						<select id="fur_material" class="dropbtn js-array" name="material" required>
+							<option selected="selected" disabled="disabled">Выберите материал</option>
+							<option value="Профнастил">Профнастил</option>
+							<option value="Легкая ковка">Легкая ковка</option>
+							<option value="Легкие породы дерева">Легкие породы дерева</option>
+							<option value="Другая легкая зашивка">Другая легкая зашивка</option>
+							<option value="Металлическая филенка">Металлическая филенка</option>
+							<option value="Массивная ковка">Массивная ковка</option>
+							<option value="Другая тяжелая зашивка">Другая тяжелая зашивка</option>
+						</select>
 					</div>
 				</div>
 				<div class="furnitura_choose_height">
 					<span class="furnitura_choose_title">Высота, м</span>
 					<div class="range-slider">
 						<span class="">0</span>							
-						<input class="range-slider__range" type="range" min="0" max="4" step="0.1" value="0"> 
+						<input id="fur_height" class="range-slider__range js-array" type="range" name="height" min="0" max="4" step="0.1" value="0" disabled> 
 						<span class="range-slider__value">0</span>
 					</div>									
 				</div>
@@ -115,11 +125,11 @@
 					<span class="furnitura_choose_title">Ширина проема, м</span>
 					<div class="range-slider">
 						<span class="">0</span>							
-						<input class="range-slider__range" type="range" min="3.6" max="8.5" step="0.1" value="5.0" disabled> 
+						<input id="fur_width" class="range-slider__range js-array" type="range" name="width" min="0" max="8.5" step="0.1" value="0" disabled> 
 						<span class="range-slider__value">0</span>
 					</div>
 				</div>
-				<button class="furnitura_choose_btn btn" disabled>Применить</button>
+				<button id="fur_submit" class="furnitura_choose_btn btn" disabled type="submit">Применить</button>
 			</div>
 		</div>
 	</section>
