@@ -472,6 +472,46 @@ add_shortcode('rht_shortcode_demo_2', 'rht_shortcode_demo_2'); // Place [rht_sho
 //         ) // Add Category and Post Tags support
 //     ));
 // }
+
+function create_post_type_comment()
+{
+    register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'rht');
+    register_post_type('rht-comment', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Комментарии', 'comments'), // Rename these to suit
+            'singular_name' => __('rht Blank Custom Post', 'comments'),
+            'add_new' => __('Add New', 'comments'),
+            'add_new_item' => __('Add New rht Blank Custom Post', 'comments'),
+            'edit' => __('Edit', 'comments'),
+            'edit_item' => __('Edit rht Blank Custom Post', 'comments'),
+            'new_item' => __('New rht Blank Custom Post', 'comments'),
+            'view' => __('View rht Blank Custom Post', 'comments'),
+            'view_item' => __('View rht Blank Custom Post', 'comments'),
+            'search_items' => __('Search rht Blank Custom Post', 'comments'),
+            'not_found' => __('No rht Blank Custom Posts found', 'comments'),
+            'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'comments')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail',
+            'custom-fields'
+        ), // Go to Dashboard Custom rht Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ),
+		'menu_icon' => 'dashicons-admin-comments' 
+    ));
+}
+add_action('init', 'create_post_type_comment');
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
@@ -773,4 +813,10 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
      <?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?>
      <?php echo get_theme_mod('contacts_address', 'rollinghitech@gmail.com'); ?>
      <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech, 2017'); ?> */
+
+    // remove comments from admin panel
+    function remove_menus(){
+        remove_menu_page( 'edit-comments.php' );          
+    }
+    add_action( 'admin_menu', 'remove_menus' );
 ?>
