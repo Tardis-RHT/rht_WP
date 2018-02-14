@@ -70,7 +70,7 @@
                         от <b><?php echo get_post_meta( $post->ID, 'price-mini', true ); ?></b> грн
                     </p>
                     <a href="<?php echo get_permalink(); ?>" class="see-more-mobile">Подробнее ></a>
-                    <button class="btn">
+                    <button class="btn buy" data-id="<?php echo $post->ID?>">
                         Добавить в корзину
                     </button>
                     <button class="ghost_btn only_desktop"onClick='location.href="<?php echo get_permalink(); ?>"'> Подробнее

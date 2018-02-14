@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+<!-- <?php require 'cart-controller.php' ?> -->
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
@@ -27,7 +28,9 @@
 				<a class="header_mobile_logo" href="<?php echo home_url(); ?>">RHT</a>
 				<a href="/shopping-cart/" class="header_mobile_cart">
 					<i class="zmdi zmdi-shopping-cart icon_cart"></i>
-					<div class="shopping-cart_number">2</div>
+					<div class="shopping-cart_number">
+						<?php countItems(); ?>
+					</div>
 				</a>
 			</div>
 			<div class="mobile_menu">
@@ -42,7 +45,7 @@
 				</div>
 			</div>
 			<!-- END OF MOBILE MENU -->
-	
+	<!-- <?php print_r($_SESSION['products']); echo $productId?> -->
 			<!-- HIDING PART OF MENU -->
 			<div class="header_wrapper_hidebig">
 				<div class="header_wrapper_hidesmall wrapper">
@@ -78,7 +81,9 @@
 						<a href="/shopping-cart/">
 							<button class="header_cart_buy">
 								<i class="zmdi zmdi-shopping-cart icon_cart"></i>
-								<div class="shopping-cart_number">1</div>
+								<div class="shopping-cart_number">
+									<?php countItems(); ?>
+								</div>
 								<span class="header_cart_bye-text">Корзина</span>
 							</button>
 						</a>
