@@ -33,7 +33,7 @@
                     <span>или</span>
                     <b>Загрузите с компьютера</b>
                     <span>(jpg/png до 10 Мб)</span>
-                    <input type="file" name="photo" class="commentPhoto" multiple accept="image/jpeg,image/png">
+                    <!-- <input type="file" name="photo" class="commentPhoto" multiple accept="image/jpeg,image/png"> -->
 				</div>
 				<div class="comment-textarea">
 						<textarea id="commentText" name="commentText" cols="30" rows="10" required placeholder="Сообщение" minlength="10"></textarea>
