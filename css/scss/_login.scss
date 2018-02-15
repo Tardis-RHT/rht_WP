@@ -1,0 +1,60 @@
+body.login_main{
+	width: 100%;
+	background-color: $bg_section;
+}
+.login_wrapper{
+	margin: 8% auto;
+	max-width: 525px;
+	@include flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $bg_white;
+	box-sizing: border-box;
+}
+.rht_login_form{
+	margin: 40px;
+	padding: 40px;
+	width: 440px;
+	min-height: 500px;
+	border: solid 1px $font-gray;
+	box-sizing: border-box;	
+	@include flex;
+	flex-direction: column;
+	justify-content: center;
+	h2{
+		margin-bottom: 45px;
+		margin-left: -3px;
+	}
+	p{
+		@include text-style_main($weight_normal, $font_black, 26px);
+		margin: 0 0 20px;
+		&:last-of-type{
+			margin: 0;
+		}
+		input[type="text"],
+		input[type="password"]{
+			box-sizing: border-box;
+            width:280px;
+            height:46px;
+			border: 1px solid $button_inactive;
+			outline: none;
+			padding-left: 5px; 
+			@include text-style_main($weight_normal, $font_black, 19px)
+		}
+		input[type="submit"]{
+			width: 280px;
+		}
+		&.rht_forgetme{
+			font-size: 14px;
+		}
+	}
+	span{
+		font-size: 18px;
+		line-height: 26px;
+		color: $font-gray;
+		margin: 0 40px;    
+	}
+}
+.rht_forgetme{
+	font-size: 10px;
+}

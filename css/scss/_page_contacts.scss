@@ -1,0 +1,131 @@
+.breadcrumbs_wrapper{
+	margin: 0 auto;
+	max-width: 1200px;
+}
+.contacts_feedback{
+	width: 100%;
+	text-align: center;
+}
+.page-contacts_h2{
+	padding-top: 50px;
+	text-align: center;
+	font-family: $main_font;
+	font-weight: $weight_bold;
+	line-height: 42px;
+	color: $font_black;
+	&::before{
+		content: none;
+	}
+}
+.contacts_feedback{
+	// display: none;
+	padding: 15px;
+	p{
+		font-family: $main_font;
+		font-weight: $weight_light;
+		color: $font_black;
+		font-size: 16px;
+		line-height: 22px;
+		padding: 24px;
+	}
+	button{
+		margin: 0 auto;
+	}
+	span{
+		display: inline-block;
+		@include text-style_main($weight_light, $font_black, 22px);
+		padding-top: 24px;
+		font-size: 16px;
+	}
+}
+.page-contacts_wrapper{
+	width: 100%;
+	margin: 0 auto;
+	background-color: $bg_section;
+	position: relative;
+}
+.page-contacts_wrapper-small{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 15px;
+}
+.contacts_contacts{
+	h2{
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+}
+.page-contacts_list{
+	li{
+		max-width: 100%;
+		margin-bottom: 15px;
+		font-family: $main_font;
+		font-weight: $weight_light;
+		font-size: 16px;
+		line-height: 22px;
+		position: relative;
+		padding-left: 30px;
+		.zmdi{
+			color: rgb(0,113,186);
+			position: absolute;
+			left: 0;
+			top: 2px;
+		}
+	}
+}
+.contacts_map{
+	height: 320px;
+}
+@media screen and (min-width: 872px){
+	.contacts_feedback{
+	margin-bottom: 100px;
+	}
+	.page-contacts_h2{
+		padding-top: 100px;
+		font-size: 36px;
+		line-height: 42px;
+	}
+	.contacts_feedback{
+		padding: 0;
+		p{
+			font-size: 24px;
+			line-height: 30px;
+		}
+		span{
+			@include text-style_main($weight_light, $font_black, 26px);
+			padding-top: 24px;
+			font-size: 18px;
+		}
+	}
+	.page-contacts_wrapper-small{
+		padding: 0;
+		@include flex;
+	}
+	.contacts_contacts{
+		width: 50%;
+		h2{
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+	}
+	.page-contacts_list{
+		li{
+			margin-bottom: 30px;
+			font-size: 18px;
+			line-height: 26px;
+		}
+	}
+	.contacts_bold{
+		font-family: $main_font;
+		font-weight: $weight_bold;
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.contacts_map{
+		position: absolute;
+	    width: 50%;
+	    height: 100%;
+	    right: 0;
+	    top: 0;	
+	}
+}

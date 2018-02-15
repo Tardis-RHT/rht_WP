@@ -449,9 +449,21 @@ function showCommentThanx(){
  
 $('#comment-form').bind('submit',function(e) {
 	e.preventDefault();
-	$("#comment-form").trigger('reset'); 
 	//here would be code
-
+	var comment_name = $('#commentName').val();
+	var comment_email = $('#commentEmail').val();
+	var comment_product = $('#commentProducts').val();
+	var comment_message = $('#commentText').val();
+    var params = {
+		name: comment_name,
+		email: comment_email,
+		product: comment_product,
+		message: comment_message, 
+	}
+    $.post(templateUrl+'/comments-controller.php', params, function(data){
+		console.log(data);
+    })
+	// $("#comment-form").trigger('reset'); 
 	//PLEASE DON'T FORGET TO ADD RESET ON 200!!!
 	//ASK ABOUT ADDING ERROR ON 500
 });
@@ -596,3 +608,17 @@ $('.shopping-cart_item-single_number').change(function(){
 	$(this).parent().next().next().html(newSum + ' грн');
 	countSum();
 })
+
+
+
+// $('input[type=file]').change(function(){
+//     files = this.files;
+// });
+// $('.commentPhoto').change(function(){
+// 	console.log($('.commentPhoto').val());
+// 	var data = new FormData();
+//     $.each( files, function( key, value ){
+//         data.append( key, value );
+// 	});
+// 	console.log(data);
+// })

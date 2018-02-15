@@ -1,0 +1,162 @@
+@mixin flex{
+	display: -webkit-box;  /* Safari 3.1 - 6, Chrome < 21 (2009 Spec), UC Browser Android */
+    display: -moz-box;      /* Firefox 2 - 27 (2009 Spec), UC Mini */
+    display: -ms-flexbox;  /* IE10 (2012 Syntax) */
+    display: -webkit-flex;  /* Safari 6.1 - 8, Android < 4.4, BB < 10, Chrome 21 - 28 */
+    display: flex;               /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
+}
+
+@mixin transition($property){
+    -webkit-transition: $property 0.3s;
+     -moz-transition: $property 0.3s;
+     -o-transition: $property 0.3s;
+     transition: $property 0.3s;
+}
+
+//Text-styles 
+
+@mixin text-style_main($font-weight, $color, $line-height){
+    font-family: $main_font;
+    font-weight: $font-weight;
+    font-size: 18px;
+    color: $color;
+    letter-spacing: 0;
+    line-height: $line-height;
+}
+
+
+@mixin text-style_signature{
+    font-family: $main_font;
+    font-weight: $weight_light;
+    font-size: 24px;
+    color: $font-gray;
+    letter-spacing: 0;
+    line-height: 29px;
+}
+
+@mixin text-style_caption{
+    font-family: $main_font;
+    font-weight: $weight_light;
+    font-size: 18px;
+    color: $font-gray;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+
+//Buttons
+
+// BUTTONS (please use <button> if you need inactive mode)
+
+.btn{
+    display: block;
+    @include text-style_main($weight_bold, $font_white, 22px);
+    padding: 10px 20px;
+	cursor: pointer;
+    text-decoration: none;
+    background-color: $button_normal;
+    position: relative;
+    @include transition(background-color);
+    outline: none;
+    border: 2px solid $button_normal;
+    &:hover{
+        background-color: $button_hover;
+        border-color: $button_hover;
+    }
+    &:active{
+        top: 1px;
+    }
+    &:disabled{
+        background-color: $button_inactive;
+        border-color: $button_inactive;
+        cursor: default;
+        &:hover{
+            top:0;
+        }
+    } 
+}
+
+.ghost_btn{
+    display: block;
+    @include text-style_main($weight_bold, $button_normal, 22px);
+    padding: 10px 30px;
+	cursor: pointer;
+    text-decoration: none;
+    background-color: $bg_white;
+    border: 2px solid $button_normal;
+    position: relative;
+    @include transition(background-color);
+    outline: none;
+    &:hover{
+        color: $font_white;
+        background-color: $button_hover;
+        border-color: $button_hover;
+    }
+    &:active{
+        top: 1px;
+    }
+    &:disabled{
+        border-color: $button_inactive;
+        color: $button_inactive;
+        background-color: $bg_white;
+        cursor: default;
+        &:hover{
+            top:0;
+        }
+    }
+    i{
+        margin-left: 10px;
+    } 
+}
+
+.video_icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    #Oval{
+        @include transition(fill);
+    }
+    &:hover{
+        #Oval{
+            fill: $button_hover;
+        }
+    }
+    &:active{
+        top: 1px;
+    }
+    &:disabled{
+        cursor: default;
+        #Oval{
+            fill: $button_inactive;
+        }
+        &:hover{
+            top:0;
+        }
+    }
+}
+
+.toggle{
+    display: block;
+    label{
+        @include text-style_main($weight_bold, $button_normal, 22px);
+        border: 2px solid $button_normal;
+        padding: 15px 50px;
+        display: inline-block;
+        cursor: pointer;
+        &:last-of-type{
+            margin-left: -6px;
+        }
+    }
+    input{
+        display: none;
+    }
+    input:checked + label{
+        background-color: $button_normal;
+        color: $font_white;
+    }
+}
