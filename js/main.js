@@ -592,7 +592,7 @@ $('.shopping-cart_item-single_number').change(function(){
 		$(this).parent().parent().parent().remove();
 	}
 	var newSum = parseInt($(this).parent().next().html()) * new_quantity;
-	console.log(parseInt(newSum));
+	// console.log(parseInt(newSum));
 	$(this).parent().next().next().html(newSum + ' грн');
 	countSum();
 })
