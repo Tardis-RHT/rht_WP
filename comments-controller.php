@@ -11,7 +11,7 @@ if(isset($comment_name)):
     $post_data = array(
         'post_title'    => 'Отзыв о ' . $comment_product,
         'post_content'  => $comment_message,
-        'post_status'   => 'draft',
+        'post_status'   => 'pending',
         'post_author'   => 1,
         'post_category' => array(6),
         'post_type'     => 'rht-comment',
