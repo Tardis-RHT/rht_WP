@@ -7,12 +7,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css"> -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/lightslider.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/lightgallery.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/lightslider.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/lightgallery.css">
 
 		<?php wp_head(); ?>
 
