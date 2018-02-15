@@ -107,22 +107,43 @@
             </ul>
             <div class="order_list">
                 <ul>
+				<?php
+				if (isset($_SESSION['products'])){
+					$products = $_SESSION['products'];
+					foreach($products as $product => $quantity ){ ?>
+
                     <li class="order_item">
-						<h3>Комплект «Стандарт»</h3>
+					<!-- different name fot each category -->
+					<?php $template = get_page_template_slug($product);
+					//for furniture:
+						if ($template == 'furnitura-set.php'):?>
+						<h3>Комплект &laquo;<?php echo get_the_title( $product ); ?>&raquo;</h3>
+						<?php endif; ?>
+					
+					<!-- for automation: -->
+						<?php if ($template == 'automatica-card.php'):?>
+						<h3>Автоматика &laquo;<?php echo get_the_title( $product ); ?>&raquo;</h3>
+						<?php endif;?>
+
 						<div class="order_item_price">
-							<p>2990 грн x 1 шт.</p><p>2990 грн</p>
+							<p>
+							<?php if(!empty(get_post_meta( $product, 'price-mini', true ))){
+									$price = get_post_meta( $product, 'price-mini', true );
+								} else{
+									$price = get_post_meta( $product, 'price', true );
+								}
+							echo $price ?>
+					 грн x <?php echo $quantity;?> шт.</p>
+					 <p class="order-single-price-total"><?php echo $price * $quantity ?> грн</p>
 						</div>
                     </li>
-                    <li class="order_item">
-						<h3>Автоматика «Rotelli»</h3>
-						<div class="order_item_price">
-							<p>1000 грн x 2 шт.</p><p>2000 грн</p>
-						</div>
-					</li>
+					<?php }
+						}
+					?>	
 				</ul>
 				<ul>
                     <li class="order_price_total">
-						<p>Сумма: <b>4990</b><span> грн</span></p>
+						<p>Сумма: <b>0</b><span> грн</span></p>
 						<span class="order_price_note">*Доставка не входит в стоимость</span>	
 					</li>
                 </ul>

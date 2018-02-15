@@ -15,11 +15,11 @@
 			<div class="shopping-cart_item-single">
 				<img src="<?php the_field('img', $product); ?>" alt="<?php echo get_the_title( $product ); ?>">
 				<div class="shopping-cart_item-single_desc">
-					<p><?php echo get_the_title( $product ); ?></p>
 					<!-- different set fot each category -->
 					<?php $template = get_page_template_slug($product);
 					//for furniture:
 						if ($template == 'furnitura-set.php'):?>
+						<p>Комплект &laquo;<?php echo get_the_title( $product ); ?>&raquo;</p>
 					<ul>
 						<li>Ширина проема – <b>до <?php the_field('width', $product); ?> м</b></li>
 						<li>Вес ворот – <b>до <?php the_field('weight', $product); ?> кг</b></li>
@@ -29,6 +29,7 @@
 					
 					<!-- for automation: -->
 					<?php if ($template == 'automatica-card.php'):?>
+					<p>Автоматика &laquo;<?php echo get_the_title( $product ); ?>&raquo;</p>
 					<ul>
 						<li class="automatica_set-weight">
 							Максимальный вес ворот &mdash; <b>
