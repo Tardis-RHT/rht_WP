@@ -819,4 +819,34 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
         remove_menu_page( 'edit-comments.php' );          
     }
     add_action( 'admin_menu', 'remove_menus' );
+
+    function add_user_menu_bubble(){
+        global $menu;
+    
+        // записи
+        $count = wp_count_posts('rht-comment')->pending; // на подтверждении
+        if( $count ){
+            foreach( $menu as $key => $value ){
+                if( $menu[$key][2] == 'edit.php' ){
+                    $menu[$key][0] .= ' <span class="awaiting-mod"><span class="pending-count">' . $count . '</span></span>';
+                    break;
+                }
+            }
+        }
+    
+        // пользователи
+        $count = count_users();
+        $count = & $count['avail_roles']['administrator']; // только админы
+    
+        if( $count ){
+            foreach( $menu as $key => $value ){
+                if( $menu[$key][2] == 'users.php' ){
+                    $menu[$key][0] .= ' <span class="awaiting-mod"><span class="pending-count">' . $count . '</span></span>';
+                    break;
+                }
+            }
+        }
+    }
+
+    add_action( 'admin_menu', 'add_user_menu_bubble' );
 ?>
