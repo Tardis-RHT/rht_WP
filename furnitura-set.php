@@ -18,7 +18,7 @@ Post Template Name: Furnitura Set
                 <div class="furnitura_set_single wrapper">
                     <div class="furnitura-set_chars">
                         <h3 class="furnitura_chars_set dots">Комплект</h3>
-                        <h3 class="furnitura_chars_title">&laquo;<?php the_title() ?>&raquo;</h3>
+                        <h3 class="furnitura_chars_title"><?php the_title() ?></h3>
                         <ul class="furnitura_chars_main">
                             <li class="furnitura_chars_main-width">Ширина проема — <b>до <?php the_field('width'); ?> м</b></li>
                             <li class="furnitura_chars_main-weight">Вес ворот — <b>до <?php the_field('weight'); ?> кг</b></li>
@@ -54,19 +54,19 @@ Post Template Name: Furnitura Set
 				<div class="furnitura-set_kit_img">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/rol_opora.jpg" alt="Item of the kit">
 				</div>
-				<p>Роликовая опора (металл) – 2 шт</p>
+				<p>Роликовая опора <span><?php the_field('pillar'); ?></span> шт</p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/fur_benefit2.png" alt="Item of the kit">
 				</div>
-				<p>Направляющий профиль (86х94х5мм) – 6 м</p>
+				<p>Направляющий профиль <span><?php the_field('profil'); ?></span></p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ogranich_verh.jpg" alt="Item of the kit">
 				</div>
-				<p>Верхний ограничитель (2 ролика) – 1 шт</p>
+				<p>Верхний ограничитель (2 ролика) — <span><?php the_field('limiter'); ?></span> шт</p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
@@ -104,3 +104,4 @@ Post Template Name: Furnitura Set
 	<?php get_template_part('economy'); ?>
 </main>
 <?php get_footer(); ?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/furnitura.js"></script>

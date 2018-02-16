@@ -138,7 +138,7 @@
 		<!-- START OF THE SET BLOCK -->
 		<?php
             global $post;
-			$args = array('posts_per_page' => 4,
+			$args = array('posts_per_page' => 10,
 				'post_type' => 'page',
 				'order' => 'ASC',
 				'post_parent' => $post->ID );
@@ -149,17 +149,17 @@
 			<div class="furnitura_products_single wrapper">
 				<div class="furnitura_products_chars">
 					<h3 class="furnitura_chars_set dots">Комплект</h3>
-					<h3 class="furnitura_chars_title">&laquo;<?php the_title() ?>&raquo;</h3>
+					<h3 class="furnitura_chars_title"><?php the_title() ?></h3>
 					<ul class="furnitura_chars_main">
 						<li class="furnitura_chars_main-width">Ширина проема — <b>до <?php the_field('width'); ?> м</b></li>
 						<li class="furnitura_chars_main-weight">Вес ворот — <b>до <?php the_field('weight'); ?> кг</b></li>
 					</ul>
 					<ul class="furnitura_chars_additional">
-						<li>Направляющий профиль (60х70х3.5мм) — 5,5 м</li>
-						<li>Роликовая опора (полимерные колеса) — 2 шт</li>
+						<li>Направляющий профиль <span><?php the_field('profil'); ?></span></li>
+						<li>Верхний ограничитель (2 ролика) — <span><?php the_field('limiter'); ?></span> шт</li>
+						<li>Роликовая опора <span><?php the_field('pillar'); ?></span> шт</li>
 						<li>Нижний улавливатель — 1 шт</li>
 						<li>Верхний улавливатель — 1 шт</li>
-						<li>Верхний ограничитель (2 ролика) — 1 шт</li>
 						<li>Накатной ролик — 1 шт</li>
 						<li>Заглушка — 1 шт</li>
 					</ul>
