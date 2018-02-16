@@ -836,4 +836,98 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
     }
 
     add_action( 'admin_menu', 'add_user_menu_bubble' );
+
+
+    // Custom Fields
+    if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_%d0%ba%d0%be%d0%bc%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%80%d0%b8%d0%b9',
+		'title' => '[:en]Комментарий[:]',
+		'fields' => array (
+			array (
+				'key' => 'field_5a845cda31bd5',
+				'label' => 'Имя и фамилия',
+				'name' => 'name',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a845e0ac0f23',
+				'label' => 'E-mail',
+				'name' => 'email',
+				'type' => 'email',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+			),
+			array (
+				'key' => 'field_5a845e1fc0f24',
+				'label' => 'Товар',
+				'name' => 'product',
+				'type' => 'select',
+				'choices' => array (
+					'Фурнитура' => 'Фурнитура',
+					'Автоматика' => 'Автоматика',
+					'Металлическая филёнка' => 'Металлическая филёнка',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_5a8702b2e2cf3',
+				'label' => 'Фотография',
+				'name' => 'img1',
+				'type' => 'image',
+				'save_format' => 'url',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_5a8702ece2cf4',
+				'label' => 'Фотография',
+				'name' => 'img2',
+				'type' => 'image',
+				'save_format' => 'url',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_5a8702fee2cf5',
+				'label' => 'Фотография',
+				'name' => 'img3',
+				'type' => 'image',
+				'save_format' => 'url',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'rht-comment',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
 ?>
