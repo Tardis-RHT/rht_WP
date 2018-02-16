@@ -10,17 +10,17 @@ $(function(){
 
 	// CHANGE LANGUAGE MENU START
 	$(document).ready(function() {
-		$('.languagepicker li:first').addClass('chevron_down');
+		$('#qtranslate-chooser li:first').addClass('chevron_down');
 	});
-	$('.languagepicker').hover(function() {
-		$('.languagepicker li').css('display','block');
-		$('.languagepicker li:first').addClass('chevron_up');
-		$('.languagepicker li:first').removeClass('chevron_down');
+	$('#qtranslate-chooser').hover(function() {
+		$('#qtranslate-chooser li').css('display','block');
+		$('#qtranslate-chooser li:first').addClass('chevron_up');
+		$('#qtranslate-chooser li:first').removeClass('chevron_down');
 		$('.header_lang').mouseleave(function(){
-			$('.languagepicker li:nth-child(2)').css('display','none');
-			$('.languagepicker li:nth-child(3)').css('display','none');
-			$('.languagepicker li:first').removeClass('chevron_up');
-			$('.languagepicker li:first').addClass('chevron_down');
+			$('#qtranslate-chooser li:nth-child(2)').css('display','none');
+			$('#qtranslate-chooser li:nth-child(3)').css('display','none');
+			$('#qtranslate-chooser li:first').removeClass('chevron_up');
+			$('#qtranslate-chooser li:first').addClass('chevron_down');
 		});
 	});
 	// CHANGE LANGUAGE MENU END

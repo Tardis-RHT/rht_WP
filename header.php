@@ -46,10 +46,7 @@
 			<div class="header_wrapper_hidebig">
 				<div class="header_wrapper_hidesmall wrapper">
 					<div class="header_lang">
-						<ul class="languagepicker">
-							<li><?php echo pll_current_language('name'); ?></li>
-							<?php pll_the_languages(array('hide_current'=>1)); ?>
-						</ul>
+						<?php qtranxf_generateLanguageSelectCode($type='text'); ?>
 					</div>
 					<div class="header_callus">
 						<a class="header_callus_tel" href="tel:<?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>"><i class="zmdi zmdi-phone"></i>&#32;<?php echo get_theme_mod('contacts_tel', '800 210 257'); ?></a>

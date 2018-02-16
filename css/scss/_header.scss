@@ -184,9 +184,10 @@
 		font-weight: $weight_normal;
 		line-height: 40px;
 		box-sizing: border-box;
+		z-index: 999;
 	}
 
-	.languagepicker{
+	#qtranslate-chooser {
 		position: absolute;
 		display: block;
 		width: 100%;
@@ -218,6 +219,9 @@
 			}
 
 		}
+	}
+	.qtranxs_widget_end{
+		display: none;
 	}
 	.chevron_up{
 		&::after{
@@ -307,13 +311,17 @@
 			font-weight: $weight_normal;
 			color: rgb(17,24,32);
 			padding: 20px;
+			a{
+				&:hover{
+						color: #0071BA;
+				}
+			}
 			&:first-of-type{
 				padding-left: 0px;
 			}
 			&:last-of-type {
 				padding-right: 0px;
 			}
-			
 		}
 	}
 	.header_menu_main {

@@ -733,8 +733,9 @@ a :visited {
     font-weight: 500;
     line-height: 40px;
     box-sizing: border-box;
+    z-index: 999;
   }
-  .languagepicker {
+  #qtranslate-chooser {
     position: absolute;
     display: block;
     width: 100%;
@@ -743,7 +744,7 @@ a :visited {
     color: white;
     box-sizing: border-box;
   }
-  .languagepicker li {
+  #qtranslate-chooser li {
     display: none;
     width: 100%;
     background-color: #111820;
@@ -751,18 +752,21 @@ a :visited {
     height: 40px;
     border-top: solid 1px #353b42;
   }
-  .languagepicker li:first-of-type {
+  #qtranslate-chooser li:first-of-type {
     border-top: none;
     display: block;
   }
-  .languagepicker li:last-of-type {
+  #qtranslate-chooser li:last-of-type {
     border-bottom: solid 1px #353b42;
   }
-  .languagepicker li a {
+  #qtranslate-chooser li a {
     color: white;
   }
-  .languagepicker li:hover:not(:first-child) {
+  #qtranslate-chooser li:hover:not(:first-child) {
     cursor: pointer;
+  }
+  .qtranxs_widget_end {
+    display: none;
   }
   .chevron_up::after {
     content: '';
@@ -872,6 +876,9 @@ a :visited {
     font-weight: 500;
     color: #111820;
     padding: 20px;
+  }
+  .header_menu li a:hover {
+    color: #0071BA;
   }
   .header_menu li:first-of-type {
     padding-left: 0px;
