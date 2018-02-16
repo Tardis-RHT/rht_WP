@@ -15,11 +15,6 @@
 	Theme Support
 \*------------------------------------*/
 
-if (!isset($content_width))
-{
-    $content_width = 900;
-}
-
 if (function_exists('add_theme_support'))
 {
     // Add Menu Support
@@ -31,25 +26,6 @@ if (function_exists('add_theme_support'))
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
-
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -87,51 +63,6 @@ function rht_nav()
 	);
 }
 
-// Load rht Blank scripts (header.php)
-// function rht_header_scripts()
-// {
-//     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-
-//     	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-//         wp_enqueue_script('conditionizr'); // Enqueue it!
-
-//         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
-//         wp_enqueue_script('modernizr'); // Enqueue it!
-
-//         wp_register_script('rhtscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-//         wp_enqueue_script('rhtscripts'); // Enqueue it!
-//     }
-// }
-
-// Load rht Blank conditional scripts
-function rht_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
-    }
-}
-
-// Load rht Blank styles
-function rht_styles()
-{
-    wp_register_style('normalize', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
-    wp_enqueue_style('normalize'); // Enqueue it!
-
-    wp_register_style('rht', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('rht'); // Enqueue it!
-}
-
-// Register rht Blank Navigation
-function register_rht_menu()
-{
-    register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'rht'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'rht'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'rht') // Extra Navigation if needed (duplicate as many as you need!)
-    ));
-}
-
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = '')
 {
@@ -143,12 +74,6 @@ function my_wp_nav_menu_args($args = '')
 function my_css_attributes_filter($var)
 {
     return is_array($var) ? array() : '';
-}
-
-// Remove invalid rel attribute values in the categorylist
-function remove_category_rel_from_category_list($thelist)
-{
-    return str_replace('rel="category tag"', 'rel="tag"', $thelist);
 }
 
 // Add page slug to body class, love this - Credit: Starkers Wordpress Theme
@@ -167,91 +92,6 @@ function add_slug_to_body_class($classes)
     }
 
     return $classes;
-}
-
-// If Dynamic Sidebar Exists
-if (function_exists('register_sidebar'))
-{
-    // Define Sidebar Widget Area 1
-    register_sidebar(array(
-        'name' => __('Widget Area 1', 'rht'),
-        'description' => __('Description for this widget-area...', 'rht'),
-        'id' => 'widget-area-1',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ));
-
-    // Define Sidebar Widget Area 2
-    register_sidebar(array(
-        'name' => __('Widget Area 2', 'rht'),
-        'description' => __('Description for this widget-area...', 'rht'),
-        'id' => 'widget-area-2',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ));
-}
-
-// Remove wp_head() injected Recent Comment styles
-function my_remove_recent_comments_style()
-{
-    global $wp_widget_factory;
-    remove_action('wp_head', array(
-        $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
-        'recent_comments_style'
-    ));
-}
-
-// Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
-function rhtwp_pagination()
-{
-    global $wp_query;
-    $big = 999999999;
-    echo paginate_links(array(
-        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-        'format' => '?paged=%#%',
-        'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
-    ));
-}
-
-// Custom Excerpts
-function rhtwp_index($length) // Create 20 Word Callback for Index page Excerpts, call using rhtwp_excerpt('rhtwp_index');
-{
-    return 20;
-}
-
-// Create 40 Word Callback for Custom Post Excerpts, call using rhtwp_excerpt('rhtwp_custom_post');
-function rhtwp_custom_post($length)
-{
-    return 40;
-}
-
-// Create the Custom Excerpts callback
-function rhtwp_excerpt($length_callback = '', $more_callback = '')
-{
-    global $post;
-    if (function_exists($length_callback)) {
-        add_filter('excerpt_length', $length_callback);
-    }
-    if (function_exists($more_callback)) {
-        add_filter('excerpt_more', $more_callback);
-    }
-    $output = get_the_excerpt();
-    $output = apply_filters('wptexturize', $output);
-    $output = apply_filters('convert_chars', $output);
-    $output = '<p>' . $output . '</p>';
-    echo $output;
-}
-
-// Custom View Article link to Post
-function rht_blank_view_article($more)
-{
-    global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'rht') . '</a>';
 }
 
 // Remove Admin bar
@@ -281,59 +121,24 @@ function rhtgravatar ($avatar_defaults)
     return $avatar_defaults;
 }
 
-// Threaded Comments
-function enable_threaded_comments()
-{
-    if (!is_admin()) {
-        if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-            wp_enqueue_script('comment-reply');
+// Remove comments from admin panel
+function remove_menus(){
+    remove_menu_page( 'edit-comments.php' );          
+}
+
+//Adding bubble for new comments posts
+function add_user_menu_bubble(){
+    global $menu;
+    $count = wp_count_posts('rht-comment')->pending;
+    if( $count ){
+        foreach( $menu as $key => $value ){
+            if( $menu[$key][2] == 'edit.php?post_type=rht-comment' ){
+                $menu[$key][0] .= ' <span class="awaiting-mod"><span class="pending-count">' . $count . '</span></span>';
+                break;
+            }
         }
     }
 }
-
-// Custom Comments Callback
-function rhtcomments($comment, $args, $depth)
-{
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
-
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
-?>
-    <!-- heads up: starting < for the html tag (li or div) in the next line: -->
-    <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
-<?php endif; ?>
-
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
-
-	<?php comment_text() ?>
-
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
-<?php }
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -345,12 +150,10 @@ add_action('wp_print_scripts', 'rht_conditional_scripts'); // Add Conditional Pa
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'rht_styles'); // Add Theme Stylesheet
 add_action('init', 'register_rht_menu'); // Add rht Blank Menu
-// add_action('init', 'create_post_type_rht'); // Add our rht Blank Custom Post Type
-add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
-add_action('init', 'rhtwp_pagination'); // Add our rht Pagination
+add_action('init', 'create_post_type_comment'); // Add custom post type for comments
+add_action( 'admin_menu', 'remove_menus' ); //Remove comments from admin panel
+add_action( 'admin_menu', 'add_user_menu_bubble' ); //Add bubble for new comments
 
-// add_action('init', 'create_post_type_automatica');
-// add_action('init', 'create_post_type_furnitura');
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
 remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
@@ -390,88 +193,10 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 add_shortcode('rht_shortcode_demo', 'rht_shortcode_demo'); // You can place [rht_shortcode_demo] in Pages, Posts now.
 add_shortcode('rht_shortcode_demo_2', 'rht_shortcode_demo_2'); // Place [rht_shortcode_demo_2] in Pages, Posts now.
 
-// Shortcodes above would be nested like this -
-// [rht_shortcode_demo] [rht_shortcode_demo_2] Here's the page title! [/rht_shortcode_demo_2] [/rht_shortcode_demo]
 
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
-
-// Create 1 Custom Post type for a Demo, called rht
-// function create_post_type_furnitura()
-// {
-//     register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
-//     register_taxonomy_for_object_type('post_tag', 'rht');
-//     register_post_type('rht-furnitura', // Register Custom Post Type
-//         array(
-//         'labels' => array(
-//             'name' => __('Фурнитура', 'furnitura'), // Rename these to suit
-//             'singular_name' => __('rht Blank Custom Post', 'furnitura'),
-//             'add_new' => __('Add New', 'furnitura'),
-//             'add_new_item' => __('Add New rht Blank Custom Post', 'furnitura'),
-//             'edit' => __('Edit', 'furnitura'),
-//             'edit_item' => __('Edit rht Blank Custom Post', 'furnitura'),
-//             'new_item' => __('New rht Blank Custom Post', 'furnitura'),
-//             'view' => __('View rht Blank Custom Post', 'furnitura'),
-//             'view_item' => __('View rht Blank Custom Post', 'furnitura'),
-//             'search_items' => __('Search rht Blank Custom Post', 'furnitura'),
-//             'not_found' => __('No rht Blank Custom Posts found', 'furnitura'),
-//             'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'furnitura')
-//         ),
-//         'public' => true,
-//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-//         'has_archive' => true,
-//         'supports' => array(
-//             'title',
-//             'editor',
-//             'excerpt',
-//             'thumbnail',
-//             'custom-fields'
-//         ), // Go to Dashboard Custom rht Blank post for supports
-//         'can_export' => true, // Allows export in Tools > Export
-//         'taxonomies' => array(
-//             'post_tag',
-//             'category'
-//         ) // Add Category and Post Tags support
-//     ));
-// }
-// function create_post_type_automatica()
-// {
-//     register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
-//     register_taxonomy_for_object_type('post_tag', 'rht');
-//     register_post_type('rht-automatica', // Register Custom Post Type
-//         array(
-//         'labels' => array(
-//             'name' => __('Автоматика', 'automatica'), // Rename these to suit
-//             'singular_name' => __('rht Blank Custom Post', 'automatica'),
-//             'add_new' => __('Add New', 'automatica'),
-//             'add_new_item' => __('Add New rht Blank Custom Post', 'automatica'),
-//             'edit' => __('Edit', 'automatica'),
-//             'edit_item' => __('Edit rht Blank Custom Post', 'automatica'),
-//             'new_item' => __('New rht Blank Custom Post', 'automatica'),
-//             'view' => __('View rht Blank Custom Post', 'automatica'),
-//             'view_item' => __('View rht Blank Custom Post', 'automatica'),
-//             'search_items' => __('Search rht Blank Custom Post', 'automatica'),
-//             'not_found' => __('No rht Blank Custom Posts found', 'automatica'),
-//             'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'automatica')
-//         ),
-//         'public' => true,
-//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-//         'has_archive' => true,
-//         'supports' => array(
-//             'title',
-//             'editor',
-//             'excerpt',
-//             'thumbnail',
-//             'custom-fields'
-//         ), // Go to Dashboard Custom rht Blank post for supports
-//         'can_export' => true, // Allows export in Tools > Export
-//         'taxonomies' => array(
-//             'post_tag',
-//             'category'
-//         ) // Add Category and Post Tags support
-//     ));
-// }
 
 function create_post_type_comment()
 {
@@ -481,17 +206,17 @@ function create_post_type_comment()
         array(
         'labels' => array(
             'name' => __('Комментарии', 'comments'), // Rename these to suit
-            'singular_name' => __('rht Blank Custom Post', 'comments'),
-            'add_new' => __('Add New', 'comments'),
-            'add_new_item' => __('Add New rht Blank Custom Post', 'comments'),
-            'edit' => __('Edit', 'comments'),
-            'edit_item' => __('Edit rht Blank Custom Post', 'comments'),
-            'new_item' => __('New rht Blank Custom Post', 'comments'),
-            'view' => __('View rht Blank Custom Post', 'comments'),
-            'view_item' => __('View rht Blank Custom Post', 'comments'),
-            'search_items' => __('Search rht Blank Custom Post', 'comments'),
-            'not_found' => __('No rht Blank Custom Posts found', 'comments'),
-            'not_found_in_trash' => __('No rht Blank Custom Posts found in Trash', 'comments')
+            'singular_name' => __('Комментарий', 'comments'),
+            'add_new' => __('Добавить', 'comments'),
+            'add_new_item' => __('Добавить комметарий', 'comments'),
+            'edit' => __('Редактировать', 'comments'),
+            'edit_item' => __('Редактировать комментарий', 'comments'),
+            'new_item' => __('Новый комментарий', 'comments'),
+            'view' => __('Просмотреть комментарий', 'comments'),
+            'view_item' => __('Просмотреть комментарий', 'comments'),
+            'search_items' => __('Поиск комментария', 'comments'),
+            'not_found' => __('Комментарии не найдены', 'comments'),
+            'not_found_in_trash' => __('Комменатрии не найдены в корзине', 'comments')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -511,7 +236,6 @@ function create_post_type_comment()
 		'menu_icon' => 'dashicons-admin-comments' 
     ));
 }
-add_action('init', 'create_post_type_comment');
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
@@ -717,6 +441,10 @@ function dimox_breadcrumbs() {
   }
 } // end of dimox_breadcrumbs()
 
+/*------------------------------------*\
+	Customizer
+\*------------------------------------*/
+
 add_action('customize_register', function($customizer){
     $customizer->add_section(
         'contacts',
@@ -804,42 +532,15 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 function my_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/login.css' );
-    // wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/style-login.js' ); // We don't use any custom js scripts for login form
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 // END OF CUSTOMIZING THE LOGIN FORM
 
-    /* <?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>
-     <?php echo get_theme_mod('contacts_email', 'rollinghitech@gmail.com'); ?>
-     <?php echo get_theme_mod('contacts_address', 'rollinghitech@gmail.com'); ?>
-     <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech, 2017'); ?> */
+/*------------------------------------*\
+	Advanced Custom Fields
+\*------------------------------------*/
 
-    // remove comments from admin panel
-    function remove_menus(){
-        remove_menu_page( 'edit-comments.php' );          
-    }
-    add_action( 'admin_menu', 'remove_menus' );
-
-    function add_user_menu_bubble(){
-        global $menu;
-    
-        // записи
-        $count = wp_count_posts('rht-comment')->pending; // на подтверждении
-        if( $count ){
-            foreach( $menu as $key => $value ){
-                if( $menu[$key][2] == 'edit.php?post_type=rht-comment' ){
-                    $menu[$key][0] .= ' <span class="awaiting-mod"><span class="pending-count">' . $count . '</span></span>';
-                    break;
-                }
-            }
-        }
-    }
-
-    add_action( 'admin_menu', 'add_user_menu_bubble' );
-
-
-    // Custom Fields
-    if(function_exists("register_field_group"))
+if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_%d0%ba%d0%be%d0%bc%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%80%d0%b8%d0%b9',
