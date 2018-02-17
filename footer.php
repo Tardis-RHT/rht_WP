@@ -7,7 +7,7 @@
 					</ul>
 				</nav>
 				<div class="footer_copyright">
-					<p>&#169; <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech, 2017'); ?></p>
+					<p>&#169; <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech'); ?>, <?php echo current_time('Y') ?></p>
 				</div>
 			</div>
 		</footer>
