@@ -614,11 +614,11 @@ $('.shopping-cart_item-single_number').change(function(){
 // $('input[type=file]').change(function(){
 //     files = this.files;
 // });
-// $('.commentPhoto').change(function(){
-// 	console.log($('.commentPhoto').val());
-// 	var data = new FormData();
-//     $.each( files, function( key, value ){
-//         data.append( key, value );
-// 	});
-// 	console.log(data);
-// })
+$('.commentPhoto').change(function(){
+	console.log($('.commentPhoto').val());
+	var data = new FormData();
+    $.each( files, function( key, value ){
+        data.append( key, value );
+	});
+	console.log(data);
+})

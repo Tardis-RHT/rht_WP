@@ -146,11 +146,10 @@ function add_user_menu_bubble(){
 
 // Add Actions
 // add_action('init', 'rht_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'rht_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'rht_styles'); // Add Theme Stylesheet
-add_action('init', 'register_rht_menu'); // Add rht Blank Menu
-add_action('init', 'create_post_type_comment'); // Add custom post type for comments
+// add_action('wp_print_scripts', 'rht_conditional_scripts'); // Add Conditional Page Scripts
+// add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
+// add_action('wp_enqueue_scripts', 'rht_styles'); // Add Theme Stylesheet
+//add_action('init', 'create_post_type_comment'); // Add custom post type for comments
 add_action( 'admin_menu', 'remove_menus' ); //Remove comments from admin panel
 add_action( 'admin_menu', 'add_user_menu_bubble' ); //Add bubble for new comments
 
