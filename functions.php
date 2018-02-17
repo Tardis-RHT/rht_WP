@@ -734,7 +734,7 @@ add_action('customize_register', function($customizer){
     );
     $customizer->add_setting(
         'contacts_copyright',
-        array('default' => 'Rolling Hi-Tech, 2017')
+        array('default' => 'Rolling Hi-Tech')
     );
     $customizer->add_control(
         'contacts_copyright',
