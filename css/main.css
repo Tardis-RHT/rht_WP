@@ -5615,7 +5615,11 @@ input[type='range']:disabled::-ms-thumb {
   align-items: center;
   margin-top: 10px;
 }
-
+.delete-product{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 @media (min-width: 872px) {
   .shopping-cart_item-single_num-container {
     margin-top: 0;

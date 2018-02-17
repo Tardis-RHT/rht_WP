@@ -17,6 +17,10 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
+
+	<script>
+		var templateUrl = '<?php echo get_template_directory_uri() ?>';
+	</script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/lightgallery.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/lightslider.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/lg-video.min.js"></script>
