@@ -737,7 +737,8 @@ a :visited {
   }
   #qtranslate-chooser {
     position: absolute;
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 40px;
     line-height: 40px;
@@ -746,15 +747,12 @@ a :visited {
   }
   #qtranslate-chooser li {
     display: none;
+    order: 2;
     width: 100%;
     background-color: #111820;
     padding-left: 20px;
     height: 40px;
     border-top: solid 1px #353b42;
-  }
-  #qtranslate-chooser li:first-of-type {
-    border-top: none;
-    display: block;
   }
   #qtranslate-chooser li:last-of-type {
     border-bottom: solid 1px #353b42;
@@ -764,6 +762,11 @@ a :visited {
   }
   #qtranslate-chooser li:hover:not(:first-child) {
     cursor: pointer;
+  }
+  #qtranslate-chooser li.active {
+    display: block;
+    order: 1;
+    border-top: none;
   }
   .qtranxs_widget_end {
     display: none;
@@ -5615,11 +5618,7 @@ input[type='range']:disabled::-ms-thumb {
   align-items: center;
   margin-top: 10px;
 }
-.delete-product{
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+
 @media (min-width: 872px) {
   .shopping-cart_item-single_num-container {
     margin-top: 0;
