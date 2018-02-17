@@ -67,20 +67,34 @@
     <section class="page_filenka_catalog wrapper">
         <h2 class="page_filenka_catalog-title">Каталог</h2>
         <div class="catalog-container">
+        <?php global $post;
+			$args = array('posts_per_page' => -1,
+				'post_type' => 'page',
+				'order' => 'ASC',
+				'post_parent' => $post->ID );
+            $myposts = get_posts( $args );
+            foreach( $myposts as $post ){ setup_postdata($post);
+        ?>
             <div class="catalog-item">
                 <div class="catalog-item-info">
                     <div class="catalog-item-info-top">
-                        <h5 class="catalog-item-title">Филёнка</h5>
-                        <p class="catalog-item-size">480 х 280 х 1,5 мм</p>
+                        <h5 class="catalog-item-title"><?php the_title() ?></h5>
+                        <p class="catalog-item-size"><?php the_field('sizes'); ?></p>
                     </div>
                     <div class="catalog-item-info-bottom">
-                        <p class="catalog-item-price"><b>199</b>грн/шт</p>
+                        <p class="catalog-item-price"><b><?php the_field('price'); ?></b>грн/шт</p>
                         <button class="btn buy" data-id="<?php echo $post->ID?>">Добавить в корзину</button>
                     </div>
                 </div>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/products/panel_1.png" alt="Филёнка" class="catalog-item-img">
+                <img src="<?php the_field('img'); ?>" alt="<?php the_title()?>" class="catalog-item-img">
             </div>
-            <div class="catalog-item">
+
+            <?php
+            }
+            wp_reset_postdata();
+            ?>
+
+            <!-- <div class="catalog-item">
                 <div class="catalog-item-info">
                     <div class="catalog-item-info-top">
                         <h5 class="catalog-item-title">Филёнка</h5>
@@ -118,7 +132,7 @@
                     </div>
                 </div>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/products/panel_4.png" alt="Филёнка" class="catalog-item-img">
-            </div>
+            </div> -->
         </div>
     </section>
 
