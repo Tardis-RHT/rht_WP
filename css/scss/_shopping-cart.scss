@@ -5,7 +5,10 @@
     }
     @media(min-width:872px){
         margin: 0 auto 120px;
-    }        
+    }
+    img{
+        height: 100%;
+    }    
 }
 .shopping-cart_item-single{
     position: relative;
@@ -24,6 +27,9 @@
         font-size: 28px;
         color: $font_black;
         margin: 10px;
+        &:hover{
+            color: #0071BA;
+        }
         @media(min-width:872px){
             position: inherit;
             font-size: 20px;
@@ -39,7 +45,8 @@
     @media(min-width:872px){
         justify-content: space-between;
         align-items: center;        
-        height: 180px;        
+        height: 180px;
+        padding: 10px;
     }
 }
 .shopping-cart_item-single_desc{
@@ -114,4 +121,8 @@
     @media (min-width:872px){
         margin-left: auto;        
     }
+}
+.delete-product{
+    border: none;
+    background: transparent;
 }
