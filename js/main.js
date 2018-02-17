@@ -562,14 +562,22 @@ $(".buy").click(function(){
 });
 
 function countSum(){
-	if($('.shopping-cart_item-single_price-total').length > 0){
+	if($('.shopping-cart_price-sum').length > 0 || $('.order_price_total').length > 0){
 		var totalPrice = 0;
-		$('.shopping-cart_item-single_price-total').each(function(){
-			totalPrice += parseInt($(this).html());
-		});
-		$('.shopping-cart_price-sum > p > span').html(totalPrice.toLocaleString('ru'));
-	} else{
-		$('.shopping-cart_price-sum > p > span').html(0);
+		if($('.shopping-cart_item-single_price-total').length > 0){
+			$('.shopping-cart_item-single_price-total').each(function(){
+				totalPrice += parseInt($(this).html());
+			});
+			$('.shopping-cart_price-sum > p > span').html(totalPrice.toLocaleString('ru'));
+		} else if($('.order-single-price-total').length > 0){
+			$('.order-single-price-total').each(function(){
+				totalPrice += parseInt($(this).html());
+			});
+			$('.order_price_total > p > b').html(totalPrice.toLocaleString('ru'));
+		}else{
+			$('.shopping-cart_price-sum > p > span').html(0);
+			$('.order_price_total > p > b').html(0);
+		}
 	}
 }
 countSum();
