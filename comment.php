@@ -15,9 +15,9 @@
             <h2 class="comment-title">Оставьте ваш отзыв</h2>
             <form action="" enctype="multipart/form-data" method="post" class="comment-form" id="comment-form">
                 <div class="comment-inputs">
-					<input type="text" class="comment-name" placeholder="Имя и фамилия" required id="commentName">
+					<input type="text" class="comment-name" placeholder="Имя и фамилия" required id="commentName" name="commentName">
 					<label for="commentName" id="commentName-lab">Имя и фамилия</label>
-					<input type="email" class="comment-email" placeholder="Email" required id="commentEmail">
+					<input type="email" class="comment-email" placeholder="Email" required id="commentEmail" name="commentEmail">
 					<label for="commentEmail" id="commentEmail-lab">Email</label>
                     <select name="products" id="commentProducts" required>
                         <option disabled value="" selected="selected" style="display: none;">Товар</option>
@@ -33,10 +33,10 @@
                     <span>или</span>
                     <b>Загрузите с компьютера</b>
                     <span>(jpg/png до 10 Мб)</span>
-                    <!-- <input type="file" multiple accept="image/jpeg,image/png"> -->
+                    <input type="file" name="photo" class="commentPhoto" multiple accept="image/jpeg,image/png">
 				</div>
 				<div class="comment-textarea">
-						<textarea id="commentText" cols="30" rows="10" required placeholder="Сообщение" minlength="10"></textarea>
+						<textarea id="commentText" name="commentText" cols="30" rows="10" required placeholder="Сообщение" minlength="10"></textarea>
 						<label for="commentText" id="commentText-lab">Сообщение</label>
 				</div> 
                 <button type="submit" disabled class="btn comment-btn" id="comment_btn" onclick="showCommentThanx()">Отправить</button>
@@ -74,5 +74,5 @@
 	</div>
 	</main>
 
-
+<!-- <?php require 'comments-controller.php' ?> -->
 <?php get_footer(); ?>
