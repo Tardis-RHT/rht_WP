@@ -41,6 +41,16 @@
 						</li>
 					</ul>
 					<?php endif;?>
+
+					<!-- for panels: -->
+					<?php if ($template == 'panels.php'):?>
+					<p><?php echo get_the_title( $product ); ?></p>
+					<ul>
+						<li class="automatica_set-weight">
+							<?php echo get_post_meta( $product, 'sizes', true ); ?>
+						</li>
+					</ul>
+					<?php endif;?>
 				</div>
 				<div class="shopping-cart_item-single_num-container">
 					<form>

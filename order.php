@@ -125,6 +125,11 @@
 						<h3>Автоматика &laquo;<?php echo get_the_title( $product ); ?>&raquo;</h3>
 						<?php endif;?>
 
+					<!-- for panels: -->
+						<?php if ($template == 'panels.php'):?>
+						<h3><?php echo get_the_title( $product ); ?></h3>
+						<?php endif;?>
+
 						<div class="order_item_price">
 							<p>
 							<?php if(!empty(get_post_meta( $product, 'price-mini', true ))){
