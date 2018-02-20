@@ -35,7 +35,7 @@ Post Template Name: Furnitura Set
 							<p id="furnitura_chars_price" class="furnitura_chars_price"><?php the_field('price'); ?> <span class="furnitura_hrn">грн</span></p>
 							<p id="furnitura_chars_price_add" class="furnitura_chars_price_add"><?php the_field('price_plus'); ?> <span class="furnitura_hrn">грн</span></p>	
                         <div class="furnitura_chars_buttons">
-                            <button class="btn buy" data-id="<?php echo $post->ID?>">Добавить в корзину</button>
+                            <button id="furnitura_buy" class="btn buy" data-id="<?php echo $post->ID?>">Добавить в корзину</button>
                         </div>
                     </div>
                     <div class="furnitura-set_img">

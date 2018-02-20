@@ -459,25 +459,34 @@ $(document).ready(calcWidth);
 
 //FORM ON PAGE AUTOMATICA
 if($('#automatica-form').length > 0){
+	var automatica_id = $('#automatica-btn').attr('data-id').split('?')[0];	
+	var width_to_cart = '?w=0';
+
 	var radio = $('#mini, #maxi');
 	var input = $('#automatica-width');
 	var commentBtn = $('#automatica-btn');
+
 	function checkInput(){
 		if (input.val() !== ''){
 			commentBtn.prop("disabled", false);
 		} else {
 			commentBtn.prop('disabled', true);
-		}
+		}		
+		width_to_cart = '?w=' + input.val();
 	}
+	width_to_cart = checkInput();
+
 	function changePrice(){
 		if(radio[0].checked){
 			$('#for-mini').css('display','inline');
 			$('#for-maxi').css('display','none');
+			$('#automatica-btn').attr('data-id', automatica_id + '?mini' + width_to_cart);
 		} else if(radio[1].checked){
 			$('#for-mini').css('display','none');
 			$('#for-maxi').css('display','inline');
+			$('#automatica-btn').attr('data-id', automatica_id + '?maxi' + width_to_cart);
 		}
-	}
+	} 
 	$(document).ready(function(){
 		checkInput();
 		changePrice();
@@ -486,7 +495,13 @@ if($('#automatica-form').length > 0){
 	radio.change(function(){
 		changePrice();
 		maximize();
+		console.log($('#automatica-btn').attr('data-id'));
 	});
+	input.change(function(){
+		checkInput();
+		changePrice();
+		maximize();
+	})
 }
 //END OF FORM ON PAGE AUTOMATICA
 
@@ -527,6 +542,12 @@ function countSum(){
 }
 countSum();
 
+function checkEmpty(){
+	if($('.shopping-cart_price-sum > p > span').html() == 0){
+		$('.shopping-cart_order').attr('disabled', 'disabled');
+	}
+} 
+checkEmpty();
 //delete product from cart
 $(".delete-product").click(function(){   
 	var currentDeleteButton = $(this); 
@@ -537,8 +558,11 @@ $(".delete-product").click(function(){
     $.post(templateUrl+'/cart-controller.php', params, function(data){
 		$('.shopping-cart_number').html(data);
 	});
-	currentDeleteButton.parent().remove();
-	countSum();
+	currentDeleteButton.parent().slideUp(400, function () {
+		currentDeleteButton.parent().remove();
+		countSum();
+		checkEmpty();
+	});
 });
 
 //change product quantity from cart
@@ -554,10 +578,13 @@ $('.shopping-cart_item-single_number').change(function(){
 		$('.shopping-cart_number').html(data);
 	});
 	if(new_quantity == 0){
-		$(this).parent().parent().parent().remove();
+		$(this).parent().parent().parent().slideUp(400, function () {
+			$(this).remove();
+			countSum();
+			checkEmpty();
+		});
 	}
 	var newSum = parseInt($(this).parent().next().html()) * new_quantity;
-	// console.log(parseInt(newSum));
 	$(this).parent().next().next().html(newSum + ' грн');
 	countSum();
 })

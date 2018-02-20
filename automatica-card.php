@@ -38,9 +38,9 @@ Post Template Name: Automatica Card
         </div>
     </section>
 
-    <section class="automatica-inset wrapper">
+    <section class="automatica-inset wrapper" id="automatica-form">
         <h2 class="inset-title">В комплект входит</h2>
-        <form action="" id="automatica-form">
+        <!-- <form action="" id="automatica-form"> -->
             <p class="inset-format">Формат комплекта:</p>
             <span class="toggle">
                     <input id="mini" type="radio" name="toggle" value="mini" checked>
@@ -94,7 +94,7 @@ Post Template Name: Automatica Card
                     <b id="for-maxi"> <?php echo get_post_meta( $post->ID, 'price-maxi', true ); ?></b>
                      грн
                     </p>
-                    <button class="btn buy" data-id="<?php echo $post->ID?>" id="automatica-btn" disabled>
+                    <button class="btn buy" data-id="<?php echo $post->ID?>?mini" id="automatica-btn" disabled>
                             Добавить в корзину
                     </button>
                 </div>            

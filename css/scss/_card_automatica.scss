@@ -140,7 +140,8 @@
 }
 .item-width{
     // width: calc(100% - 25px);
-    max-width: 245px;
+    // max-width: 245px;
+    width: 245px;
     box-sizing: border-box;
     padding: 12px 0 12px 25px;
     background-color: $bg_section;

@@ -4510,7 +4510,7 @@ input[type='range']:disabled::-ms-thumb {
 }
 
 .item-width {
-  max-width: 245px;
+  width: 245px;
   box-sizing: border-box;
   padding: 12px 0 12px 25px;
   background-color: #f7f7f7;

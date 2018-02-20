@@ -10,12 +10,17 @@
 		<?php
 			if (isset($_SESSION['products'])){
 				$products = $_SESSION['products'];
-				foreach($products as $product => $quantity ){ ?>
+				foreach($products as $productData => $quantity ){ 
+
+					if(strrpos($productData, "?") !== false){
+						$product = stristr($productData, '?', true);
+					} else{
+						$product = $productData;
+					}
+		?>
 					
 			<div class="shopping-cart_item-single">
-				<div class="shopping-cart_item-single_img">
-					<img src="<?php the_field('img', $product); ?>" alt="<?php echo get_the_title( $product ); ?>">
-				</div>
+				<img src="<?php the_field('img', $product); ?>" alt="<?php echo get_the_title( $product ); ?>">
 				<div class="shopping-cart_item-single_desc">
 					<!-- different set fot each category -->
 					<?php $template = get_page_template_slug($product);
@@ -26,7 +31,11 @@
 						<li>Ширина проема – <b>до <?php the_field('width', $product); ?> м</b></li>
 						<li>Вес ворот – <b>до <?php the_field('weight', $product); ?> кг</b></li>
 					</ul>
+					
+					<?php if(strrpos($productData, "?plate") !== false){ ?>
 					<span>+ Регулировочная пластина</span>
+					<?php } ?>
+
 					<?php endif; ?>
 					
 					<!-- for automation: -->
@@ -40,6 +49,20 @@
 						<li class="automatica_set-power">
 							Мощность мотора &mdash; <b>
 							<?php echo get_post_meta( $product, 'power', true ); ?> Вт</b>
+						</li>
+						<?php if(strrpos($productData, "?mini") !== false){ ?>
+						<li class="automatica_set-power">
+							Формат комплекта - <b>mini</b>
+						</li>
+						<?php } elseif(strrpos($productData, "?maxi") !== false){?>
+						<li class="automatica_set-power">
+							Формат комплекта - <b>maxi</b>
+						</li>
+						<?php } ?>
+						<li class="automatica_set-power">
+							Ширина ворот &mdash; <b>
+							<?php $pos = strpos($productData, '?w=') + 3;
+							echo substr ($productData, $pos) ?> м</b>
 						</li>
 					</ul>
 					<?php endif;?>
@@ -57,12 +80,17 @@
 				<div class="shopping-cart_item-single_num-container">
 					<form>
 						<input type="number" class="shopping-cart_item-single_number" min="0" value="<?php
-						echo $quantity;?>" data-id="<?php echo $product;?>">
+						echo $quantity;?>" data-id="<?php echo $productData;?>">
 						<span>шт.</span>			
 					</form>
 					<p class="shopping-cart_item-single_price">
-					<?php if(!empty(get_post_meta( $product, 'price-mini', true ))){
+					<?php 
+					if(strrpos($productData, "?plate") !== false){ 
+						$price = get_post_meta( $product, 'price_plus', true );
+					} elseif(strrpos($productData, "?mini") !== false){
 						$price = get_post_meta( $product, 'price-mini', true );
+					} elseif(strrpos($productData, "?maxi") !== false){
+						$price = get_post_meta( $product, 'price-maxi', true );
 					} else{
 						$price = get_post_meta( $product, 'price', true );
 					}
@@ -72,11 +100,10 @@
 						<?php echo $price * $quantity ?> грн
 					</p>
 				</div>
-				<button class="delete-product" data-id="<?php echo $product ?>">
+				<button class="delete-product" data-id="<?php echo $productData ?>">
 					<i class="zmdi zmdi-close"></i>
 				</button>				
 			</div>
-
 
 				<?php }
 					}

@@ -108,10 +108,16 @@
             <div class="order_list">
                 <ul>
 				<?php
-				if (isset($_SESSION['products'])){
-					$products = $_SESSION['products'];
-					foreach($products as $product => $quantity ){ ?>
+					if (isset($_SESSION['products'])){
+						$products = $_SESSION['products'];
+						foreach($products as $productData => $quantity ){ 
 
+							if(strrpos($productData, "?") !== false){
+								$product = stristr($productData, '?', true);
+							} else{
+								$product = $productData;
+							}
+				?>
                     <li class="order_item">
 					<!-- different name fot each category -->
 					<?php $template = get_page_template_slug($product);
@@ -132,8 +138,13 @@
 
 						<div class="order_item_price">
 							<p>
-							<?php if(!empty(get_post_meta( $product, 'price-mini', true ))){
+							<?php 
+								if(strrpos($productData, "?plate") !== false){ 
+									$price = get_post_meta( $product, 'price_plus', true );
+								} elseif(strrpos($productData, "?mini") !== false){
 									$price = get_post_meta( $product, 'price-mini', true );
+								} elseif(strrpos($productData, "?maxi") !== false){
+									$price = get_post_meta( $product, 'price-maxi', true );
 								} else{
 									$price = get_post_meta( $product, 'price', true );
 								}
