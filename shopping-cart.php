@@ -10,7 +10,13 @@
 		<?php
 			if (isset($_SESSION['products'])){
 				$products = $_SESSION['products'];
-				foreach($products as $product => $quantity ){ ?>
+				foreach($products as $productData => $quantity ){ 
+
+					if(strrpos($productData, "?") !== false){
+						$product = stristr($productData, '?', true);
+					}
+
+					?>
 					
 			<div class="shopping-cart_item-single">
 				<img src="<?php the_field('img', $product); ?>" alt="<?php echo get_the_title( $product ); ?>">
@@ -70,7 +76,7 @@
 						<?php echo $price * $quantity ?> грн
 					</p>
 				</div>
-				<button class="delete-product" data-id="<?php echo $product ?>">
+				<button class="delete-product" data-id="<?php echo $productData ?>">
 					<i class="zmdi zmdi-close"></i>
 				</button>				
 			</div>

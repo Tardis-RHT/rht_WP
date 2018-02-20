@@ -94,7 +94,7 @@ Post Template Name: Automatica Card
                     <b id="for-maxi"> <?php echo get_post_meta( $post->ID, 'price-maxi', true ); ?></b>
                      грн
                     </p>
-                    <button class="btn buy" data-id="<?php echo $post->ID?>" id="automatica-btn" disabled>
+                    <button class="btn buy" data-id="<?php echo $post->ID?>?mini" id="automatica-btn" disabled>
                             Добавить в корзину
                     </button>
                 </div>            

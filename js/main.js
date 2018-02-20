@@ -391,10 +391,26 @@ function showCommentThanx(){
 	// $('#thankyou-hide').hide(200, 'swing');
 	$('#thankyou-popup').show(450,'swing');
 }
- 
+// function uploadPhoto(){
+// 	files = $('.commentPhoto').files;
+// 	var data = new FormData();
+// 	// $.each( files, function( key, value ){
+// 	// 	data.append( key, value );
+// 	// });
+// 	return data;
+// }
+// console.log(uploadPhoto());
 $('#comment-form').bind('submit',function(e) {
 	e.preventDefault();
 	//here would be code
+
+	// var comment_photo = uploadPhoto();
+	// console.log(comment_photo);
+	var file_data = $('#photo').prop('files')[0];
+	console.log(file_data);
+	// var form_data = new FormData();
+	// form_data.append('file', file_data);
+
 	var comment_name = $('#commentName').val();
 	var comment_email = $('#commentEmail').val();
 	var comment_product = $('#commentProducts').val();
@@ -404,10 +420,18 @@ $('#comment-form').bind('submit',function(e) {
 		email: comment_email,
 		product: comment_product,
 		message: comment_message, 
+		// photo: file_data,
 	}
     $.post(templateUrl+'/comments-controller.php', params, function(data){
 		console.log(data);
-    })
+	})
+	$.ajax({
+		url:templateUrl+'/comments-controller.php',
+		data:file_data,
+		type:'POST',
+		contentType: false,
+		processData: false,
+	});
 	// $("#comment-form").trigger('reset'); 
 	//PLEASE DON'T FORGET TO ADD RESET ON 200!!!
 	//ASK ABOUT ADDING ERROR ON 500
@@ -564,12 +588,12 @@ $('.shopping-cart_item-single_number').change(function(){
 
 
 
-$('.commentPhoto').change(function(){
-	files = this.files;
-	console.log($('.commentPhoto').val());
-	var data = new FormData();
-    $.each( files, function( key, value ){
-        data.append( key, value );
-	});
-	console.log(data);
-});
+// $('.commentPhoto').change(function(){
+// 	files = this.files;
+// 	console.log($('.commentPhoto').val());
+// 	var data = new FormData();
+//     $.each( files, function( key, value ){
+//         data.append( key, value );
+// 	});
+// 	console.log(data);
+// });

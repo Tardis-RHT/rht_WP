@@ -13,7 +13,6 @@ if(isset($comment_name)):
         'post_content'  => $comment_message,
         'post_status'   => 'pending',
         'post_author'   => 1,
-        'post_category' => array(6),
         'post_type'     => 'rht-comment',
     );
 
@@ -26,5 +25,10 @@ if(isset($comment_name)):
     update_post_meta($post_id, 'email', $comment_email);
     update_post_meta($post_id, 'product', $comment_product);
 
+
+    // $upload = wp_upload_bits( $_FILES["photo"]["name"], null, file_get_contents( $_FILES["photo"]["tmp_name"]) );
+    echo 'file';
+    print_r($_FILES["photo"]);
+    print_r($_POST['data']);
 endif;
 ?>
