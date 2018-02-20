@@ -493,9 +493,9 @@ if($('#automatica-form').length > 0){
 		maximize();
 	});
 	radio.change(function(){
+		checkInput();
 		changePrice();
 		maximize();
-		console.log($('#automatica-btn').attr('data-id'));
 	});
 	input.change(function(){
 		checkInput();
