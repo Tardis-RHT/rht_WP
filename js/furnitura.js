@@ -69,21 +69,28 @@ $(document).ready(function() {
 });
 
 // SHOW HIDE THE adjusting-plate BLOCK BY CLICKIN CHECKBOX
+if(document.getElementById('furnitura_buy')){
+  var furnitura_buy = document.getElementById('furnitura_buy');
+  var data_id = furnitura_buy.getAttribute('data-id');
+}
 function toggleCheckbox() {
-	var div = document.getElementById('adjusting-plate');
+  var div = document.getElementById('adjusting-plate');
 	if(this.checked)
 	{
 	  div.style.display = 'inline-block';
 	  document.getElementById('furnitura_chars_price_add').style.display = 'inline-block';
-	  document.getElementById('furnitura_chars_price').style.display = 'none';
-	  
+    document.getElementById('furnitura_chars_price').style.display = 'none';
+    
+    furnitura_buy.setAttribute('data-id', data_id + '?plate');	  
 	}
 	else{
 	  div.style.display = 'none';
 	  document.getElementById('furnitura_chars_price_add').style.display = 'none';
-	  document.getElementById('furnitura_chars_price').style.display = 'inline-block';
-	  
-	}
+    document.getElementById('furnitura_chars_price').style.display = 'inline-block';
+    
+	  furnitura_buy.setAttribute('data-id', data_id);
+  }
+  console.log(data_id);
 }
 
 if(document.getElementById('adjusting-plate_checkbox')){

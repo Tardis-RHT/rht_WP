@@ -38,9 +38,9 @@ Post Template Name: Automatica Card
         </div>
     </section>
 
-    <section class="automatica-inset wrapper">
+    <section class="automatica-inset wrapper" id="automatica-form">
         <h2 class="inset-title">В комплект входит</h2>
-        <form action="" id="automatica-form">
+        <!-- <form action="" id="automatica-form"> -->
             <p class="inset-format">Формат комплекта:</p>
             <span class="toggle">
                     <input id="mini" type="radio" name="toggle" value="mini" checked>

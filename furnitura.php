@@ -138,7 +138,7 @@
 		<!-- START OF THE SET BLOCK -->
 		<?php
             global $post;
-			$args = array('posts_per_page' => 10,
+			$args = array('posts_per_page' => 0,
 				'post_type' => 'page',
 				'order' => 'ASC',
 				'post_parent' => $post->ID );
@@ -171,7 +171,7 @@
 					</div>
 				</div>
 				<div class="furnitura_products_img">
-					<img class="" src="<?php the_field('set_img'); ?>" alt="Фурнитура комплект">
+					<img class="" src="<?php the_field('img'); ?>" alt="Фурнитура комплект">
 				</div>
 			</div>
 		</div>
