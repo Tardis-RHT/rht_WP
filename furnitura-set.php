@@ -66,7 +66,7 @@ Post Template Name: Furnitura Set
 				<div class="furnitura-set_kit_img">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ogranich_verh.jpg" alt="Item of the kit">
 				</div>
-				<p>Верхний ограничитель (2 ролика) — <span><?php the_field('limiter'); ?></span> шт</p>
+				<p>Верхний ограничитель — <span><?php the_field('limiter'); ?></span> шт</p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">

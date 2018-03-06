@@ -156,7 +156,7 @@
 					</ul>
 					<ul class="furnitura_chars_additional">
 						<li>Направляющий профиль <span><?php the_field('profil'); ?></span></li>
-						<li>Верхний ограничитель (2 ролика) — <span><?php the_field('limiter'); ?></span> шт</li>
+						<li>Верхний ограничитель — <span><?php the_field('limiter'); ?></span> шт</li>
 						<li>Роликовая опора <span><?php the_field('pillar'); ?></span> шт</li>
 						<li>Нижний улавливатель — 1 шт</li>
 						<li>Верхний улавливатель — 1 шт</li>
