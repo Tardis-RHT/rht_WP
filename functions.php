@@ -66,6 +66,10 @@ function rht_conditional_scripts()
     wp_deregister_script('jquery');
     wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js','','', true);
     wp_enqueue_script('jquery');
+    wp_register_script('rht_dropzone_script', get_template_directory_uri() . '/js/dropzone.js','','', true);
+    if (is_page_template( 'comment.php' )) {
+        wp_enqueue_script('rht_dropzone_script');
+    }
     wp_register_script('rht_main_script', get_template_directory_uri() . '/js/main.js','','', true);
     wp_enqueue_script('rht_main_script');
 

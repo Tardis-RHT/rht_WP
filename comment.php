@@ -10,10 +10,14 @@
         </section>
     </div>
 
+	<!-- <input multiple="multiple" id="sortpicture" type="file" name="sortpic" />
+	<button id="upload">Upload</button> -->
+
+
     <section class="comment" id="thankyou-hide">
         <div class="wrapper">
             <h2 class="comment-title">Оставьте ваш отзыв</h2>
-            <form action="" enctype="multipart/form-data" method="post" class="comment-form" id="comment-form">
+            <form action="<?php echo get_template_directory_uri() ?>/upload.php" enctype="multipart/form-data" method="post" class="comment-form" id="comment-form">
                 <div class="comment-inputs">
 					<input type="text" class="comment-name" placeholder="Имя и фамилия" required id="commentName" name="commentName">
 					<label for="commentName" id="commentName-lab">Имя и фамилия</label>
@@ -33,7 +37,7 @@
                     <span>или</span>
                     <b>Загрузите с компьютера</b>
                     <span>(jpg/png до 10 Мб)</span>
-                    <input type="file" name="photo" id="photo" class="commentPhoto" multiple accept="image/jpeg,image/png">
+                    <!-- <input type="file" name="photo" id="photo" class="commentPhoto" multiple accept="image/jpeg,image/png"> -->
 				</div>
 				<div class="comment-textarea">
 						<textarea id="commentText" name="commentText" cols="30" rows="10" required placeholder="Сообщение" minlength="10"></textarea>
