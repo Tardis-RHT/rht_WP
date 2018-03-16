@@ -20,7 +20,7 @@
 		?>
 					
 			<div class="shopping-cart_item-single">
-				<img src="<?php the_field('img', $product); ?>" alt="<?php echo get_the_title( $product ); ?>">
+				<img src="<?php the_field('img', $product); ?>" alt="<?php echo get_the_title( $product ); ?>" class="shopping-cart_item-single_img">
 				<div class="shopping-cart_item-single_desc">
 					<!-- different set fot each category -->
 					<?php $template = get_page_template_slug($product);

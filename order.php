@@ -19,7 +19,7 @@
 					</div>
 					<div class="order_delivery_form">
 						<span>Выберите почтовую компанию</span>
-						<select class="post-office_select" name="post office">
+						<select class="post-office_select" name="post office" id="post-office_select">
 							<option class="option" value="sat">САТ</option>
 							<option class="option" value="intime">Интайм</option>
 							<option class="option" value="other">Другой способ доставки</option>
@@ -118,7 +118,16 @@
 								$product = $productData;
 							}
 				?>
-                    <li class="order_item">
+					<li class="order_item" data-id="<?php echo $product ?>" data-add="<?php 
+						if(strrpos($productData, "?plate") !== false){ 
+							echo 'Регулировочная пластина';
+						} elseif(strrpos($productData, "?maxi") !== false){
+							echo 'Набор maxi';
+						} elseif(strpos($productData, '?w=') !== false){
+							$pos = strpos($productData, '?w=') + 3;
+							echo 'Ширина ворот '. substr ($productData, $pos) . ' м';
+						}
+						?>">
 					<!-- different name fot each category -->
 					<?php $template = get_page_template_slug($product);
 					//for furniture:
@@ -149,7 +158,7 @@
 									$price = get_post_meta( $product, 'price', true );
 								}
 							echo $price ?>
-					 грн x <?php echo $quantity;?> шт.</p>
+					 грн x <span class="js-quantity"><?php echo $quantity;?></span> шт.</p>
 					 <p class="order-single-price-total"><?php echo $price * $quantity ?> грн</p>
 						</div>
                     </li>
