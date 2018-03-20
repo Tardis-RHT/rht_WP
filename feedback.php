@@ -11,7 +11,48 @@
 				<div id="goToPrevSlideFeedback" class="pointer_left feedback_pointer"></div>	
 				<div class="main_feedback_container">		
 					<ul id="feedbacksl" class="cs-hidden">
+						<?php
+							global $post;
+							$args = array('posts_per_page' => 20,'post_type' => 'rht-comment', 'order' => 'ASC' );
+							$myposts = get_posts( $args );
+							foreach( $myposts as $post ){ setup_postdata($post);
+						?>
 						<li>
+							<div class="feedback_slide_container">
+								<p class="main_feedback_text">
+									<?php echo strip_tags(get_the_content()); ?>
+								</p>
+								<div class="main_feedback_nameanddate">
+									<p class="main_feedback_name">
+										<?php echo get_post_meta( $post->ID, 'name', true ); ?>
+									</p>
+									<p class="main_feedback_date">
+										<?php the_date('j.m.Y') ?>
+									</p>
+								</div>
+								<div class="main_feedback_gallery">
+									<div class="main_feedback_gallery-cont feedbacklg">
+										<?php for($j=1; $j<=3; $j++){
+											$fieldName = "img{$j}";
+											$imgUrl = get_field($fieldName);
+											if(!empty($imgUrl)){
+												echo '<a class="main_feedback_gallery-img" href="';
+												echo $imgUrl . '">';
+												$imgId = get_attachment_id_by_url($imgUrl);
+												echo wp_get_attachment_image($imgId, 'small');
+												echo '</a>';
+											}
+										}
+										?>
+									</div>
+								</div>
+							</div>
+						</li>
+						<?php
+							}
+							wp_reset_postdata();
+						?>
+						<!-- <li>
 							<div class="feedback_slide_container">
 								<p class="main_feedback_text">Спасибо компании «Rolling Hi-Tech» за отличную работу 
 										и продукцию. Всё отправили вовремя, без косяков и за 
@@ -79,7 +120,7 @@
 									</div>
 								</div>
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 				<div id="goToNextSlideFeedback" class="pointer_right feedback_pointer"></div>				
