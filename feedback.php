@@ -27,7 +27,7 @@
 										<?php echo get_post_meta( $post->ID, 'name', true ); ?>
 									</p>
 									<p class="main_feedback_date">
-										<?php the_date('j.m.Y') ?>
+										<?php echo get_the_date('j.m.Y') ?>
 									</p>
 								</div>
 								<div class="main_feedback_gallery">
