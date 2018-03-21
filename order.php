@@ -20,9 +20,9 @@
 					<div class="order_delivery_form">
 						<span>Выберите почтовую компанию</span>
 						<select class="post-office_select" name="post office" id="post-office_select">
-							<option class="option" value="sat">САТ</option>
-							<option class="option" value="intime">Интайм</option>
-							<option class="option" value="other">Другой способ доставки</option>
+							<option class="option" value="САТ">САТ</option>
+							<option class="option" value="Интайм">Интайм</option>
+							<option class="option" value="Другой способ доставки">Другой способ доставки</option>
 						</select>
 						<span >Способ доставки:</span>
 						<span class="order_delivery-choose">
@@ -97,7 +97,7 @@
 					</div>
 					<div class="order_done_message">
 						<h3>Спасибо, ваш заказ принят!</h3>
-						<h3>Его номер : 89944</h3>
+						<h3>Его номер : <span id="order_id_from_db"></span></h3>
 						<p>Ожидайте звонка с 09:00 до 19:00, чтобы подтвердить заявку.  Менеджер уточнит стоимость доставки в связи с тарифами почтовой компании.</p>
 						<a href="<?php echo home_url(); ?>">
 							<button class="btn">На главную</button>

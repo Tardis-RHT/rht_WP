@@ -41,13 +41,15 @@ if($id_to_change){
     changeQuantity($id_to_change, $new_quantity);
 }
 
+// include_once('order-controller.php');
+
 
 function countItems(){
     if (isset($_SESSION['products'])){
         $count = 0;
         $products = $_SESSION['products'];
         foreach($products as $product => $quantity ){ 
-            $count = $count + $quantity;
+            $count += $quantity;
         }
         echo $count;
     } else{
@@ -57,4 +59,6 @@ function countItems(){
 countItems();
 
 // print_r($_SESSION['products']);
+
+session_write_close();
 ?>

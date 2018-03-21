@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<!-- END OF MOBILE MENU -->
-	<!-- <?php print_r($_SESSION['products']); echo $productId?> -->
+
 			<!-- HIDING PART OF MENU -->
 			<div class="header_wrapper_hidebig">
 				<div class="header_wrapper_hidesmall wrapper">

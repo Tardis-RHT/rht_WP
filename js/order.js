@@ -38,7 +38,7 @@ $(document).ready(function(){
         customer['Город'] = orderCity;
 
         if(deliveryMethod == 'order_office'){
-            var orderOfficeNumber = $('#order_post-office_label').val();
+            var orderOfficeNumber = $('#order_post-office_number').val();
 
             customer['Способ доставки'] = 'В отделение';
             customer['Номер отделения'] = orderOfficeNumber;
@@ -100,9 +100,9 @@ $(document).ready(function(){
             order: order
         }
         $.post(templateUrl+'/order-controller.php', params, function(data){
-            console.log(data);
+            $('.shopping-cart_number').html('0');
+            $('#order_id_from_db').html(data);
         })
-        // console.log(params);
     }
 });
 
