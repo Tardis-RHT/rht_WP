@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/lightslider.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/lightgallery.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dropzone.css">
 
 		<?php wp_head(); ?>
 

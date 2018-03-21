@@ -332,6 +332,7 @@ function changeMsg3(){
 	document.getElementById("msgQuontity").innerHTML="до 3 фотографий";
 	document.getElementsByClassName("dz-message")[0].style.opacity = '0.7';	
 }
+
   //END OF DROPZONE
 
   //VALIDATION ON COMMENT PAGE
@@ -391,27 +392,62 @@ function showCommentThanx(){
 	// $('#thankyou-hide').hide(200, 'swing');
 	$('#thankyou-popup').show(450,'swing');
 }
- 
-$('#comment-form').bind('submit',function(e) {
-	e.preventDefault();
-	//here would be code
-	var comment_name = $('#commentName').val();
-	var comment_email = $('#commentEmail').val();
-	var comment_product = $('#commentProducts').val();
-	var comment_message = $('#commentText').val();
-    var params = {
-		name: comment_name,
-		email: comment_email,
-		product: comment_product,
-		message: comment_message, 
+var comment_photo = {};
+var dzClosure;
+
+if($('#comment-form').length > 0){
+	Dropzone.options.myDropzone= {
+		url: templateUrl+'/upload.php',
+		autoProcessQueue: false,
+		uploadMultiple: true,
+		parallelUploads: 3,
+		maxFiles: 3,
+		maxFilesize: 100000,
+		acceptedFiles: 'image/*',
+		addRemoveLinks: true,
+		init: function () {
+			dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
+	
+			// for Dropzone to process the queue (instead of default form behavior):
+			// document.getElementById("comment_btn").addEventListener("click", function(e) {
+			//     e.preventDefault();
+			// //     e.stopPropagation();
+			// // 	dzClosure.processQueue();
+			// });
+			
+			this.on("sendingmultiple", function(data, xhr, formData) {
+				for(var i=0; i<data.length; i++){
+					var newImageName = data[i].name;
+					comment_photo[newImageName] = data[i].dataURL ;
+				}			
+			});    
+		}
 	}
-    $.post(templateUrl+'/comments-controller.php', params, function(data){
-		console.log(data);
-    })
-	// $("#comment-form").trigger('reset'); 
-	//PLEASE DON'T FORGET TO ADD RESET ON 200!!!
-	//ASK ABOUT ADDING ERROR ON 500
-});
+	$('#comment-form').bind('submit',function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		dzClosure.processQueue();
+		var comment_name = $('#commentName').val();
+		var comment_email = $('#commentEmail').val();
+		var comment_product = $('#commentProducts').val();
+		var comment_message = $('#commentText').val();
+		var photos = $('.comment-photo').html();
+		var params = {
+			name: comment_name,
+			email: comment_email,
+			product: comment_product,
+			message: comment_message,
+			photo: comment_photo 
+		}
+		$.post(templateUrl+'/comments-controller.php', params, function(data){
+			// console.log(params);
+			// console.log(data);
+		});
+		$("#comment-form").trigger('reset');
+		console.log(dzClosure);
+	});	
+}
+
   //END OF VALIDATION ON COMMENT PAGE
 
  //CERTIFICATES SCROLL OR CAROUSEL
@@ -589,14 +625,5 @@ $('.shopping-cart_item-single_number').change(function(){
 	countSum();
 })
 
+//uploading comment
 
-
-$('.commentPhoto').change(function(){
-	files = this.files;
-	console.log($('.commentPhoto').val());
-	var data = new FormData();
-    $.each( files, function( key, value ){
-        data.append( key, value );
-	});
-	console.log(data);
-});

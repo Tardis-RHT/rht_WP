@@ -24,7 +24,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('post-thumbnails');
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
-    add_image_size('small', 120, '', true); // Small Thumbnail
+    add_image_size('small', 80, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Localisation Support
@@ -66,6 +66,10 @@ function rht_conditional_scripts()
     wp_deregister_script('jquery');
     wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js','','', true);
     wp_enqueue_script('jquery');
+    wp_register_script('rht_dropzone_script', get_template_directory_uri() . '/js/dropzone.js','','', true);
+    if (is_page_template( 'comment.php' )) {
+        wp_enqueue_script('rht_dropzone_script');
+    }
     wp_register_script('rht_main_script', get_template_directory_uri() . '/js/main.js','','', true);
     wp_enqueue_script('rht_main_script');
 
@@ -167,6 +171,17 @@ function add_user_menu_bubble(){
             }
         }
     }
+}
+
+//receiving image id from its url:
+function get_attachment_id_by_url( $url ) {
+    global $wpdb;
+
+    $table  = $wpdb->prefix . 'posts';
+    $attachment_id = $wpdb->get_var( 
+        $wpdb->prepare( "SELECT ID FROM $table WHERE guid RLIKE %s", $url ) 
+    );
+    return $attachment_id;
 }
 
 /*------------------------------------*\
