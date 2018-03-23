@@ -93,7 +93,7 @@
             }
             wp_reset_postdata();
             ?>
-
+            
             <!-- <div class="catalog-item">
                 <div class="catalog-item-info">
                     <div class="catalog-item-info-top">

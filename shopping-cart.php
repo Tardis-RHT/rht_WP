@@ -76,6 +76,11 @@
 						</li>
 					</ul>
 					<?php endif;?>
+
+					<!-- for economy -->
+					<?php if (get_post_type($product) == 'rht-economy'):?>
+					<p><?php echo get_field( 'title', $product ); ?></p>
+					<?php endif;?>
 				</div>
 				<div class="shopping-cart_item-single_num-container">
 					<form>
@@ -91,6 +96,8 @@
 						$price = get_post_meta( $product, 'price-mini', true );
 					} elseif(strrpos($productData, "?maxi") !== false){
 						$price = get_post_meta( $product, 'price-maxi', true );
+					} elseif(strrpos($productData, "?economy") !== false){
+						$price = explode("?economy=", $productData)[1];
 					} else{
 						$price = get_post_meta( $product, 'price', true );
 					}

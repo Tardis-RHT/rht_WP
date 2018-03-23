@@ -145,6 +145,11 @@
 						<h3><?php echo get_the_title( $product ); ?></h3>
 						<?php endif;?>
 
+					<!-- for economy -->
+						<?php if (get_post_type($product) == 'rht-economy'):?>
+						<h3><?php echo get_field( 'title', $product ); ?></h3>
+						<?php endif;?>
+
 						<div class="order_item_price">
 							<p>
 							<?php 
@@ -154,6 +159,8 @@
 									$price = get_post_meta( $product, 'price-mini', true );
 								} elseif(strrpos($productData, "?maxi") !== false){
 									$price = get_post_meta( $product, 'price-maxi', true );
+								} elseif(strrpos($productData, "?economy") !== false){
+									$price = explode("?economy=", $productData)[1];
 								} else{
 									$price = get_post_meta( $product, 'price', true );
 								}
