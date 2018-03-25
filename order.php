@@ -131,7 +131,7 @@
 					<!-- different name fot each category -->
 					<?php $template = get_page_template_slug($product);
 					//for furniture:
-						if ($template == 'furnitura_set.php'):?>
+						if ($template == 'furnitura-set.php'):?>
 						<h3>Комплект &laquo;<?php echo get_the_title( $product ); ?>&raquo;</h3>
 						<?php endif; ?>
 					
