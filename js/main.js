@@ -555,20 +555,7 @@ $(document).on('click', '.buy', function(){
 		$('.shopping-cart_number').html(data);
 		// console.log(data);
     })
-})
-
-// $(".buy").click(function(){   
-// 	var currentButton = $(this); 
-// 	var productId = currentButton.attr('data-id');
-//     // console.log(productId);
-//     var params = {
-//         id: productId,
-// 	}
-//     $.post(templateUrl+'/cart-controller.php', params, function(data){
-// 		$('.shopping-cart_number').html(data);
-// 		// console.log(data);
-//     })
-// });
+});
 
 function countSum(){
 	if($('.shopping-cart_price-sum').length > 0 || $('.order_price_total').length > 0){
