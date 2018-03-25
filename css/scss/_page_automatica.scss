@@ -247,8 +247,9 @@
     }
 }
 .automatica_set-price{
-    @include text-style_main($weight_normal, $font_black, 46px);
+    @include text-style_main($weight_normal, $button_normal, 46px);
     vertical-align: bottom;
+    font-weight: bold;
     b{
         font-size:  36px;
     }

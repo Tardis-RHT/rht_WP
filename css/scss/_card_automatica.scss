@@ -239,7 +239,7 @@
     padding: 50px 0;
 }
 .economy-title{
-    margin-bottom: 15px;
+    margin-bottom: 60px;
     color: $bg_white;
 }
 .economy-items{
@@ -249,7 +249,6 @@
     align-items: center;
     //mobile
     flex-wrap: wrap;
-    
 }
 .economy-item{
     @include flex;
@@ -287,6 +286,7 @@
     img{
         width: 100%;
         height: auto;
+        max-height: 300px;
         margin-bottom: 30px;
     }
 }
@@ -312,7 +312,7 @@
 .economy-item-title{
     @include text-style_main($weight_normal, $font_white, 22px);
     padding-top: 10px;
-    border-top: 2px solid $font-gray;
+    border-top: 2px solid rgba(120, 120, 123, 0.5);
     //mobile    
     font-size: 14px;
 }
@@ -367,13 +367,14 @@
     .economy_deal{
         // height: 345px;
         // padding: 18px 0 32px;
+        min-width: 222px;
         align-items: center; //?
         button{
             margin-bottom: 34px;
         }
     }
     .economy-prices{
-        margin-bottom: 60px;
+        margin-bottom: 67px;
     }
 }
 

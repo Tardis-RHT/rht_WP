@@ -3958,10 +3958,11 @@ input[type='range']:disabled::-ms-thumb {
   font-family: "MuseoSansCyrl";
   font-weight: 500;
   font-size: 18px;
-  color: #111820;
+  color: #0071ba;
   letter-spacing: 0;
   line-height: 46px;
   vertical-align: bottom;
+  font-weight: bold;
 }
 
 .automatica_set-price b, .catalog-item-price b, .economy-price b {
@@ -4680,7 +4681,7 @@ input[type='range']:disabled::-ms-thumb {
 }
 
 .economy-title {
-  margin-bottom: 15px;
+  margin-bottom: 60px;
   color: white;
 }
 
@@ -4729,6 +4730,7 @@ input[type='range']:disabled::-ms-thumb {
 .economy-item img {
   width: 100%;
   height: auto;
+  max-height: 300px;
   margin-bottom: 30px;
 }
 
@@ -4763,7 +4765,7 @@ input[type='range']:disabled::-ms-thumb {
   letter-spacing: 0;
   line-height: 22px;
   padding-top: 10px;
-  border-top: 2px solid #78787b;
+  border-top: 2px solid rgba(120, 120, 123, 0.5);
   font-size: 14px;
 }
 
@@ -4826,13 +4828,14 @@ input[type='range']:disabled::-ms-thumb {
     max-width: none;
   }
   .economy_deal {
+    min-width: 222px;
     align-items: center;
   }
   .economy_deal button {
     margin-bottom: 34px;
   }
   .economy-prices {
-    margin-bottom: 60px;
+    margin-bottom: 67px;
   }
 }
 
@@ -5829,7 +5832,7 @@ input[type='range']:disabled::-ms-thumb {
 .order_list {
   flex: 1;
   background-color: #f7f7f7;
-  border: solid 1px #78787b;
+  border: solid 1px #dddddd;
   margin-bottom: 20px;
 }
 
