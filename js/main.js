@@ -544,7 +544,7 @@ if($('#automatica-form').length > 0){
 
 //BUY BUTTON
 
-$(".buy").click(function(){   
+$(document).on('click', '.buy', function(){
 	var currentButton = $(this); 
 	var productId = currentButton.attr('data-id');
     // console.log(productId);
