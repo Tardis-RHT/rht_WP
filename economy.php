@@ -19,7 +19,7 @@
 				<img src="<?php echo get_field('img', $economyPoduct1 ); ?>" alt="<?php echo get_the_title( $economyPoduct1 ); ?>">
 				<p class="economy-item-title">
 				<?php 
-					if(get_page_template_slug($economyPoduct1) == 'furnitura-set'){
+					if(get_page_template_slug($economyPoduct1) == 'furnitura_set'){
 						echo 'Комплект' . get_the_title( $economyPoduct1 );
 					} else{
 						echo 'Автоматика "'. strtok(get_the_title( $economyPoduct1 ), " ") .'"';
@@ -32,7 +32,7 @@
 			<img src="<?php echo get_field('img', $economyPoduct2 ); ?>" alt="<?php echo get_the_title( $economyPoduct2 ); ?>">
 				<p class="economy-item-title">
 				<?php 
-					if(get_page_template_slug($economyPoduct2) == 'furnitura-set'){
+					if(get_page_template_slug($economyPoduct2) == 'furnitura_set'){
 						echo 'Комплект' .get_the_title( $economyPoduct2 );
 					} else{
 						echo 'Автоматика "'. strtok(get_the_title( $economyPoduct2 ), " ") .'"';
