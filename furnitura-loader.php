@@ -67,7 +67,7 @@ foreach( $myposts as $post ){ setup_postdata($post);
             </div>
         </div>
         <div class="furnitura_products_img">
-            <img src="<?php the_field('img'); ?>" alt="Фурнитура комплект">
+            <img src="<?php echo get_field('img', $post->ID); ?>" alt="Фурнитура комплект">
         </div>
     </div>
 </div>
