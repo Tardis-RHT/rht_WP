@@ -118,7 +118,7 @@
     // padding-left: 10px; //?
 }
 .inset-order{
-    text-align: right;
+    text-align: left;
     button{
         display: inline;
     }
@@ -157,11 +157,11 @@
     letter-spacing: 0;
 
     &::-moz-placeholder {
-        @include text-style_main($weight_normal, $font_black, 18px);
+        @include text-style_main($weight_normal, $font-gray, 18px);
         opacity: 1;
 	}
 	&::-webkit-input-placeholder {
-        @include text-style_main($weight_normal, $font_black, 18px);
+        @include text-style_main($weight_normal, $font-gray, 18px);
         opacity: 1;
 	}
 }

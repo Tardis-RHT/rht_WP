@@ -4142,6 +4142,10 @@ input[type='range']:disabled::-ms-thumb {
   margin-bottom: 70px;
 }
 
+.page_filenka_slider-container {
+  margin: 0 auto 115px;
+}
+
 .filenka-slide {
   width: 100%;
 }
@@ -4507,7 +4511,7 @@ input[type='range']:disabled::-ms-thumb {
 }
 
 .inset-order {
-  text-align: right;
+  text-align: left;
 }
 
 .inset-order button {
@@ -4566,7 +4570,7 @@ input[type='range']:disabled::-ms-thumb {
   font-family: "MuseoSansCyrl";
   font-weight: 500;
   font-size: 18px;
-  color: #111820;
+  color: #78787b;
   letter-spacing: 0;
   line-height: 18px;
   opacity: 1;
@@ -4576,7 +4580,7 @@ input[type='range']:disabled::-ms-thumb {
   font-family: "MuseoSansCyrl";
   font-weight: 500;
   font-size: 18px;
-  color: #111820;
+  color: #78787b;
   letter-spacing: 0;
   line-height: 18px;
   opacity: 1;
