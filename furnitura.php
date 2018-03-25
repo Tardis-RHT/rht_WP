@@ -190,10 +190,16 @@
 		<h2>Также предлагаем</h2>
 		<div class="offers">
 			<a class="offer-automatica" href="/automatica/">
-				<h3>Автоматика</h3>
+				<div>
+					<h3>Автоматика</h3>
+					<div class="offer_btn">Подробнее</div>
+				</div>
 			</a>
 			<a class="offer-filenka2" href="/panels/">
-				<h3>Металлическая<br>филёнка</h3>
+				<div>
+					<h3>Металлическая<br>филёнка</h3>
+					<div class="offer_btn">Подробнее</div>
+				</div>
 			</a>
 		</div>
 	</section>
