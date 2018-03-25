@@ -475,6 +475,10 @@ a :visited {
   color: inherit;
 }
 
+.breadcrumbs .sep {
+  font-size: 14px;
+}
+
 .edit_icon {
   margin: 0 24px;
 }

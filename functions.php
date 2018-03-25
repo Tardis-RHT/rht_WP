@@ -341,7 +341,7 @@ function dimox_breadcrumbs() {
 
   // $wrap_before = '<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
   // $wrap_after = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
-  $sep = '/'; // разделитель между "крошками"
+  $sep = '<i class="zmdi zmdi-long-arrow-right"></i>'; // разделитель между "крошками"
   $sep_before = '<span class="sep">'; // тег перед разделителем
   $sep_after = '</span>'; // тег после разделителя
   $show_home_link = 1; // 1 - показывать ссылку "Главная", 0 - не показывать
