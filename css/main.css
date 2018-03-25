@@ -717,7 +717,7 @@ a :visited {
     /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
     font-size: 18px;
     font-weight: 500;
-    justify-content: space-between;
+    justify-content: flex-end;
     box-sizing: border-box;
     background-color: #111820;
     color: white;
