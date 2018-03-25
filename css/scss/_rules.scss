@@ -178,6 +178,12 @@ a {
     }
 }
 
+.edit_icon{
+    margin: 0 24px;
+    &:hover{
+        cursor: pointer;
+    }
+}
 // .only_desktop{
 //     display: none;
 //     @media (min-width:769px){

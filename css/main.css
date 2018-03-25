@@ -475,6 +475,14 @@ a :visited {
   color: inherit;
 }
 
+.edit_icon {
+  margin: 0 24px;
+}
+
+.edit_icon:hover {
+  cursor: pointer;
+}
+
 .stickytop {
   position: fixed;
   top: 0;
@@ -5869,8 +5877,15 @@ input[type='range']:disabled::-ms-thumb {
   padding: 30px 0;
 }
 
+.order_edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .order_make_title {
   position: relative;
+  display: inline-block;
   margin-left: 55px;
   font-size: 24px;
   font-weight: 500;

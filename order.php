@@ -65,8 +65,9 @@
 					</div>
 				</li>
 				<li class="order_make_item">
-					<div class="order_make_name">
+					<div class="order_make_name order_edit">
 						<p class="order_make_title order_pay">Выберите способ оплаты</p>
+						<i id="oderEdit" class="zmdi zmdi-edit edit_icon" style="display: none"></i>
 					</div>
 					<ul class="order_payment-list">
 						<li class="order_payment_method">

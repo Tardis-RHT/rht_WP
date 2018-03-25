@@ -85,14 +85,21 @@
     color: $font_black;
 }
 .order_make_name{
+
     box-sizing: border-box;
     background-color: $bg_section;
     width: 100%;
     min-height: 86px;
     padding: 30px 0;
 }
+.order_edit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .order_make_title{
     position: relative;
+    display: inline-block;
     margin-left: 55px;
     font-size: 24px;
     font-weight: $weight_normal;
