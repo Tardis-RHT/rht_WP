@@ -25,7 +25,7 @@
 					<!-- different set fot each category -->
 					<?php $template = get_page_template_slug($product);
 					//for furniture:
-						if ($template == 'furnitura-set.php'):?>
+						if ($template == 'furnitura_set.php'):?>
 						<p>Комплект &laquo;<?php echo get_the_title( $product ); ?>&raquo;</p>
 					<ul>
 						<li>Ширина проема – <b>до <?php the_field('width', $product); ?> м</b></li>

@@ -74,7 +74,7 @@ function rht_conditional_scripts()
     wp_enqueue_script('rht_main_script');
 
     wp_register_script('rht_furnitura_script', get_template_directory_uri() . '/js/furnitura.js','','', true);
-    if (is_page_template( $furnitura ) || (is_page_template( $furnitura-set ))) {
+    if (is_page_template( $furnitura ) || (is_page_template( $furnitura_set ))) {
         wp_enqueue_script('rht_furnitura_script');
     }
 }
