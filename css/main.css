@@ -481,6 +481,7 @@ a :visited {
 
 .edit_icon {
   margin: 0 24px;
+  color: #0071ba;
 }
 
 .edit_icon:hover {
