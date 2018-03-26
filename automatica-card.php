@@ -67,7 +67,7 @@ Post Template Name: Automatica Card
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/products/bitmap1.png" alt="Стальная оцинкованная зубчатая рейка">
                             </div>
                         <p class="inset-item-name">Стальная оцинкованная зубчатая рейка &mdash; 4&nbsp;м</p>
-                        <input type="text" class="item-width" placeholder="Ширина проема ворот" id="automatica-width" oninput="checkInput()">
+                        <input type="number" class="item-width" placeholder="Ширина проема ворот" id="automatica-width" oninput="checkInput()">
                         <i class="zmdi zmdi-help showme"></i>
                         <!-- <div class="automatica_help">
                             <img src="img/adjusting_plate.png" alt="Item of the kit">

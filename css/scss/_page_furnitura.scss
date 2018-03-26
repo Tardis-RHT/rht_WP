@@ -36,9 +36,9 @@
     flex-direction: column;
     align-items: left;
     h3{
-        background-color: rgba(17,24,32,0.5);
-        @media (min-width:1440px){
-        }      
+        // background-color: rgba(17,24,32,0.5);
+        // @media (min-width:1440px){
+        // }      
     }
 }
 .furnitura_h3_product{
@@ -65,7 +65,7 @@
     line-height: 34px;
     margin-bottom: 15px;
     display: inline-block;
-    background-color: rgba(17,24,32,0.1);
+    // background-color: rgba(17,24,32,0.1);
     @media(min-width:769px){
         margin-bottom: 40px;
         font-size: 30px;

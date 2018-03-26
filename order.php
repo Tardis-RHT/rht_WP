@@ -14,8 +14,12 @@
             <ul class="order_make">
 				<li class="order_make_item">
 					<div class="order_make_name">
-						<p class="order_make_title order_delivery">Выберите способ доставки</p>
+						<div class="order_edit">
+							<p class="order_make_title order_delivery">Выберите способ доставки</p>
+							<i id="oderEdit" class="zmdi zmdi-edit edit_icon" style="display: none"></i>
+						</div>
 						<p class="order_make_comment">Стоимость доставки не включена в стоимость и соответствует тарифам компаний.</p>
+						
 					</div>
 					<div class="order_delivery_form">
 						<span>Выберите почтовую компанию</span>
@@ -145,6 +149,11 @@
 						<h3><?php echo get_the_title( $product ); ?></h3>
 						<?php endif;?>
 
+					<!-- for economy -->
+						<?php if (get_post_type($product) == 'rht-economy'):?>
+						<h3><?php echo get_field( 'title', $product ); ?></h3>
+						<?php endif;?>
+
 						<div class="order_item_price">
 							<p>
 							<?php 
@@ -154,6 +163,8 @@
 									$price = get_post_meta( $product, 'price-mini', true );
 								} elseif(strrpos($productData, "?maxi") !== false){
 									$price = get_post_meta( $product, 'price-maxi', true );
+								} elseif(strrpos($productData, "?economy") !== false){
+									$price = explode("?economy=", $productData)[1];
 								} else{
 									$price = get_post_meta( $product, 'price', true );
 								}

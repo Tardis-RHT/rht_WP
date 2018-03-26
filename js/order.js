@@ -59,9 +59,11 @@ $(document).ready(function(){
         $('.order_make_comment').hide('400');
         $('.order_delivery_form').hide('400');
         $('#orderGo').hide('400');
+        $('#oderEdit').show('400');
         $('.order_delivery').css('color', 'rgb(221,221,221)');
         $('.order_pay').css('color', 'rgb(17,24,32)');
     });
+    
     $('.order_payment_method').click(function(){
 
         //RECIEVING INFO ABOUT CUSTOMER
@@ -77,6 +79,21 @@ $(document).ready(function(){
         //SENDING DATA TO CONTROLLER
         sendData();
     });
+
+    // PRESSING EDIT BUTTON ON DELIVERY METHOD
+
+    $('#oderEdit').click(function(){
+        $('#oderEdit').hide('400');
+        $('.order_payment-list').hide('400');
+        $('.order_make_comment').show('400');
+        $('.order_delivery_form').show('400');
+        $('#orderGo').show('400');
+        $('.order_delivery').css('color', 'rgb(221,221,221)');
+        $('.order_pay').css('color', 'rgb(17,24,32)');
+    });
+
+
+
 
     // SHOW HIDE LABELS FOR INPUTS
     $(".order_input").focusin(function(){

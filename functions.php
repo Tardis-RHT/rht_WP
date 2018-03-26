@@ -19,7 +19,7 @@ if (function_exists('add_theme_support'))
 {
     // Add Menu Support
     add_theme_support('menus');
-
+    
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     add_image_size('large', 700, '', true); // Large Thumbnail
@@ -194,6 +194,7 @@ add_action('wp_print_scripts', 'rht_conditional_scripts'); // Add Conditional Pa
 add_action('wp_enqueue_scripts', 'rht_styles'); // Add Theme Stylesheet
 add_action('init', 'register_rht_menu'); // Add rht Blank Menu
 add_action('init', 'create_post_type_comment'); // Add custom post type for comments
+add_action('init', 'create_post_type_economy'); // Add custom post type for comments
 add_action( 'admin_menu', 'remove_menus' ); //Remove comments from admin panel
 add_action( 'admin_menu', 'add_user_menu_bubble' ); //Add bubble for new comments
 
@@ -239,8 +240,6 @@ add_shortcode('rht_shortcode_demo_2', 'rht_shortcode_demo_2'); // Place [rht_sho
 
 function create_post_type_comment()
 {
-    register_taxonomy_for_object_type('category', 'rht'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'rht');
     register_post_type('rht-comment', // Register Custom Post Type
         array(
         'labels' => array(
@@ -257,22 +256,53 @@ function create_post_type_comment()
             'not_found' => __('Комментарии не найдены', 'comments'),
             'not_found_in_trash' => __('Комменатрии не найдены в корзине', 'comments')
         ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
+        'public' => true,        
+        'publicly_queryable' => false,
+        'exclude_from_search' => true,
         'supports' => array(
             'title',
             'editor',
-            'excerpt',
-            'thumbnail',
+            // 'excerpt',
+            // 'thumbnail',
             'custom-fields'
         ), // Go to Dashboard Custom rht Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
         'taxonomies' => array(
-            'post_tag',
-            'category'
         ),
 		'menu_icon' => 'dashicons-admin-comments' 
+    ));
+}
+
+function create_post_type_economy()
+{
+    register_post_type('rht-economy', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Скидки', 'economy'), // Rename these to suit
+            'singular_name' => __('Скидку', 'economy'),
+            'add_new' => __('Добавить новую', 'economy'),
+            'add_new_item' => __('Добавить скидку', 'economy'),
+            'edit' => __('Редактировать', 'economy'),
+            'edit_item' => __('Редактировать скидку', 'economy'),
+            'new_item' => __('Новая скидка', 'economy'),
+            'view' => __('Просмотреть скидку', 'economy'),
+            'view_item' => __('Просмотреть скидку', 'economy'),
+            'search_items' => __('Поиск скидки', 'economy'),
+            'not_found' => __('Скидки не найдены', 'economy'),
+            'not_found_in_trash' => __('Скидки не найдены в корзине', 'economy')
+        ),
+        'public' => true,
+        'publicly_queryable' => false,
+        'exclude_from_search' => true,
+        'menu_position' => 21,
+        'supports' => array(
+            'title',
+            // 'editor'
+        ), // Go to Dashboard Custom rht Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+        ),
+		'menu_icon' => 'dashicons-cart' 
     ));
 }
 /*------------------------------------*\
@@ -311,7 +341,7 @@ function dimox_breadcrumbs() {
 
   // $wrap_before = '<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
   // $wrap_after = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
-  $sep = '/'; // разделитель между "крошками"
+  $sep = '<i class="zmdi zmdi-long-arrow-right"></i>'; // разделитель между "крошками"
   $sep_before = '<span class="sep">'; // тег перед разделителем
   $sep_after = '</span>'; // тег после разделителя
   $show_home_link = 1; // 1 - показывать ссылку "Главная", 0 - не показывать
@@ -663,6 +693,88 @@ if(function_exists("register_field_group"))
 		'options' => array (
 			'position' => 'normal',
 			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+    ));
+    register_field_group(array (
+		'id' => 'acf_economy',
+		'title' => 'Economy',
+		'fields' => array (
+            array (
+				'key' => 'field_5ab5899d9cc4e',
+				'label' => 'Название для корзины',
+				'name' => 'title',
+				'type' => 'text',
+				'default_value' => 'Акционный комплект',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5ab422903d72a',
+				'label' => 'Входят в набор',
+				'name' => 'economy_ids',
+				'type' => 'relationship',
+				'instructions' => 'Выберите товары, входящие в акционный набор',
+				'required' => 1,
+				'return_format' => 'id',
+				'post_type' => array (
+					0 => 'page',
+				),
+				'taxonomy' => array (
+					0 => 'all',
+				),
+				'filters' => array (
+					0 => 'search',
+				),
+				'result_elements' => array (
+					0 => 'featured_image',
+					1 => 'post_type',
+					2 => 'post_title',
+				),
+				'max' => 2,
+			),
+			array (
+				'key' => 'field_5ab425d03d72b',
+				'label' => 'Скидка',
+				'name' => 'discount',
+				'type' => 'number',
+				'default_value' => 10,
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '%',
+				'min' => 0,
+				'max' => 100,
+				'step' => '',
+            ),
+            array (
+				'key' => 'field_5ab58a3af2c7a',
+				'label' => 'Изображение для козрины',
+				'name' => 'img',
+				'type' => 'image',
+				'save_format' => 'url',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'rht-economy',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
 			'hide_on_screen' => array (
 			),
 		),

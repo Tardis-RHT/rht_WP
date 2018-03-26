@@ -38,7 +38,7 @@
     font-weight: $weight_bold;
     font-size: 24px;
     line-height: 34px;
-    background-color: rgba(17,24,32,.2);
+    // background-color: rgba(17,24,32,.2);
     @media(min-width:769px){
         font-size: 30px;
         line-height: 30px;
@@ -116,7 +116,7 @@
     padding: 10px 0;
     @media (min-width:769px){
         margin-bottom: 50px;
-        height: 650px;
+        min-height: 650px;
         padding: 0;
     }
 }
@@ -130,15 +130,17 @@
     // z-index: -2;
     img{
         position: absolute;
-        z-index: 2;
-        max-width: 100%;
+        // z-index: 2;
+        // max-width: 100%;
+        width: auto;
+        height: 100%;
         bottom: 0;
-        left: 60%;
-        opacity: .5;
+        // left: 60%;
+        opacity: .2;
         @media (min-width:480px){
             max-width: 80%;
-            left: 50%;
-            opacity: .9;
+            // left: 50%;
+            // opacity: .9;
         }
         @media (min-width:769px){
             position: static;
@@ -176,7 +178,7 @@
 }
 .automatica_set-capture{
     position: relative;
-    z-index: 2;
+    z-index: 5;
 }
 .automatica_set-capture > .main_products-category{
     color: $font_black;
@@ -245,8 +247,9 @@
     }
 }
 .automatica_set-price{
-    @include text-style_main($weight_normal, $font_black, 46px);
+    @include text-style_main($weight_normal, $button_normal, 46px);
     vertical-align: bottom;
+    font-weight: bold;
     b{
         font-size:  36px;
     }
@@ -288,8 +291,6 @@
     margin-bottom: 45px;
 }
 
-
-
 .offers > a{
     font-weight: $weight_bold;
     font-size: 24px;
@@ -297,7 +298,6 @@
     margin-bottom: 15px;
     // display: inline-block;
     background-color: rgba(17,24,32,.3);
-    
     display: block;
     width: calc(100% + 30px);
     // padding: 50px;
@@ -310,12 +310,34 @@
     justify-content: center;
     cursor: pointer;
     text-align: center;
-
     margin-left: -15px;
     margin-right: -15px;
+    transition: all 0.3s;
+    &:hover{
+        transition: all 0.3s;
+        .offer_btn{
+            transition: all 0.3s;
+            display: block;
+        }
+    }
     h3{
-        background-color: rgba(17,24,32,.2);
-        text-align: left;       
+        // background-color: rgba(17,24,32,.2);
+        text-align: left;
+        transition: all 0.3s;  
+    }
+    .offer_btn{
+        display: none;
+        margin-top: 20px;
+        @include text-style_main($weight_bold, $button_normal, 22px);
+        padding: 10px 30px;
+        cursor: pointer;
+        text-decoration: none;
+        background-color: transparent;
+        border: 1px solid $button_normal;
+        position: relative;
+        transition: all 0.3s;
+        @include transition(background-color);
+        outline: none;
     }
     @media(min-width:480px){
         justify-content: flex-start;
@@ -332,9 +354,10 @@
         // margin-bottom: 50px;
         font-size: 36px;
         line-height: 46px;
-        width: calc(50% - 35px);
+        width: calc(50% - 30px);
         margin: 0;
     }
+
 
     // margin-bottom: 15px;
     // padding: 10px 10px;

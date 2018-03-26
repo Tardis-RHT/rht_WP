@@ -52,7 +52,7 @@ $(document).ready(function() {
     $('#fur_submit').removeAttr('disabled');
     // console.log( this.value );
   })
-  $('#fur_submit').click(function() {
+  $('#fur_submit').click(function(event) {
     event.preventDefault();
     // console.log($('#fur_material').val(), $('#fur_height').val(), $('#fur_width').val());
     var map = {};
@@ -60,6 +60,15 @@ $(document).ready(function() {
         map[$(this).attr("name")] = $(this).val();
     });
     console.log(map);
+    var params = {
+      options: map,
+    } 
+    $.post(templateUrl+'/furnitura-loader.php', params, function(data){
+      $('.furnitura_products_wrapper').each(function(){
+        $(this).remove();
+      });
+      $('.furnitura_products').prepend(data);
+    });
     // console.log(JSON.stringify(map));
 
 

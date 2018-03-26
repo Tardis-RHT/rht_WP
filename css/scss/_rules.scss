@@ -176,8 +176,18 @@ a {
     a{
         color: inherit;
     }
+    .sep{
+        font-size: 14px;
+    }
 }
 
+.edit_icon{
+    margin: 0 24px;
+    color: $button_normal;
+    &:hover{
+        cursor: pointer;
+    }
+}
 // .only_desktop{
 //     display: none;
 //     @media (min-width:769px){

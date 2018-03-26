@@ -93,7 +93,7 @@
             }
             wp_reset_postdata();
             ?>
-
+            
             <!-- <div class="catalog-item">
                 <div class="catalog-item-info">
                     <div class="catalog-item-info-top">
@@ -163,10 +163,17 @@
         <h2 class="automatica_offers-title">Также предлагаем</h2>
         <div class="offers">
             <a class="offer-furnitura" href="/furnitura/">
-                <h3>Фурнитура</h3>
+                <div>
+                    <h3>Фурнитура</h3>
+                    <div class="offer_btn">Подробнее</div>
+                </div>
+                
             </a>
             <a class="offer-automatica" href="/automatica/">
-                <h3>Автоматика</h3>
+                <div>
+                    <h3>Автоматика</h3>
+                    <div class="offer_btn">Подробнее</div>
+                </div> 
             </a>
         </div>
     </section>

@@ -165,7 +165,7 @@
 					</ul>
 					<p class="furnitura_chars_price"><?php the_field('price'); ?> <span class="furnitura_hrn">грн</span></p>
 					<div class="furnitura_chars_buttons">
-						<a class="ghost_link" href="furnitura_set.html">Подробнее ></a>
+						<a class="ghost_link" href="furnitura-set.html">Подробнее ></a>
 						<button class="btn buy" data-id="<?php echo $post->ID?>">Добавить в корзину</button>
 						<button class="ghost_btn" onClick='location.href="<?php echo get_permalink();?>"'>Подробнее</button>
 					</div>
@@ -190,10 +190,16 @@
 		<h2>Также предлагаем</h2>
 		<div class="offers">
 			<a class="offer-automatica" href="/automatica/">
-				<h3>Автоматика</h3>
+				<div>
+					<h3>Автоматика</h3>
+					<div class="offer_btn">Подробнее</div>
+				</div>
 			</a>
 			<a class="offer-filenka2" href="/panels/">
-				<h3>Металлическая<br>филёнка</h3>
+				<div>
+					<h3>Металлическая<br>филёнка</h3>
+					<div class="offer_btn">Подробнее</div>
+				</div>
 			</a>
 		</div>
 	</section>
