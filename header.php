@@ -26,7 +26,7 @@
 				<div class="header_mobile_burger"><i id='burger' class="zmdi zmdi-menu zmdi-hc-2x"></i>
 				</div>
 				<a class="header_mobile_logo" href="<?php echo home_url(); ?>">RHT</a>
-				<a href="/shopping-cart/" class="header_mobile_cart">
+				<button onClick="location.href='/shopping-cart/'" class="header_mobile_cart" disabled>
 					<i class="zmdi zmdi-shopping-cart icon_cart"></i>
 					<div class="shopping-cart_number">
 						<?php countItems(); ?>
@@ -75,15 +75,15 @@
 							<button class="header_cart_call-button" onclick="superPopup()">Перезвоните мне</button>
 							<span class="header_cart_call-tel">Или звоните <a href="tel:<?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>"><?php echo get_theme_mod('contacts_tel', '800 210 257'); ?></a></span>
 						</div>
-						<a href="/shopping-cart/">
-							<button class="header_cart_buy">
+						<button onClick="location.href='/shopping-cart/'" class="header_cart-btn" disabled>
+							<span class="header_cart_buy">
 								<i class="zmdi zmdi-shopping-cart icon_cart"></i>
 								<div class="shopping-cart_number">
 									<?php countItems(); ?>
 								</div>
 								<span class="header_cart_bye-text">Корзина</span>
-							</button>
-						</a>
+							</span>
+						</button>
 					</div>
 				</div>
 			</div>

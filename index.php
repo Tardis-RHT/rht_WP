@@ -37,7 +37,7 @@
 	</section>
 
 	<section class="main_benefits" id="benefits">
-			<ul class="main_benefits_container">
+		<ul class="main_benefits_container">
 			<li class="main_benefits_single">
 				<img class="main_benefits_icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/production.svg" alt="Own production">
 				<h3>Собственное производство</h3>
