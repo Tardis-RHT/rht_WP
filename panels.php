@@ -177,7 +177,11 @@
             </a>
         </div>
     </section>
-    <?php get_template_part('callback'); ?>
+    <?php 
+		global $showOnlyModal;
+		$showOnlyModal = false; 
+		get_template_part('callback'); 
+	?>
 	</main>
 
 

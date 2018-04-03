@@ -16,6 +16,9 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dropzone.css">
 
 		<?php wp_head(); ?>
+		<?php global $showOnlyModal;
+		$showOnlyModal = true; 
+		?>
 
 	</head>
 	<body>

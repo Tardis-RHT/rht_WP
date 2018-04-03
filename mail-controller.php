@@ -3,6 +3,11 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
 
 $phoneNumpber = $_POST['phoneNumber'];
 $currentPage = $_POST['currentPage'];
+if ($currentPage == '/'){
+    $currentPage = 'main';
+} else{
+    $currentPage = str_replace('/', '', $currentPage); 
+}
 date_default_timezone_set('Europe/Kiev'); 
 $curDate = date("d/m/Y") . ' в ' . date("G:i");
 
@@ -46,13 +51,13 @@ $message = "
 </table>
 <br/>
 -- 
-This e-mail was sent from a callback form on the page {$currentPage}
+This e-mail was sent from a callback form on the {$currentPage} page
 ";
 
 // remove_all_filters( 'wp_mail_from' );
 // remove_all_filters( 'wp_mail_from_name' );
 
-$to = 'coolahhy@gmail.com';
+$to = get_theme_mod('contacts_email_to_mail', 'coolahhy@gmail.com');
 $subject = 'Callback request';
 $headers = array(
 	'From: RHT-Site <me@example.net>',

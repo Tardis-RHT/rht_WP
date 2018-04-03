@@ -33,7 +33,7 @@ $args = array('posts_per_page' => -1,
         array(
 			'key'	  	=> 'matherial',
 			'value'	  	=> $material,
-			'compare' 	=> '=',
+			'compare' 	=> 'LIKE',
 		),
     ), 
 );

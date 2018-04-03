@@ -163,7 +163,11 @@
 
 	<?php get_template_part('feedback'); ?>
 
-	<?php get_template_part('callback'); ?>
+	<?php 
+		global $showOnlyModal;
+		$showOnlyModal = false; 
+		get_template_part('callback'); 
+	?>
 	</main>
 
 

@@ -102,5 +102,6 @@ Post Template Name: Furnitura Set
 	</section>
 
 	<?php get_template_part('economy'); ?>
+
 </main>
 <?php get_footer(); ?>

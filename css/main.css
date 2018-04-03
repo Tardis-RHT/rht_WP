@@ -5119,6 +5119,10 @@ input[type='range']:disabled::-ms-thumb {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .modal {
   position: fixed;
   z-index: 120;

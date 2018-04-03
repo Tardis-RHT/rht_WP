@@ -287,10 +287,14 @@ function superPopup(){
 	$('#overlay')
 		.addClass('modal-overlay');
 	$('#popup-callback-start')
+		.removeClass('hidden')
 		.addClass('modal');
 	$('#callback-popup')
 		.addClass('modal-answer');
 	$('#modal-close').click(function(){
+		hideModal()
+	});
+	$('#overlay').click(function(){
 		hideModal()
 	});
 	$('body')
@@ -299,6 +303,9 @@ function superPopup(){
 function hideModal(){
 	$('#popup-callback-start')
 		.removeClass('modal');
+		if($('#popup-callback-start').hasClass('showAlways') == false){
+			$('#popup-callback-start').addClass('hidden');
+		}
 	$('#callback-popup')
 		.removeClass('modal-answer');
 	$('#overlay')
