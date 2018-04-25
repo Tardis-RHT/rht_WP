@@ -64,10 +64,66 @@ $heavy_arr = array ();
         4 => 0
     );
 
+$light_arr = array ();
+    $light_arr[3.6] = array (
+        2 => 277,
+        2.5 => 277,
+        3 => 0,
+        3.5 => 0,
+        4 => 0
+    );
+    $light_arr[4.3] = array (
+        2 => 279,
+        2.5 => 279,
+        3 => 279,
+        3.5 => 279,
+        4 => 279
+    );
+    $light_arr[5] = array (
+        2 => 283,
+        2.5 => 283,
+        3 => 283,
+        3.5 => 283,
+        4 => 292
+    );
+    $light_arr[5.7] = array (
+        2 => 286,
+        2.5 => 286,
+        3 => 286,
+        3.5 => 293,
+        4 => 293
+    );
+    $light_arr[6.4] = array (
+        2 => 278,
+        2.5 => 287,
+        3 => 294,
+        3.5 => 297,
+        4 => 295
+    );
+    $light_arr[7.1] = array (
+        2 => 296,
+        2.5 => 296,
+        3 => 296,
+        3.5 => 298,
+        4 => 0
+    );
+    $light_arr[7.8] = array (
+        2 => 297,
+        2.5 => 297,
+        3 => 298,
+        3.5 => 0,
+        4 => 0
+    );
+    $light_arr[8.5] = array (
+        2 => 298,
+        2.5 => 298,
+        3 => 0,
+        3.5 => 0,
+        4 => 0
+    );
 
 
-
-    function convW4arr ($w) {
+function convW4arr ($w) {
     if ($w <= 3.6) {
         $w = 3.6;
     } else
@@ -125,14 +181,18 @@ function convH4arr ($h) {
 
 // function getHeavy ($w, $h) {
 //     return $heavy_arr[convW4arr($w)][convH4arr($h)];
-    
 // }
+
 $w2 = convW4arr($width);
 $h2 = convH4arr($height);
 
-$komplektID = $heavy_arr[$w2][$h2];
-// print_r($komplektID);
+if ($material == 'light'){
+    $komplektID = $light_arr[$w2][$h2];
+} else {
+    $komplektID = $heavy_arr[$w2][$h2];
+}
 
+print_r($material);
 
 global $post;
 $pages = get_pages(array(
