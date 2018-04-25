@@ -14,7 +14,8 @@ jQuery(function($){
 				if( data ) { 
 					$('#true_loadmore').text('Загрузить больше').before(data); // вставляем новые посты
 					current_page++; // увеличиваем номер страницы на единицу
-					if (current_page == max_pages) $("#true_loadmore").remove(); // если последняя страница, удаляем кнопку
+					var counter = $('.furnitura_products_single').length;
+					if (counter == max_pages) $("#true_loadmore").remove(); // если последняя страница, удаляем кнопку
 				} else {
 					$('#true_loadmore').remove(); // если мы дошли до последней страницы постов, скроем кнопку
 				}

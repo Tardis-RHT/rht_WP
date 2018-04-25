@@ -152,13 +152,17 @@
             ?>
 		<!-- END OF THE SET BLOCK -->
 		<div class="furnitura_products_end">
+			<?php
+				$pages = get_pages( array( 'child_of' => $post->ID));
+				$count_pages = count($pages);
+			?>
 				<script>
-				var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-				var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
-				var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
-				var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+					var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+					var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+					var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+					var max_pages = '<?php echo $count_pages ?>';
 				</script>
-				<button id="true_loadmore" class="misha_loadmore furnitura_products_more ghost_btn">Загрузить больше</button>
+				<button id="true_loadmore" class="furnitura_products_more ghost_btn">Загрузить больше</button>
 		</div>
 	</section>
 
