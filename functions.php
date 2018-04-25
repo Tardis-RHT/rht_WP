@@ -782,4 +782,41 @@ if(function_exists("register_field_group"))
 	));
 }
 
+function true_loadmore_scripts() {
+ 	wp_enqueue_script( 'true_loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'true_loadmore_scripts' );
+
+
+function true_load_posts(){
+ 
+	// $args = unserialize( stripslashes( $_POST['query'] ) );
+	$args['paged'] = $_POST['page'] + 1; // следующая страница
+    // $args['post_status'] = 'publish';
+    $args['posts_per_page'] = 4;
+    $args['post_parent'] = 63;
+    $args['post_type'] = 'page';
+    $args['order'] = 'ASC';
+
+	// обычно лучше использовать WP_Query, но не здесь
+	query_posts( $args );
+	// если посты есть
+	if( have_posts() ) :
+ 
+		// запускаем цикл
+		while( have_posts() ): the_post();
+ 
+        get_template_part('furnitura-short');
+ 
+		endwhile;
+ 
+	endif;
+	die();
+}
+ 
+ 
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
+
 ?>

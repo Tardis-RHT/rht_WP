@@ -103,13 +103,13 @@
 						</div> -->
 						<select id="fur_material" class="dropbtn js-array" name="material" required>
 							<option selected="selected" disabled="disabled">Выберите материал</option>
-							<option value="Профнастил">Профнастил</option>
-							<option value="Легкая ковка">Легкая ковка</option>
-							<option value="Легкие породы дерева">Легкие породы дерева</option>
-							<option value="Другая легкая зашивка">Другая легкая зашивка</option>
-							<option value="Металлическая филенка">Металлическая филенка</option>
-							<option value="Массивная ковка">Массивная ковка</option>
-							<option value="Другая тяжелая зашивка">Другая тяжелая зашивка</option>
+							<option value="light">Профнастил</option>
+							<option value="light">Легкая ковка</option>
+							<option value="light">Легкие породы дерева</option>
+							<option value="light">Другая легкая зашивка</option>
+							<option value="heavy">Металлическая филенка</option>
+							<option value="heavy">Массивная ковка</option>
+							<option value="heavy">Другая тяжелая зашивка</option>
 						</select>
 					</div>
 				</div>
@@ -138,50 +138,28 @@
 		<!-- START OF THE SET BLOCK -->
 		<?php
             global $post;
-			$args = array('posts_per_page' => -1,
+			$args = array('posts_per_page' => 4,
 				'post_type' => 'page',
 				'order' => 'ASC',
 				'post_parent' => $post->ID );
             $myposts = get_posts( $args );
             foreach( $myposts as $post ){ setup_postdata($post);
-                ?>
-		<div class="furnitura_products_wrapper">
-			<div class="furnitura_products_single wrapper">
-				<div class="furnitura_products_chars">
-					<h3 class="furnitura_chars_set dots">Комплект</h3>
-					<h3 class="furnitura_chars_title"><?php the_title() ?></h3>
-					<ul class="furnitura_chars_main">
-						<li class="furnitura_chars_main-width">Ширина проема — <b>до <?php the_field('width'); ?> м</b></li>
-						<li class="furnitura_chars_main-weight">Вес ворот — <b>до <?php the_field('weight'); ?> кг</b></li>
-					</ul>
-					<ul class="furnitura_chars_additional">
-						<li>Направляющий профиль <span><?php the_field('profil'); ?></span></li>
-						<li>Верхний ограничитель — <span><?php the_field('limiter'); ?></span> шт</li>
-						<li>Роликовая опора <span><?php the_field('pillar'); ?></span> шт</li>
-						<li>Нижний улавливатель — 1 шт</li>
-						<li>Верхний улавливатель — 1 шт</li>
-						<li>Накатной ролик — 1 шт</li>
-						<li>Заглушка — 1 шт</li>
-					</ul>
-					<p class="furnitura_chars_price"><?php the_field('price'); ?> <span class="furnitura_hrn">грн</span></p>
-					<div class="furnitura_chars_buttons">
-						<a class="ghost_link" href="furnitura-set.html">Подробнее ></a>
-						<button class="btn buy" data-id="<?php echo $post->ID?>">Добавить в корзину</button>
-						<button class="ghost_btn" onClick='location.href="<?php echo get_permalink();?>"'>Подробнее</button>
-					</div>
-				</div>
-				<div class="furnitura_products_img">
-					<img class="" src="<?php the_field('img'); ?>" alt="Фурнитура комплект">
-				</div>
-			</div>
-		</div>
+                
+			get_template_part('furnitura-short');
 
-		<?php
             }
             wp_reset_postdata();
             ?>
 		<!-- END OF THE SET BLOCK -->
-		<div class="furnitura_products_end"><button class="furnitura_products_more ghost_btn">Загрузить больше</button></div>
+		<div class="furnitura_products_end">
+				<script>
+				var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+				var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+				var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+				var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+				</script>
+				<button id="true_loadmore" class="misha_loadmore furnitura_products_more ghost_btn">Загрузить больше</button>
+		</div>
 	</section>
 
 	<?php get_template_part('feedback'); ?>
