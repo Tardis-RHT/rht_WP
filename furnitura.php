@@ -151,6 +151,7 @@
             wp_reset_postdata();
             ?>
 		<!-- END OF THE SET BLOCK -->
+		
 		<div class="furnitura_products_end">
 			<?php
 				$pages = get_pages( array( 'child_of' => $post->ID));
@@ -158,7 +159,7 @@
 			?>
 				<script>
 					var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-					var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+					// var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
 					var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
 					var max_pages = '<?php echo $count_pages ?>';
 				</script>
