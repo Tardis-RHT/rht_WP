@@ -3,7 +3,7 @@ jQuery(function($){
 		$(this).text('Загружаю...'); // изменяем текст кнопки, вы также можете добавить прелоадер
 		var data = {
 			'action': 'loadmore',
-			'query': true_posts,
+			// 'query': true_posts,
 			'page' : current_page
 		};
 		$.ajax({
