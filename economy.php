@@ -22,7 +22,7 @@
 					if(get_page_template_slug($economyPoduct1) == 'furnitura-set'){
 						echo 'Комплект' . get_the_title( $economyPoduct1 );
 					} else{
-						echo 'Автоматика "'. strtok(get_the_title( $economyPoduct1 ), " ") .'"';
+						echo 'Автоматика '. strtok(get_the_title( $economyPoduct1 ), " ");
 					}
 				?>
 				</p>

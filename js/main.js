@@ -565,7 +565,9 @@ $(document).on('click', '.buy', function(){
 		$('.shopping-cart_number').html(data);
 		checkCart();
 		// console.log(data);
-    })
+	})
+	
+	$('#product-to-cart').fadeIn("slow").delay(1500).fadeOut("slow");
 });
 
 function countSum(){

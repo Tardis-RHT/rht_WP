@@ -23,6 +23,14 @@
 				// unset($showOnlyModal);
 			}
 		?>
+		
+		<div class="add-to-cart hidden" id="product-to-cart">
+			<div class="add-to-cart-plate">
+				<p class="add-to-cart-text">Товар добавлен в корзину</p>
+				<i class="add-to-cart-symb zmdi zmdi-check"></i>
+			</div>
+		</div>
+
 	<script>
 		var templateUrl = '<?php echo get_template_directory_uri() ?>';
 	</script>

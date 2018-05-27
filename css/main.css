@@ -1087,6 +1087,7 @@ a :visited {
   position: absolute;
   left: calc(50% - 15px);
   bottom: 45px;
+  z-index: 2000;
   color: rgba(255, 255, 255, 0.5);
   border-radius: 40px;
   padding: 8px 8px 20px;
@@ -2111,7 +2112,8 @@ footer {
 
 .footer_copyright {
   font-family: "MuseoSansCyrl";
-  font-weight: 500;
+  font-weight: 400;
+  opacity: .5;
   font-size: 18px;
   color: #78787b;
 }
@@ -2130,6 +2132,62 @@ footer {
   .footer_copyright {
     text-align: left;
   }
+}
+
+.add-to-cart {
+  position: fixed;
+  top: calc(50% - 60px);
+  left: calc(50% - 143px);
+  z-index: 2000;
+  width: 286px;
+  height: 120px;
+  background-color: white;
+  border: 1px solid #0071ba;
+}
+
+.add-to-cart-plate {
+  padding: 20px 30px;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  /* Safari 3.1 - 6, Chrome < 21 (2009 Spec), UC Browser Android */
+  display: -moz-box;
+  /* Firefox 2 - 27 (2009 Spec), UC Mini */
+  display: -ms-flexbox;
+  /* IE10 (2012 Syntax) */
+  display: -webkit-flex;
+  /* Safari 6.1 - 8, Android < 4.4, BB < 10, Chrome 21 - 28 */
+  display: flex;
+  /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-to-cart-plate .add-to-cart-text {
+  font-size: 18px;
+  color: #0d223f;
+  line-height: 23px;
+}
+
+.add-to-cart-plate .add-to-cart-symb {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 1px solid #0071ba;
+  display: -webkit-box;
+  /* Safari 3.1 - 6, Chrome < 21 (2009 Spec), UC Browser Android */
+  display: -moz-box;
+  /* Firefox 2 - 27 (2009 Spec), UC Mini */
+  display: -ms-flexbox;
+  /* IE10 (2012 Syntax) */
+  display: -webkit-flex;
+  /* Safari 6.1 - 8, Android < 4.4, BB < 10, Chrome 21 - 28 */
+  display: flex;
+  /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
+  justify-content: center;
+  align-items: center;
+  color: #0071ba;
 }
 
 .furnitura_title, .filenka_title {
@@ -4268,6 +4326,13 @@ input[type='range']:disabled::-ms-thumb {
 }
 
 @media (min-width: 720px) {
+  .catalog-item img {
+    margin-right: -40px;
+    margin-bottom: -40px;
+  }
+}
+
+@media (min-width: 720px) {
   .catalog-item {
     padding: 40px;
   }
@@ -4721,7 +4786,8 @@ input[type='range']:disabled::-ms-thumb {
 }
 
 .economy {
-  background-color: #111820;
+  background-color: #0a1a30;
+  background-image: url(../img/bg_dark@1x.png);
   color: white;
   padding: 50px 0;
 }
