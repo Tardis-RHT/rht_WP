@@ -74,7 +74,7 @@ function rht_conditional_scripts()
     wp_enqueue_script('rht_main_script');
 
     wp_register_script('rht_furnitura_script', get_template_directory_uri() . '/js/furnitura.js','','', true);
-    if (is_page_template( $furnitura ) || (is_page_template( $furnitura-set ))) {
+    if (is_page_template( $furnitura ) || (is_page_template( $set ))) {
         wp_enqueue_script('rht_furnitura_script');
     }
 }
@@ -781,5 +781,42 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+function true_loadmore_scripts() {
+ 	wp_enqueue_script( 'true_loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'true_loadmore_scripts' );
+
+
+function true_load_posts(){
+ 
+	// $args = unserialize( stripslashes( $_POST['query'] ) );
+	$args['paged'] = $_POST['page'] + 1; // следующая страница
+    // $args['post_status'] = 'publish';
+    $args['posts_per_page'] = 4;
+    $args['post_parent'] = 63;
+    $args['post_type'] = 'page';
+    $args['order'] = 'ASC';
+
+	// обычно лучше использовать WP_Query, но не здесь
+	query_posts( $args );
+	// если посты есть
+	if( have_posts() ) :
+ 
+		// запускаем цикл
+		while( have_posts() ): the_post();
+ 
+        get_template_part('furnitura-short');
+ 
+		endwhile;
+ 
+	endif;
+	die();
+}
+ 
+ 
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 
 ?>
