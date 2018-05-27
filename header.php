@@ -16,6 +16,9 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dropzone.css">
 
 		<?php wp_head(); ?>
+		<?php global $showOnlyModal;
+		$showOnlyModal = true; 
+		?>
 
 	</head>
 	<body>
@@ -26,7 +29,7 @@
 				<div class="header_mobile_burger"><i id='burger' class="zmdi zmdi-menu zmdi-hc-2x"></i>
 				</div>
 				<a class="header_mobile_logo" href="<?php echo home_url(); ?>">RHT</a>
-				<a href="/shopping-cart/" class="header_mobile_cart">
+				<button onClick="location.href='/shopping-cart/'" class="header_mobile_cart" disabled>
 					<i class="zmdi zmdi-shopping-cart icon_cart"></i>
 					<div class="shopping-cart_number">
 						<?php countItems(); ?>
@@ -74,15 +77,15 @@
 						<div class="header_cart_call invisible">
 							<button class="header_cart_call-button" onclick="superPopup()">Перезвоните мне</button>
 						</div>
-						<a href="/shopping-cart/">
-							<button class="header_cart_buy">
+						<button onClick="location.href='/shopping-cart/'" class="header_cart-btn" disabled>
+							<span class="header_cart_buy">
 								<i class="zmdi zmdi-shopping-cart icon_cart"></i>
 								<div class="shopping-cart_number">
 									<?php countItems(); ?>
 								</div>
 								<span class="header_cart_bye-text">Корзина</span>
-							</button>
-						</a>
+							</span>
+						</button>
 					</div>
 				</div>
 			</div>

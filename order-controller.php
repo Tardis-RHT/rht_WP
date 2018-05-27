@@ -11,7 +11,13 @@ if($customerInfo && $orderInfo):
 
     foreach($customerInfo as $key => $value ){
         $customerInfoToDB .= $key . ': ' . $value . "\r\n";
+        $customerInfoToEmail .= "<tr>
+            <td style=\"padding: 0 10px;\"><p>$key</p></td>
+            <td style=\"padding: 0 10px;\"><p>$value</p></td>
+        </tr>";
     }
+
+    
 
     
     $product_count = 1;
@@ -19,6 +25,10 @@ if($customerInfo && $orderInfo):
         $orderInfoToDB .= $product_count . '. ';
         foreach($orderProducts as $key => $value ){
             $orderInfoToDB .= $key . ': ' . $value . "\r\n";
+            $orderInfoToEmail .= "<tr>
+                <td style=\"padding: 0 10px;\"><p>$key</p></td>
+                <td style=\"padding: 0 10px;\"><p>$value</p></td>
+            </tr>";
         }
         $product_count++;
     }
@@ -52,6 +62,84 @@ echo $orderID;
 
 mysqli_close($link);
 
+
+//SEND EMAIL
+date_default_timezone_set('Europe/Kiev'); 
+$curDate = date("d/m/Y") . ' в ' . date("G:i");
+
+$message = "
+<table cellspacing=\"0\" cellpadding=\"0\">
+    <tbody>
+    <tr>
+        <td>
+            <table width=\"360px\" cellspacing=\"1\" cellpadding=\"0\" border=\"2\">
+                <tbody>
+                    <tr>
+                        <td style=\"background-color: #0071ba; padding: 10px; text-align: center;\" colspan=\"2\">
+                            <strong>
+                                <span style=\"color: #fff; text-align: center;\">
+                                    Заказ с сайта
+                                </span>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=\"padding: 10px; text-align: center;\" colspan=\"2\">
+                            <strong>
+                                <span style=\"color: #000; text-align: center;\">
+                                    Заказ
+                                </span>
+                            </strong>
+                        </td>
+                    </tr>
+                    {$orderInfoToEmail}
+                    <tr>
+                        <td style=\"padding: 10px; text-align: center;\" colspan=\"2\">
+                            <strong>
+                                <span style=\"color: #000; text-align: center;\">
+                                    Данные о покупателе
+                                </span>
+                            </strong>
+                        </td>
+                    </tr>
+                    {$customerInfoToEmail}
+                    <tr>
+                        <td style=\"background: #e0e0e0; padding: 0 10px;\">
+                            <p style=\"text-align: left;\">Дата и время заказа</p>
+                        </td>
+                        <td style=\"background: #e0e0e0; padding: 0 10px;\">
+                            <p style=\"text-align: left;\">{$curDate}</p>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+-- 
+This e-mail was sent from RHT shopping cart
+";
+
+$to = get_theme_mod('contacts_email_to_mail', 'coolahhy@gmail.com');
+$subject = 'RHT order';
+$from = get_option( 'admin_email' );
+
+$headers = array(
+	'From: RHT-Site <support@digvice.kl.com.ua>',
+	'content-type: text/html'
+);
+
+//For later use
+// $headers = array(
+// 	'From: RHT-Site <'.$from.'>',
+// 	'content-type: text/html'
+// );
+
+wp_mail( $to, $subject, $message, $headers );
+
+//FINISH
 unset($_SESSION['products']);
 endif;
 ?>

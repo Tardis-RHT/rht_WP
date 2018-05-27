@@ -109,6 +109,12 @@ h3 {
 
 
 // BUTTONS
+button{
+    cursor: pointer;
+    &:disabled{
+        cursor: default;
+    }
+}
 
 %btn_big{
     width: 225px;

@@ -518,8 +518,8 @@ add_action('customize_register', function($customizer){
     $customizer->add_section(
         'contacts',
         array(
-            'title' => 'Contacts & copyright',
-            'description' => 'Контакты и copyright для всего сайта',
+            'title' => 'Контакты',
+            'description' => 'Настройки контактов для всего сайта',
             'priority' => 11,
         )
     );
@@ -548,6 +548,18 @@ add_action('customize_register', function($customizer){
         )
     );
     $customizer->add_setting(
+        'contacts_email_to_mail',
+        array('default' => 'rollinghitech@gmail.com')
+    );
+    $customizer->add_control(
+        'contacts_email_to_mail',
+        array(
+            'label' => 'Email для отправки сообщений с сайта',
+            'section' => 'contacts',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_setting(
         'contacts_address',
         array('default' => '69000, Украина, Запорожье, ул. Новостроек, дом 7')
     );
@@ -555,18 +567,6 @@ add_action('customize_register', function($customizer){
         'contacts_address',
         array(
             'label' => 'Адрес',
-            'section' => 'contacts',
-            'type' => 'text',
-        )
-    );
-    $customizer->add_setting(
-        'contacts_copyright',
-        array('default' => 'Rolling Hi-Tech')
-    );
-    $customizer->add_control(
-        'contacts_copyright',
-        array(
-            'label' => 'Copyright',
             'section' => 'contacts',
             'type' => 'text',
         )

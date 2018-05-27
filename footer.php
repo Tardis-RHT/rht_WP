@@ -7,7 +7,7 @@
 					</ul>
 				</nav>
 				<div class="footer_copyright">
-					<p>&#169; <?php echo get_theme_mod('contacts_copyright', 'Rolling Hi-Tech'); ?>, <?php echo current_time('Y') ?></p>
+					<p>&#169; <?php echo get_theme_mod('blogname', 'Rolling Hi-Tech'); ?>, <?php echo current_time('Y') ?></p>
 				</div>
 			</div>
 		</footer>
@@ -15,6 +15,14 @@
 
 		</div>
 		<!-- /wrapper -->
+
+		<?php 
+		global $showOnlyModal;
+			if($showOnlyModal == true){
+				include(locate_template('callback.php'));
+				// unset($showOnlyModal);
+			}
+		?>
 	<script>
 		var templateUrl = '<?php echo get_template_directory_uri() ?>';
 	</script>

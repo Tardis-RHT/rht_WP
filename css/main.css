@@ -410,6 +410,14 @@ h3 {
   }
 }
 
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
 .video_btn {
   background-color: #0071ba;
   background-image: url("../img/icons/triangle.svg");
@@ -552,6 +560,9 @@ a :visited {
 }
 
 .header_mobile_cart {
+  border: none;
+  background: none;
+  padding: 0;
   display: -webkit-box;
   /* Safari 3.1 - 6, Chrome < 21 (2009 Spec), UC Browser Android */
   display: -moz-box;
@@ -563,6 +574,16 @@ a :visited {
   display: flex;
   /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
   color: white;
+}
+
+.header_cart-btn {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.header_cart-btn:disabled .shopping-cart_number {
+  background: #6d6d6d;
 }
 
 .header_cart_buy {
@@ -5121,6 +5142,10 @@ input[type='range']:disabled::-ms-thumb {
     border-right: none;
     border-top: none;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 .modal {
