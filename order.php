@@ -14,8 +14,12 @@
             <ul class="order_make">
 				<li class="order_make_item">
 					<div class="order_make_name">
-						<p class="order_make_title order_delivery">Выберите способ доставки</p>
+						<div class="order_edit">
+							<p class="order_make_title order_delivery">Выберите способ доставки</p>
+							<i id="oderEdit" class="zmdi zmdi-edit edit_icon" style="display: none"></i>
+						</div>
 						<p class="order_make_comment">Стоимость доставки не включена в стоимость и соответствует тарифам компаний.</p>
+						
 					</div>
 					<div class="order_delivery_form">
 						<span>Выберите почтовую компанию</span>
@@ -65,9 +69,8 @@
 					</div>
 				</li>
 				<li class="order_make_item">
-					<div class="order_make_name order_edit">
+					<div class="order_make_name">
 						<p class="order_make_title order_pay">Выберите способ оплаты</p>
-						<i id="oderEdit" class="zmdi zmdi-edit edit_icon" style="display: none"></i>
 					</div>
 					<ul class="order_payment-list">
 						<li class="order_payment_method">
