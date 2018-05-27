@@ -5,6 +5,7 @@
     overflow: hidden;
     @media(min-width:872px){
         margin: 0 auto!important;
+        max-height: calc(100vh - 110px);
     }
 }
 .main-page_video-video{

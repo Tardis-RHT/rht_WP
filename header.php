@@ -76,7 +76,6 @@
 					<div class="header_cart">
 						<div class="header_cart_call invisible">
 							<button class="header_cart_call-button" onclick="superPopup()">Перезвоните мне</button>
-							<span class="header_cart_call-tel">Или звоните <a href="tel:<?php echo get_theme_mod('contacts_tel', '800 210 257'); ?>"><?php echo get_theme_mod('contacts_tel', '800 210 257'); ?></a></span>
 						</div>
 						<button onClick="location.href='/shopping-cart/'" class="header_cart-btn" disabled>
 							<span class="header_cart_buy">

@@ -49,7 +49,7 @@
 
 .btn{
     display: block;
-    @include text-style_main($weight_bold, $font_white, 22px);
+    @include text-style_main($weight_normal, $font_white, 22px);
     padding: 10px 20px;
 	cursor: pointer;
     text-decoration: none;
