@@ -74,7 +74,7 @@
                 background-position: right 50px bottom;
             }
             &:nth-of-type(2){ 
-                background-size: 30%;
+                background-size: 25%;
                 background-position: left 10% center;        
                 .main_products-caption{
                     padding-left: 50%;
@@ -120,6 +120,7 @@
 
 .main_products-category{
     font-size: 10px;
+    font-weight: 400;
     line-height: 12px;
     margin-bottom: 15px;
     letter-spacing: 5px;
@@ -136,8 +137,9 @@
     }
 }
 .main_products-title{
-    font-weight: $weight_bold;
+    // font-weight: $weight_bold;
     font-size: 24px;
+    font-weight: 400;
     line-height: 34px;
     margin-bottom: 15px;
     display: inline-block;
@@ -156,6 +158,7 @@
 .main_products-btn{
     padding: 15px;
     font-size: 12px;
+    font-weight: 400;
     line-height: 14px;
     font-weight: $weight_light;
     margin: 0 auto;

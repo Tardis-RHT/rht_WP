@@ -1310,7 +1310,7 @@ a :visited {
     background-position: right 50px bottom;
   }
   .main_products-single:nth-of-type(2) {
-    background-size: 30%;
+    background-size: 25%;
     background-position: left 10% center;
   }
   .main_products-single:nth-of-type(2) .main_products-caption {
@@ -1356,6 +1356,7 @@ a :visited {
 
 .main_products-category {
   font-size: 10px;
+  font-weight: 400;
   line-height: 12px;
   margin-bottom: 15px;
   letter-spacing: 5px;
@@ -1379,8 +1380,8 @@ a :visited {
 }
 
 .main_products-title {
-  font-weight: 700;
   font-size: 24px;
+  font-weight: 400;
   line-height: 34px;
   margin-bottom: 15px;
   display: inline-block;
@@ -1406,6 +1407,7 @@ a :visited {
 .main_products-btn {
   padding: 15px;
   font-size: 12px;
+  font-weight: 400;
   line-height: 14px;
   font-weight: 300;
   margin: 0 auto;
