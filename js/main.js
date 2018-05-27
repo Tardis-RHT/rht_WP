@@ -142,6 +142,9 @@ $(function($){
 	else if (tel.checkValidity() === true){
 		// console.log('valid');
 		telBtn.removeAttribute('disabled', 'disabled');
+		if(e.keyCode == 13) {
+			telBtn.trigger('submit');
+		}
 	   }
 	//    telBtn.setAttribute('disabled', 'disabled');
 	

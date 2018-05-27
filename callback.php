@@ -17,7 +17,7 @@
 		</div>
 	</div>
 </div>
-<section class="main_callback-answer wrapper" id="callback-popup">			
+<section class="main_callback-answer wrapper hidden" id="callback-popup">			
 	<div class="callback_form_wrapper-small">
 		<button class="callback-answer-close" onClick='hidePopup()'><i class="zmdi zmdi-close zmdi-hc-2x"></i></button>
 		<h2>Ваша заявка обрабатывается</h2>
