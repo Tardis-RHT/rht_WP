@@ -41,7 +41,7 @@ $success = mysqli_real_connect(
 );
 
 
-$query = "CREATE TABLE IF NOT EXISTS `wpfolder`.`wp_orders` ( `Id` INT NOT NULL AUTO_INCREMENT , `Name` TEXT NOT NULL , `Product` TEXT NOT NULL , PRIMARY KEY (`Id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci";
+$query = "CREATE TABLE IF NOT EXISTS `".$db."` ( `Id` INT NOT NULL AUTO_INCREMENT , `Name` TEXT NOT NULL , `Product` TEXT NOT NULL , PRIMARY KEY (`Id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci";
 $result = mysqli_query($link, $query);
 
 $query = "INSERT INTO wp_orders (`Id`,`Name`,`Product`) VALUES ('','$customerInfoToDB','$orderInfoToDB')";
