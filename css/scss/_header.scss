@@ -263,14 +263,12 @@
 		@include flex;
 		align-items: center;
 		font-size: 14px;
-		font-weight: 700;
 		line-height: 40px;
 		text-align: center;
 	}
 	.header_callus_tel {
 		width: 186px;
 		color: $font_white;
-		font-weight: $weight_bold;
 		border-left: solid 1px rgb(53, 59, 66);
 		border-right: solid 1px rgb(53, 59, 66);
 	}
@@ -352,7 +350,6 @@
 		color: $button_normal;
 		font-size: 10px;
 		text-decoration: none;
-		font-weight: $weight_bold;
 		outline: none;
 		@include transition(background-color);
 		&:hover{
