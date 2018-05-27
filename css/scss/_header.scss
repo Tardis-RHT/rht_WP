@@ -38,8 +38,21 @@
 	 color: $font_white;
 }
 .header_mobile_cart {
+	border: none;
+	background: none;
+	padding: 0;
 	@include flex;
 	color: $font-white;
+}
+.header_cart-btn{
+	border: none;
+	background: none;
+	padding: 0;
+	&:disabled{
+		.shopping-cart_number{
+			background: #6d6d6d;
+		}
+	}
 }
 .header_cart_buy {
 	@include flex;

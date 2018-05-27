@@ -142,6 +142,9 @@ $(function($){
 	else if (tel.checkValidity() === true){
 		// console.log('valid');
 		telBtn.removeAttribute('disabled', 'disabled');
+		if(e.keyCode == 13) {
+			telBtn.trigger('submit');
+		}
 	   }
 	//    telBtn.setAttribute('disabled', 'disabled');
 	
@@ -287,10 +290,14 @@ function superPopup(){
 	$('#overlay')
 		.addClass('modal-overlay');
 	$('#popup-callback-start')
+		.removeClass('hidden')
 		.addClass('modal');
 	$('#callback-popup')
 		.addClass('modal-answer');
 	$('#modal-close').click(function(){
+		hideModal()
+	});
+	$('#overlay').click(function(){
 		hideModal()
 	});
 	$('body')
@@ -299,6 +306,9 @@ function superPopup(){
 function hideModal(){
 	$('#popup-callback-start')
 		.removeClass('modal');
+		if($('#popup-callback-start').hasClass('showAlways') == false){
+			$('#popup-callback-start').addClass('hidden');
+		}
 	$('#callback-popup')
 		.removeClass('modal-answer');
 	$('#overlay')
@@ -553,6 +563,7 @@ $(document).on('click', '.buy', function(){
 	}
     $.post(templateUrl+'/cart-controller.php', params, function(data){
 		$('.shopping-cart_number').html(data);
+		checkCart();
 		// console.log(data);
     })
 });
@@ -593,11 +604,13 @@ $(".delete-product").click(function(){
 	}
     $.post(templateUrl+'/cart-controller.php', params, function(data){
 		$('.shopping-cart_number').html(data);
+		checkCart();
 	});
 	currentDeleteButton.parent().slideUp(400, function () {
 		currentDeleteButton.parent().remove();
 		countSum();
 		checkEmpty();
+		checkCart();
 	});
 });
 
@@ -612,12 +625,14 @@ $('.shopping-cart_item-single_number').change(function(){
 	}
 	$.post(templateUrl+'/cart-controller.php', params, function(data){
 		$('.shopping-cart_number').html(data);
+		checkCart();
 	});
 	if(new_quantity == 0){
 		$(this).parent().parent().parent().slideUp(400, function () {
 			$(this).remove();
 			countSum();
 			checkEmpty();
+			checkCart();
 		});
 	}
 	var newSum = parseInt($(this).parent().next().html()) * new_quantity;
@@ -625,5 +640,16 @@ $('.shopping-cart_item-single_number').change(function(){
 	countSum();
 })
 
-//uploading comment
+//check ability of shopping cart
 
+function checkCart(){
+	if($('.shopping-cart_number').html() == 0){
+		$('.header_cart-btn').attr('disabled', 'disabled');
+		$('.header_mobile_cart').attr('disabled', 'disabled');
+	} else{
+		$('.header_cart-btn').removeAttr('disabled');
+		$('.header_mobile_cart').removeAttr('disabled');
+	}
+}
+
+checkCart();
