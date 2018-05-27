@@ -129,13 +129,18 @@ h3 {
     background-image: url('../img/icons/triangle.svg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 40%;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     box-sizing: border-box;
     cursor: pointer;  
     @include transition(background-color);
+    @media (min-width:500px){
+        width: 50px;
+        height: 50px;
+        background-size: auto;
+    }
     &:hover{
         background-color: $button_hover;
     }

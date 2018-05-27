@@ -54,6 +54,7 @@ $(document).ready(function() {
   })
   $('#fur_submit').click(function(event) {
     event.preventDefault();
+    $("#true_loadmore").css("display", "none")
     // console.log($('#fur_material').val(), $('#fur_height').val(), $('#fur_width').val());
     var map = {};
     $(".js-array").each(function() {
