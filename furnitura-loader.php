@@ -207,26 +207,6 @@ $args = array('posts_per_page' => -1,
     'post_type' => 'page',
     'order' => 'ASC',
     'post_parent' => $parentId,
-<<<<<<< HEAD
-    'meta_query'	=> array(
-		'relation'		=> 'AND',
-		array(
-			'key'	 	=> 'width',
-			'value'	  	=> $width,
-			'compare' 	=> '>',
-		),
-		array(
-			'key'	  	=> 'height',
-			'value'	  	=> $height,
-			'compare' 	=> '>',
-        ),
-        array(
-			'key'	  	=> 'matherial',
-			'value'	  	=> $material,
-			'compare' 	=> 'LIKE',
-		),
-    ), 
-=======
     'include' => $arrayIDs,
     // 'meta_query'	=> array(
 	// 	'relation'		=> 'AND',
@@ -246,7 +226,6 @@ $args = array('posts_per_page' => -1,
 	// 		'compare' 	=> '=',
 	// 	),
     // ), 
->>>>>>> master
 );
 $myposts = get_posts( $args );
 
