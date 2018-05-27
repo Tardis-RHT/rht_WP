@@ -59,10 +59,21 @@ This e-mail was sent from a callback form on the {$currentPage} page
 
 $to = get_theme_mod('contacts_email_to_mail', 'coolahhy@gmail.com');
 $subject = 'Callback request';
+$from = get_option( 'admin_email' );
+
 $headers = array(
-	'From: RHT-Site <me@example.net>',
+	'From: RHT-Site <support@digvice.kl.com.ua>',
 	'content-type: text/html'
 );
 
-wp_mail( $to, $subject, $message, $headers );
+//For later use
+// $headers = array(
+// 	'From: RHT-Site <'.$from.'>',
+// 	'content-type: text/html'
+// );
+
+$mailResult = false;
+$mailResult = wp_mail( $to, $subject, $message, $headers );
+echo $mailResult;
+
 ?>

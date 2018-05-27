@@ -122,12 +122,20 @@ $message = "
 This e-mail was sent from RHT shopping cart
 ";
 
-$to = 'coolahhy@gmail.com';
+$to = get_theme_mod('contacts_email_to_mail', 'coolahhy@gmail.com');
 $subject = 'RHT order';
+$from = get_option( 'admin_email' );
+
 $headers = array(
-	'From: RHT-Site <me@example.net>',
+	'From: RHT-Site <support@digvice.kl.com.ua>',
 	'content-type: text/html'
 );
+
+//For later use
+// $headers = array(
+// 	'From: RHT-Site <'.$from.'>',
+// 	'content-type: text/html'
+// );
 
 wp_mail( $to, $subject, $message, $headers );
 
