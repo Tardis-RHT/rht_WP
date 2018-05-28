@@ -52,43 +52,43 @@ Post Template Name: Furnitura Set
 		<ul class="furnitura-set_fullkit">
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/rol_opora.jpg" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/rol_opora@1x.png" srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/rol_opora@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/rol_opora@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Роликовая опора <span><?php the_field('pillar'); ?></span> шт</p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/fur_benefit2.png" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/fur_benefit2@1x.png" srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/fur_benefit2@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/fur_benefit2@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Направляющий профиль <span><?php the_field('profil'); ?></span></p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ogranich_verh.jpg" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ogranich_verh@1x.png" srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/ogranich_verh@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/ogranich_verh@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Верхний ограничитель — <span><?php the_field('limiter'); ?></span> шт</p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/rolik_nakat.jpg" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/rolik_nakat@1x.png" srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/rolik_nakat@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/rolik_nakat@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Накатной (концевой) ролик – 1 шт</p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_niz.jpg" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_niz@1x.png" srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_niz@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_niz@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Нижний улавливатель – 1 шт </p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_verh.jpg" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_verh@1x.png" srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_verh@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/ulavl_verh@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Верхний улавливатель – 1 шт</p>
 			</li>
 			<li class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/zaglushka.jpg" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/zaglushka@1x.png" srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/zaglushka@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/zaglushka@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Заглушка – 1 шт</p>
 			</li>

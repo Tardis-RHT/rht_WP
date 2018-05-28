@@ -18,7 +18,9 @@ footer {
 }
 .footer_copyright {
     font-family: $main_font;
-    font-weight: $weight_normal;
+    // font-weight: $weight_normal;
+    font-weight: 400;
+    opacity: .5;
     font-size: 18px;
     color: $font-gray;
 }
@@ -36,5 +38,42 @@ footer {
     }
     .footer_copyright{
         text-align: left;
+    }
+}
+
+
+//add to cart plate
+.add-to-cart{
+    position: fixed;
+    top: calc(50% - 60px);
+    left: calc(50% - 143px);
+    z-index: 2000;
+    width: 286px;
+    height: 120px;
+    background-color: $bg_white;
+    border: 1px solid $button_normal;
+}
+.add-to-cart-plate{
+    padding: 20px 30px;
+    height: 100%;
+    width: 100%;    
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .add-to-cart-text{
+        font-size: 18px;
+        color: $font_h2;
+        line-height: 23px;
+    }
+    .add-to-cart-symb{
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        border: 1px solid $button_normal;
+        @include flex;
+        justify-content: center;
+        align-items: center;
+        color: $button_normal;
     }
 }
