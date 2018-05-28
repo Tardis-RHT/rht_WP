@@ -573,6 +573,7 @@ a :visited {
   /* Safari 6.1 - 8, Android < 4.4, BB < 10, Chrome 21 - 28 */
   display: flex;
   /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
+  align-items: center;
   color: white;
 }
 

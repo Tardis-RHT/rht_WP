@@ -42,6 +42,7 @@
 	background: none;
 	padding: 0;
 	@include flex;
+	align-items: center;
 	color: $font-white;
 }
 .header_cart-btn{
