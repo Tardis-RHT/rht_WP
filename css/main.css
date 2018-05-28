@@ -3783,7 +3783,7 @@ input[type='range']:disabled::-ms-thumb {
 @media (min-width: 1024px) {
   .page_products-title {
     font-size: 36px;
-    line-height: 60px;
+    line-height: 46px;
   }
 }
 
