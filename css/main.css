@@ -1448,9 +1448,8 @@ a :visited {
     padding: 15px 35px;
     font-size: 16px;
     line-height: 20px;
-    font-weight: 700;
     margin: 0;
-    min0width: none;
+    min-width: none;
   }
 }
 
