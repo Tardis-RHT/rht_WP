@@ -77,7 +77,7 @@
 
 .ghost_btn{
     display: block;
-    @include text-style_main($weight_bold, $button_normal, 22px);
+    @include text-style_main($weight_normal, $button_normal, 22px);
     padding: 10px 30px;
 	cursor: pointer;
     text-decoration: none;
