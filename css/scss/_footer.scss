@@ -18,10 +18,9 @@ footer {
 }
 .footer_copyright {
     font-family: $main_font;
-    // font-weight: $weight_normal;
-    font-weight: 400;
+    font-weight: $weight_normal;
     opacity: .5;
-    font-size: 18px;
+    // font-size: 18px;
     color: $font-gray;
 }
 
