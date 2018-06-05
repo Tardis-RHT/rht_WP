@@ -533,7 +533,7 @@ a :visited {
   /* Safari 6.1 - 8, Android < 4.4, BB < 10, Chrome 21 - 28 */
   display: flex;
   /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
-  padding: 10px;
+  padding: 5px 10px;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -552,11 +552,17 @@ a :visited {
 }
 
 .header_mobile_logo {
+  height: 100%;
   font-weight: 700;
   font-size: 24px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: white;
+}
+
+.header_mobile_logo img {
+  width: auto;
+  height: 100%;
 }
 
 .header_mobile_cart {

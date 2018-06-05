@@ -28,7 +28,7 @@
 			<div class="header_mobile stickytop">
 				<div class="header_mobile_burger"><i id='burger' class="zmdi zmdi-menu zmdi-hc-2x"></i>
 				</div>
-				<a class="header_mobile_logo" href="<?php echo home_url(); ?>">RHT</a>
+				<a class="header_mobile_logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_white.png" alt="RHT logo"/></a>
 				<button onClick="location.href='/shopping-cart/'" class="header_mobile_cart" disabled>
 					<i class="zmdi zmdi-shopping-cart icon_cart"></i>
 					<div class="shopping-cart_number">
@@ -67,7 +67,7 @@
 			<!-- MAIN MENU -->
 			<div class="header_wrapper_big">
 				<div class="header_wrapper_small wrapper">
-					<a href="<?php echo home_url(); ?>"><img class="header_logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="RHT logo"></a>
+					<a href="<?php echo home_url(); ?>"><img class="header_logo" src="<?php echo get_template_directory_uri(); ?>/img/logo_black.png" alt="RHT logo"/></a>
 					<nav class="header_menu">
 						<ul class="header_menu_main">
 							<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>

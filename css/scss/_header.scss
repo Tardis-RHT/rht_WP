@@ -14,7 +14,7 @@
 }
 .header_mobile {
 	@include flex;
-	padding: 10px;
+	padding: 5px 10px;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
@@ -31,11 +31,16 @@
     text-align: center;
 }
 .header_mobile_logo {
-	 font-weight: $weight_bold;
-	 font-size: 24px;
-	 letter-spacing: 1px;
-	 text-transform: uppercase;
-	 color: $font_white;
+	height: 100%;
+	font-weight: $weight_bold;
+	font-size: 24px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: $font_white;
+	 img{
+		width: auto;
+		height: 100%;;
+	 }
 }
 .header_mobile_cart {
 	border: none;
