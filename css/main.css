@@ -902,11 +902,17 @@ a :visited {
     font-weight: 500;
     box-sizing: border-box;
   }
+  .header_logo_link {
+    width: 20%;
+  }
   .header_logo {
     width: 175px;
     height: 47px;
   }
   .header_menu {
+    width: 45%;
+  }
+  .header_menu ul {
     display: -webkit-box;
     /* Safari 3.1 - 6, Chrome < 21 (2009 Spec), UC Browser Android */
     display: -moz-box;
@@ -917,13 +923,12 @@ a :visited {
     /* Safari 6.1 - 8, Android < 4.4, BB < 10, Chrome 21 - 28 */
     display: flex;
     /* Edge 12+, Firefox 28+, Blink, Safari 9+, Opera Mini 8+ */
-    justify-content: center;
-    width: 60%;
+    justify-content: space-around;
   }
   .header_menu li {
     display: block;
     float: left;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: #111820;
     padding: 20px;
@@ -937,19 +942,6 @@ a :visited {
   .header_menu li:last-of-type {
     padding-right: 0px;
   }
-  .header_menu_main {
-    max-width: 475px;
-  }
-}
-
-@media screen and (min-width: 872px) and (max-width: 870px) {
-  .header_menu_main {
-    font-size: 16px;
-    padding: 5px;
-  }
-}
-
-@media screen and (min-width: 872px) {
   .header_cart {
     display: -webkit-box;
     /* Safari 3.1 - 6, Chrome < 21 (2009 Spec), UC Browser Android */

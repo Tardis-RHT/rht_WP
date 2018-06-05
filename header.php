@@ -67,11 +67,9 @@
 			<!-- MAIN MENU -->
 			<div class="header_wrapper_big">
 				<div class="header_wrapper_small wrapper">
-					<a href="<?php echo home_url(); ?>"><img class="header_logo" src="<?php echo get_template_directory_uri(); ?>/img/logo_black.png" alt="RHT logo"/></a>
+					<a class="header_logo_link" href="<?php echo home_url(); ?>"><img class="header_logo" src="<?php echo get_template_directory_uri(); ?>/img/logo_black.png" alt="RHT logo"/></a>
 					<nav class="header_menu">
-						<ul class="header_menu_main">
-							<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-						</ul>
+						<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 					</nav>
 					<div class="header_cart">
 						<div class="header_cart_call invisible">
