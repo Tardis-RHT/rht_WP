@@ -4776,7 +4776,6 @@ input[type='range']:disabled::-ms-thumb {
 
 .economy {
   background-color: #0a1a30;
-  background-image: url(../img/bg_dark@1x.png);
   color: white;
   padding: 50px 0;
 }
