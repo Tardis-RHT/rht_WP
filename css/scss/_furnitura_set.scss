@@ -54,7 +54,11 @@
 .furnitura-set_checkbox{
     position: relative;
     margin-bottom: 85px;
+    font-weight: $weight_light;
     @include flex;
+    label{
+        color: #78787B;
+    }
     .zmdi-help {
         padding-left: 5px;
         color: $button_normal;
@@ -364,7 +368,7 @@
     display: none;
 }
 .furnitura-set_kit_img{
-    margin: 0 auto;
+    margin: 0 auto 10px;
     width: 270px;
     height: 200px;
     background-color: $bg_section;

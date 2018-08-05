@@ -118,11 +118,11 @@
         </div>
 		<div class="shopping-cart_price-sum">
 			<p>Сумма:</p>
-			<p><span>0</span> грн</p>
+			<p class="price"><span>0</span> грн</p>
 		</div>
 		<a href="/order/">
 			<button class="btn shopping-cart_order">
-			Заказать
+			Оформить заказ
 			</button>
 		</a>
     </section>

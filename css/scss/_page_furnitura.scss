@@ -23,8 +23,9 @@
         height: 320px;
         background-position: right 20px bottom;
     }
-    @media (min-width:1025px){
+    @media (min-width:1024px){
         height: 420px;
+        background-position: right -150px bottom;
     }
     @media (min-width:1440px){
         height: 620px;
@@ -61,7 +62,7 @@
 }
 .furnitura_products-title{
     max-width: 300px;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 20px;
     line-height: 34px;
     margin-bottom: 15px;
@@ -75,8 +76,10 @@
     }
     @media(min-width:1024px){
         margin-bottom: 50px;
-        font-size: 36px;
-        line-height: 46px;
+        // font-size: 36px;
+        // line-height: 46px;
+        font-size: 48px;
+        line-height: 60px;
     }
 }
 // END OF SECTION TITLE
@@ -132,12 +135,13 @@
     margin: 0 0 10px;
     max-width: 600px;
     font-family: $main_font;
-    font-weight: 400;    
+    font-weight: 700;    
     color: $font_white;
     font-size: 16px;
     line-height: 33px;
     @media (min-width:1024px){
-        font-size: 36px;
+        // font-size: 36px;
+        font-size: 48px;
         line-height: 57px;
         margin: 0 0 50px;
     }
@@ -152,13 +156,14 @@
         }
         @media (min-width:768px){
             font-size: 35px;
+            font-weight: $weight_super_bold;
         }
     }
 }
 .main-page_video-link{
     display: block;
-    color: $font_white;
-    margin: 10px 0;
+    // color: $font_white;
+    margin: 15px 0;
     &:visited{
         color: $font_white;
     }
@@ -548,6 +553,7 @@ input[type='range']:disabled::-ms-thumb {
 }
 .furnitura_chars_additional{
     margin-bottom: 45px;
+    margin-left: 32px;
     @include text-style_main($weight_light, $font-gray, 32px);
     display: none;
     @media(min-width:769px){
@@ -559,7 +565,7 @@ input[type='range']:disabled::-ms-thumb {
     font-weight: $weight_normal;
     font-size: 36px;
     line-height: 46px;
-    color: $font_black;
+    color: #0071BA;
     vertical-align: bottom;
     span{
         font-size: 18px;

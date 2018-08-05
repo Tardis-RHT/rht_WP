@@ -75,6 +75,7 @@
 }
 .inset-format{
     @include text-style_main($weight_light, $font-gray, 26px);
+    font-size: 16px;
     margin-bottom: 5px;
 }
 .toggle{
@@ -121,6 +122,11 @@
     text-align: left;
     button{
         display: inline;
+    }
+    .automatica_set-price{
+        b{
+            font-weight: $weight_super_bold;
+        }
     }
 }
 .inset-img-container{
@@ -313,7 +319,7 @@
 .economy-item-title{
     @include text-style_main($weight_normal, $font_white, 22px);
     padding-top: 10px;
-    border-top: 2px solid rgba(120, 120, 123, 0.5);
+    border-top: 1px solid #0071BA;
     //mobile    
     font-size: 14px;
 }

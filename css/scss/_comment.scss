@@ -91,7 +91,7 @@
     margin-right: 40px;
 }
 .comment-requiremence{
-    @include text-style_main($weight_normal, $font_gray, 22px);
+    @include text-style_main($weight_light, $font_gray, 22px);
     padding-top: 25px;
 }
 
@@ -191,7 +191,9 @@
         left: 100px;
     }
 }
-
+.dropzone .dz-preview .dz-remove:hover{
+    color: #D0021B;
+}
 //labels
 
 .comment-form{

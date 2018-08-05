@@ -82,7 +82,7 @@
                         <p class="catalog-item-size"><?php the_field('sizes'); ?></p>
                     </div>
                     <div class="catalog-item-info-bottom">
-                        <p class="catalog-item-price"><b><?php the_field('price'); ?></b>грн/шт</p>
+                        <p class="catalog-item-price"><b><?php the_field('price'); ?></b>&nbsp;грн/шт</p>
                         <button class="btn buy" data-id="<?php echo $post->ID?>">Добавить в корзину</button>
                     </div>
                 </div>

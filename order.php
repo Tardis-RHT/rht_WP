@@ -179,7 +179,7 @@
 				</ul>
 				<ul>
                     <li class="order_price_total">
-						<p>Сумма: <b>0</b><span> грн</span></p>
+						<p>Сумма: <span class="price"><b>0</b><span> грн</span></span></p>
 						<span class="order_price_note">*Доставка не входит в стоимость</span>	
 					</li>
                 </ul>

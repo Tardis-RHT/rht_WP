@@ -2,7 +2,7 @@
         <div class="wrapper furnitura-set_benefits_wrap">
 				<div class="fur_slider_remote wrapper">
 						<div class="pager_container">
-							<div class="fur_pager" id="fur_pager1"></div>
+							<div class="fur_pager fur_pager_active" id="fur_pager1"></div>
 							<div class="fur_pager" id="fur_pager2"></div>
 							<div class="fur_pager" id="fur_pager3"></div>
 						</div>

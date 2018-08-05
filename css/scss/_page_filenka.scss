@@ -114,6 +114,9 @@
     @extend .furnitura_title_wrapper;
     background-image: url('../img/products/filenka.png');
     background-position: right bottom;
+    @media(min-width:1024px){
+        background-position: right -100px bottom;
+    }
 }
 
 .custom-html{

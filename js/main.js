@@ -582,10 +582,10 @@ function countSum(){
 			$('.order-single-price-total').each(function(){
 				totalPrice += parseInt($(this).html());
 			});
-			$('.order_price_total > p > b').html(totalPrice.toLocaleString('ru'));
+			$('.order_price_total > p  b').html(totalPrice.toLocaleString('ru'));
 		}else{
 			$('.shopping-cart_price-sum > p > span').html(0);
-			$('.order_price_total > p > b').html(0);
+			$('.order_price_total > p b').html(0);
 		}
 	}
 }

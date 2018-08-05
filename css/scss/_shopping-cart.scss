@@ -116,6 +116,9 @@
         span{
             font-size: 36px;
         }
+        &.price{
+            color:#0071BA;
+        }
     }
     @media (min-width:872px){
         justify-content: flex-end;        

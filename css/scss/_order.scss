@@ -76,13 +76,16 @@
         span{
             font-size: 24px;
         }
+        .price{
+            color: #0071BA;
+        }
     }
 }
 .order_price_note{
     font-size: 16px;
     font-weight: $weight_light;
     line-height: 19px;
-    color: $font_black;
+    color: #78787B;
 }
 .order_make_name{
 
@@ -198,6 +201,7 @@
         width: 50%;
         height: 46px;
         @include text-style_main($weight_bold, $button_normal, 22px);
+        font-size: 16px;
         text-align: center;
         border: 2px solid $button_normal;
         padding: 10px 0;

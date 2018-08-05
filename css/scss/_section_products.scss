@@ -120,7 +120,7 @@
 
 .main_products-category{
     font-size: 10px;
-    font-weight: 400;
+    font-weight: $weight_light;
     line-height: 12px;
     margin-bottom: 15px;
     letter-spacing: 5px;
@@ -139,7 +139,7 @@
 .main_products-title{
     // font-weight: $weight_bold;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: $weight_bold;
     line-height: 34px;
     margin-bottom: 15px;
     display: inline-block;
@@ -171,8 +171,8 @@
         margin: 0;
         min0width: none;
     }
-    @media(min-width:1024px){
-        font-size: 18px;
-        line-height: 22px;
-    }
+    // @media(min-width:1024px){
+    //     font-size: 18px;
+    //     line-height: 22px;
+    // }
 }

@@ -74,6 +74,7 @@
 }
 .feedback_slider_counter{
     @include text-style_caption;
+    color: #dddddd;
 }
 @media screen and (min-width: 760px){
     .main_feedback {
@@ -111,6 +112,7 @@
     .main_feedback_number-big{
         font-size: 36px;
         font-weight: $weight_normal;
+        color: #78787B;
     }
     .main_feedback_text {
         width: 670px;
@@ -118,7 +120,7 @@
         text-align: left;
         font-family: $main_font;
         font-weight: $weight_normal;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 36px;
     }
     .main_feedback_nameanddate{
@@ -128,8 +130,8 @@
         text-align: left;
         font-family: $main_font;
         font-weight: $weight_light;
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 18px;
+        line-height: 22px;
         color: $font-gray;
         margin-bottom: 20px;
         margin-left: 0;

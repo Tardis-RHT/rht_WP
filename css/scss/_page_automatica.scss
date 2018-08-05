@@ -198,7 +198,7 @@
 }
 .automatica_set-characteristics{
     margin-bottom: 15px;
-    @include text-style_main($weight_light, $font_h2, 18px);
+    @include text-style_main($weight_normal, $font_h2, 18px);
     font-size: 12px;
     max-width: 60%;
     li{
@@ -240,6 +240,7 @@
 }
 .automatica_set-characteristics-additional{
     margin-bottom: 95px;
+    margin-left: 32px;
     @include text-style_main($weight_light, $font-gray, 32px);
     display: none;
     @media(min-width:769px){
@@ -249,9 +250,9 @@
 .automatica_set-price{
     @include text-style_main($weight_normal, $button_normal, 46px);
     vertical-align: bottom;
-    font-weight: bold;
     b{
         font-size:  36px;
+        font-weight: $weight_normal;
     }
 }
 .automatica_set-capture button{

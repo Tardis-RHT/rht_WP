@@ -46,6 +46,10 @@ h1 {
             left: 7px;
         }
     }
+    @media (min-width:1024px) {
+        font-size: 72px;
+        line-height: 112px;
+    }
 }
 
 h2 {
@@ -111,6 +115,7 @@ h3 {
 // BUTTONS
 button{
     cursor: pointer;
+    font-family: $main_font;
     &:disabled{
         cursor: default;
     }
