@@ -123,7 +123,7 @@
     font-weight: $weight_light;
     line-height: 12px;
     margin-bottom: 15px;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     text-align: left;
     @media (min-width:769px) {
         font-size: 14px;
@@ -167,9 +167,8 @@
         padding: 15px 35px;
         font-size: 16px;
         line-height: 20px;
-        font-weight: $weight_bold;
         margin: 0;
-        min0width: none;
+        min-width: none;
     }
     // @media(min-width:1024px){
     //     font-size: 18px;

@@ -485,9 +485,10 @@ input[type='range']:disabled::-ms-thumb {
 }
 .furnitura_chars_set{
     font-size: 10px;
+    font-weight: 400;
     line-height: 12px;
     margin-bottom: 15px;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     text-align: left;
     color: $font_black;
     @media (min-width:769px) {
@@ -501,7 +502,7 @@ input[type='range']:disabled::-ms-thumb {
 }
 .furnitura_chars_title{
     font-size: 36px;
-    font-weight: $weight_bold;
+    font-weight: 400;
     line-height: 46px;
     color: $font_h2;
     margin-bottom: 22px;
@@ -513,9 +514,9 @@ input[type='range']:disabled::-ms-thumb {
     li{
         margin-left: 25px;
         position: relative;
-        b{
-            font-weight: $weight_bold;
-        }
+        // b{
+        //     font-weight: $weight_bold;
+        // }
         &::before{
             content: '';
             display: inline-block;
@@ -565,7 +566,8 @@ input[type='range']:disabled::-ms-thumb {
     font-weight: $weight_normal;
     font-size: 36px;
     line-height: 46px;
-    color: #0071BA;
+    color: $button_normal;
+    // color: $font_black;
     vertical-align: bottom;
     span{
         font-size: 18px;

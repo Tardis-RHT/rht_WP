@@ -94,7 +94,7 @@ Post Template Name: Furnitura Set
 			</li>
 			<li id="adjusting-plate" class="furnitura-set_kit_single">
 				<div class="furnitura-set_kit_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/regul_pastina.jpg" alt="Item of the kit">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/furnitura/regul_pastina@1x.png"  srcset="<?php echo get_template_directory_uri(); ?>/img/furnitura/regul_plastina@1x.png 1x, <?php echo get_template_directory_uri(); ?>/img/furnitura/regul_plastina@2x.png 2x" alt="Item of the kit">
 				</div>
 				<p>Регулировочная пластина</p>
 			</li>
