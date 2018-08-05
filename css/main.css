@@ -171,7 +171,6 @@ textarea:focus:-ms-input-placeholder {
 .btn:hover {
   background-color: #0063a6;
   border-color: #0063a6;
-  font-weight: 700;
 }
 
 .btn:active {
