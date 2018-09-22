@@ -43,7 +43,7 @@ reader.onload = function (event) {
 reader.readAsDataURL(file);
 }  else {
 holder.innerHTML += '<p>Uploaded ' + file.name + ' ' + (file.size ? (file.size/1024|0) + 'K' : '');
-console.log(file);
+// console.log(file);
 }
 }
 

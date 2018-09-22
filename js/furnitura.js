@@ -60,7 +60,7 @@ $(document).ready(function() {
     $(".js-array").each(function() {
         map[$(this).attr("name")] = $(this).val();
     });
-    console.log(map);
+    // console.log(map);
     var params = {
       options: map,
     } 
@@ -100,7 +100,7 @@ function toggleCheckbox() {
     
 	  furnitura_buy.setAttribute('data-id', data_id);
   }
-  console.log(data_id);
+  // console.log(data_id);
 }
 
 if(document.getElementById('adjusting-plate_checkbox')){

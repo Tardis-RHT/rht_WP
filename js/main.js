@@ -454,7 +454,7 @@ if($('#comment-form').length > 0){
 			// console.log(data);
 		});
 		$("#comment-form").trigger('reset');
-		console.log(dzClosure);
+		// console.log(dzClosure);
 	});	
 }
 
