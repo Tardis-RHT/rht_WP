@@ -5776,6 +5776,10 @@ input[type='range']:disabled::-ms-thumb {
   color: #D0021B;
 }
 
+.dropzone .dz-preview .dz-progress {
+  display: none;
+}
+
 .comment-form .comment-inputs {
   position: relative;
 }

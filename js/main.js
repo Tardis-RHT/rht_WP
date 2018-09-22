@@ -351,7 +351,7 @@ function changeMsg3(){
 	var inputs = $('#commentName, #commentEmail, #commentProducts, #commentText');
 	var commentBtn = $('#comment_btn');
 	function checkCommentValidity(){
-	if(commentBtn != undefined){
+	if(commentBtn !== undefined){
 	// commentBtn.prop( "disabled", true );
 
 		$("#commentEmail").smartValidity({
