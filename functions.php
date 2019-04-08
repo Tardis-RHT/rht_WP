@@ -819,4 +819,8 @@ function true_load_posts(){
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 
+
+// Полностью отключим Гутенберг на сайте (новый редактор)
+add_filter( 'use_block_editor_for_post_type', '__return_false', 100 );
+
 ?>
